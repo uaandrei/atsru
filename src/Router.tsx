@@ -1,6 +1,5 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import { HomePage } from "./pages";
-import { FrozenYogurtPrivacyPolicyPage } from "./pages";
+import { HomePage, FrozenYogurtPrivacyPolicyPage, FrozenYogurtPage } from "./pages";
 
 export const Router = () => (
   <div className="container">
@@ -33,6 +32,16 @@ export const Router = () => (
                   Home
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/fy"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"
+                  }
+                >
+                  Frozen Yogurt
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -41,6 +50,7 @@ export const Router = () => (
     <hr />
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/fy" element={<FrozenYogurtPage />} />
       <Route path="/fy-privacy-policy" element={<FrozenYogurtPrivacyPolicyPage />} />
     </Routes>
   </div>

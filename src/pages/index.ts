@@ -1,2 +1,2 @@
 export { HomePage } from "./Home";
-export { PrivacyPage } from "./Privacy";
+export { FrozenYogurtPrivacyPolicyPage } from "./FrozenYogurtPrivacyPolicyPage";

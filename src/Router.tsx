@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import { HomePage, PrivacyPage } from "./pages";
+import { HomePage } from "./pages";
+import { FrozenYogurtPrivacyPolicyPage } from "./pages";
 
 export const Router = () => (
   <div className="container">
@@ -7,7 +8,7 @@ export const Router = () => (
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            ațru
+            atsru
           </a>
           <button
             className="navbar-toggler"
@@ -29,17 +30,7 @@ export const Router = () => (
                     isActive ? "nav-link active" : "nav-link"
                   }
                 >
-                  acasă
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/privacy"
-                  className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link"
-                  }
-                >
-                  polica de confidențialitate
+                  Home
                 </NavLink>
               </li>
             </ul>
@@ -50,7 +41,7 @@ export const Router = () => (
     <hr />
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/fy-privacy-policy" element={<FrozenYogurtPrivacyPolicyPage />} />
     </Routes>
   </div>
 );

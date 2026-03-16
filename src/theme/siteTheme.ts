@@ -1,5 +1,5 @@
 export const siteTheme = {
-  brandName: 'Handmade by Alex',
+  brandName: 'Handmade by atsru',
   heroImage: {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHZxfeTlCJNtnN0jLT3CNx2Gi-xFnQ3VEdLeHkZs2G3eqYGd00Gdr1w4k7NcgvuIbqm0VKLjw2KNzh_1W1T3obFnS9muIT_wn9Q9k74Fjy7MeMVCO-B0QmWoPbHRq8DPkZuIJc9SIBIc0xnRH2yPymarN1Ztbk5-siniU9GAlg0ZnyIrhoawmi5i9tMCTVWq99RywzwoWkUWr0DAPRN0miLrLeXkEeFAZujhM72Sjb0x-qgm9w2BTk29ueoF6zKKONra1z6P_MJLAa',
   },

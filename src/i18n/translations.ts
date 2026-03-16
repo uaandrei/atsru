@@ -3,7 +3,7 @@ import type { Locale, Translation } from './types'
 export const translations: Record<Locale, Translation> = {
   en: {
     meta: {
-      title: 'Handmade by Alex | Friendly Developer',
+      title: 'Handmade by atsru | Friendly Developer',
       description:
         'A playful developer portfolio built with React, Tailwind, and bilingual content.',
     },
@@ -112,7 +112,7 @@ export const translations: Record<Locale, Translation> = {
   },
   ro: {
     meta: {
-      title: 'Handmade by Alex | Dezvoltator Prietenos',
+      title: 'Handmade by atsru | Dezvoltator Prietenos',
       description:
         'Un portofoliu jucaus de dezvoltator, construit cu React, Tailwind si continut bilingv.',
     },

@@ -1,8 +1,11 @@
+import { LanguageProvider } from './i18n/LanguageProvider'
+import { HomePage } from './pages/HomePage'
+
 function App() {
   return (
-    <>
-      hello world
-    </>
+    <LanguageProvider>
+      <HomePage />
+    </LanguageProvider>
   )
 }
 

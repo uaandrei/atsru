@@ -13,9 +13,6 @@ export const translations: Record<Locale, Translation> = {
       { href: '#projects', label: 'My scribbles' },
       { href: '#contact', label: 'Say hello' },
     ],
-    header: {
-      cta: "Let's grab coffee!",
-    },
     hero: {
       badge: 'Open for fun chats and projects',
       titleLead: "Let's build",
@@ -125,9 +122,6 @@ export const translations: Record<Locale, Translation> = {
       { href: '#projects', label: 'Proiectele mele' },
       { href: '#contact', label: 'Spune-mi salut' },
     ],
-    header: {
-      cta: 'Hai la o cafea!',
-    },
     hero: {
       badge: 'Disponibil pentru discutii si proiecte',
       titleLead: 'Hai sa construim',

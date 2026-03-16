@@ -30,9 +30,6 @@ export type Translation = {
     description: string
   }
   nav: NavigationItem[]
-  header: {
-    cta: string
-  }
   hero: {
     badge: string
     titleLead: string

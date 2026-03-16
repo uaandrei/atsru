@@ -7,7 +7,6 @@ import { SymbolIcon } from '../common/SymbolIcon'
 
 type HeaderProps = {
   nav: NavigationItem[]
-  ctaLabel: string
   locale: Locale
   onLocaleChange: (locale: Locale) => void
   languageLabel: string
@@ -15,7 +14,6 @@ type HeaderProps = {
 
 export function Header({
   nav,
-  ctaLabel,
   locale,
   onLocaleChange,
   languageLabel,
@@ -59,9 +57,6 @@ export function Header({
               onChange={onLocaleChange}
               label={languageLabel}
             />
-            <a href="#contact" className={siteTheme.classes.headerButton}>
-              {ctaLabel}
-            </a>
             <button
               type="button"
               className="rounded-full p-2 text-[#2D3436] transition hover:bg-white md:hidden"
@@ -89,13 +84,6 @@ export function Header({
                 {item.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              className="inline-flex justify-center rounded-full bg-[#2D3436] px-6 py-3 text-base font-bold text-white"
-              onClick={() => setMenuOpen(false)}
-            >
-              {ctaLabel}
-            </a>
           </Container>
         </div>
       ) : null}

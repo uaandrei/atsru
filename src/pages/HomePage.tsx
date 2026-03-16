@@ -15,7 +15,6 @@ export function HomePage() {
     <div className={siteTheme.classes.page}>
       <Header
         nav={t.nav}
-        ctaLabel={t.header.cta}
         locale={locale}
         onLocaleChange={setLocale}
         languageLabel={t.languageToggle.label}

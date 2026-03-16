@@ -12,7 +12,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
     <section className="py-24" id="contact">
       <Container>
         <div className="relative overflow-hidden rounded-[3rem] border-4 border-[#2D3436]/5 bg-[#E8F3F1] p-12 text-center lg:p-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(45,52,54,0.18)_1px,_transparent_1px)] bg-[length:28px_28px] opacity-30"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(45,52,54,0.18)_1px,transparent_1px)] bg-size-[28px_28px] opacity-30"></div>
 
           <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-10">
             <h2

@@ -34,7 +34,7 @@ export function ServicesSection({
               key={item.title}
               className={[
                 siteTheme.classes.card,
-                'group flex flex-col gap-8 p-10 hover:-translate-y-2 hover:border-[#2D3436]',
+                'hover:cursor-pointer group flex flex-col gap-8 p-10 hover:-translate-y-2 hover:border-[#2D3436]',
               ].join(' ')}
             >
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E8F3F1] text-[#2D3436] transition duration-300 group-hover:bg-[#2D3436] group-hover:text-white">

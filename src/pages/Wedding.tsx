@@ -1,5 +1,7 @@
-const heroImageUrl =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuB57uob_Nzx8EEVwON2fHEvgibZqrI96HDbXSD1q3259lW9hHX_wIg060dvZ6JF2SK9O-hS61SUgtJ26UUKiAHo8iD9vTQbmbw0rGN0-MyfCwaUg_hyA09wkya6M54qbNoMoEjlltlrDee_cTLYhYhydouKsgzx2PbgxwyCzrYSmiU1s5L1escF7oc0Ny6pokIOki8HgFd8pebaaQmHWtRsOqrmnEptnFMKAXdqnBAz6oGH78RlveFQK5xyXgZwvHvzKGsXTnVd_uk'
+import dallasbarn from "./dallasbarn.png";
+
+const mapEmbedUrl =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.6208135581232!2d24.72590607738046!3d46.23788488148441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474b9fd669657fe9%3A0x2477d062b435dfc0!2sThe%20Dallas%20Barn!5e0!3m2!1sen!2sro!4v1774013725472!5m2!1sen!2sro'
 
 export function WeddingPage() {
   return (
@@ -150,7 +152,7 @@ export function WeddingPage() {
                 <span className="material-symbols-outlined text-3xl">fluid</span>
               </div>
               <h2 className="font-serif text-2xl md:text-3xl font-bold leading-tight tracking-tight">
-                Lista de cadouri
+                Confirmare invitație
               </h2>
             </div>
             <button
@@ -164,23 +166,42 @@ export function WeddingPage() {
           <main className="layout-content-container flex flex-col max-w-[800px] w-full flex-1 px-4 md:px-0 py-10">
             <div className="mb-10 text-center">
               <div className="w-full h-64 md:h-80 rounded-xl overflow-hidden mb-8 shadow-xl border-4 border-white dark:border-rustic-wood">
-                <div
-                  className="w-full h-full bg-center bg-no-repeat bg-cover"
-                  data-alt="Recepție elegantă de nuntă, cu lumini calde și drapaje crem"
-                  style={{ backgroundImage: `url("${heroImageUrl}")` }}
-                />
+                <img src={dallasbarn} alt="The Dallas Barn" className="w-full h-full object-cover" />
               </div>
 
               <h1 className="font-serif italic text-5xl md:text-6xl text-rustic-wood dark:text-primary mb-4">
-                Rămânem în legătură
+                Ne vedem la nuntă
               </h1>
               <div className="w-24 h-1 bg-primary mx-auto mb-6" />
               <p className="text-slate-600 dark:text-slate-400 text-lg max-w-lg mx-auto leading-relaxed">
-                Ne-ar plăcea să rămânem aproape și să vă ținem la curent cu
-                drumul nostru și cu viitoarele bucurii. Vă rugăm să ne lăsați
-                datele voastre.
+                Vă rugăm să ne confirmați participarea și să ne trimiteți
+                detaliile de care avem nevoie pentru organizare.
               </p>
             </div>
+
+            <section className="mb-10 rounded-xl border border-primary/10 bg-white/55 p-6 shadow-sm backdrop-blur-sm">
+              <p className="font-serif text-2xl text-rustic-wood dark:text-slate-200">
+                Locația evenimentului
+              </p>
+              <p className="mt-3 text-lg font-semibold text-slate-800 dark:text-slate-100">
+                The Dallas Barn, Sighisoara
+              </p>
+              <p className="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">
+                Mai jos găsiți harta locației, pentru a ajunge ușor la
+                eveniment.
+              </p>
+
+              <div className="mt-6 overflow-hidden rounded-xl border border-primary/10 shadow-sm">
+                <iframe
+                  allowFullScreen
+                  className="block h-[320px] w-full md:h-[450px]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src={mapEmbedUrl}
+                  title="Harta locației The Dallas Barn, Sighisoara"
+                />
+              </div>
+            </section>
 
             <form
               className="bg-white/50 dark:bg-background-dark/50 backdrop-blur-sm p-6 md:p-12 rounded-xl shadow-sm border border-primary/10 space-y-8"
@@ -190,24 +211,12 @@ export function WeddingPage() {
                 <div className="col-span-1 md:col-span-2">
                   <label className="flex flex-col gap-2">
                     <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
-                      Numele invitaților
+                      Nume
                     </span>
                     <input
                       className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary h-14 px-4 text-lg placeholder:text-slate-400"
-                      placeholder="Numele complete ale tuturor invitaților care participă"
+                      placeholder="Numele complet"
                       type="text"
-                    />
-                  </label>
-                </div>
-
-                <div className="col-span-1 md:col-span-2">
-                  <label className="flex flex-col gap-2">
-                    <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
-                      Adresa poștală
-                    </span>
-                    <textarea
-                      className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary min-h-[120px] p-4 text-lg placeholder:text-slate-400"
-                      placeholder="Stradă, număr, apartament, oraș, județ, cod poștal"
                     />
                   </label>
                 </div>
@@ -215,7 +224,39 @@ export function WeddingPage() {
                 <div>
                   <label className="flex flex-col gap-2">
                     <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
-                      Adresă de email
+                      Număr de invitați
+                    </span>
+                    <input
+                      className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary h-14 px-4 text-lg placeholder:text-slate-400"
+                      min="1"
+                      placeholder="1"
+                      type="number"
+                    />
+                  </label>
+                </div>
+
+                <div>
+                  <label className="flex flex-col gap-2">
+                    <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
+                      Telefon
+                    </span>
+                    <div className="relative">
+                      <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">
+                        call
+                      </span>
+                      <input
+                        className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary h-14 pl-12 pr-4 text-lg placeholder:text-slate-400"
+                        placeholder="+40 7xx xxx xxx"
+                        type="tel"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div>
+                  <label className="flex flex-col gap-2">
+                    <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
+                      Email
                     </span>
                     <div className="relative">
                       <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">
@@ -230,35 +271,35 @@ export function WeddingPage() {
                   </label>
                 </div>
 
-                <div>
-                  <label className="flex flex-col gap-2">
-                    <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
-                      Număr de telefon
-                    </span>
-                    <div className="relative">
-                      <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">
-                        call
-                      </span>
+                <fieldset className="col-span-1 md:col-span-2">
+                  <legend className="font-serif text-xl text-rustic-wood dark:text-slate-200">
+                    Vă ajutăm cu cazarea?
+                  </legend>
+                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <label className="flex items-start gap-3 rounded-lg border border-primary/20 bg-white/80 p-4 text-slate-700 dark:bg-background-dark dark:text-slate-200">
                       <input
-                        className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary h-14 pl-12 pr-4 text-lg placeholder:text-slate-400"
-                        placeholder="(555) 000-0000"
-                        type="tel"
+                        className="mt-1 h-5 w-5 accent-[var(--primary)]"
+                        type="checkbox"
+                        value="Nu, ne ocupam"
                       />
-                    </div>
-                  </label>
-                </div>
+                      <span className="text-lg leading-relaxed">
+                        Nu, ne ocupăm
+                      </span>
+                    </label>
 
-                <div className="col-span-1 md:col-span-2">
-                  <label className="flex flex-col gap-2">
-                    <span className="font-serif text-xl text-rustic-wood dark:text-slate-200">
-                      Note speciale
-                    </span>
-                    <textarea
-                      className="form-input w-full rounded-lg border-primary/20 bg-white/80 dark:bg-background-dark focus:border-primary focus:ring-primary min-h-[100px] p-4 text-lg placeholder:text-slate-400"
-                      placeholder="Restricții alimentare, preferințe muzicale sau un mesaj drag pentru noi..."
-                    />
-                  </label>
-                </div>
+                    <label className="flex items-start gap-3 rounded-lg border border-primary/20 bg-white/80 p-4 text-slate-700 dark:bg-background-dark dark:text-slate-200">
+                      <input
+                        className="mt-1 h-5 w-5 accent-[var(--primary)]"
+                        type="checkbox"
+                        value="Da, am vrea"
+                      />
+                      <span className="text-lg leading-relaxed">
+                        Da, am vrea
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
               </div>
 
               <div className="pt-6">

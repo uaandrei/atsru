@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #e6b319;
+  --color-background-light: #f8f7f6;
+  --color-background-dark: #211d11;
+  --color-accent-gold: #d4af37;
+  --color-rustic-wood: #4a3728;
+  --font-display: "Work Sans", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
 * {
   text-transform: lowercase;
+}
+
+.cream-texture {
+  background-color: #f8f7f6;
+  background-image: radial-gradient(#e6e1d6 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
 }

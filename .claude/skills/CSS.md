@@ -1,0 +1,2 @@
+- do not write css in constants because it will mess up my intellisense
+- use only tailwind css for styling

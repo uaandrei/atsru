@@ -1,1 +1,0 @@
-- do not use functions, but instead declare them as constants

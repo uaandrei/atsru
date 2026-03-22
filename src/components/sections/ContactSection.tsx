@@ -29,9 +29,11 @@ export function ContactSection({ contact }: ContactSectionProps) {
 
             <div className="mt-4 flex w-full flex-col gap-6 sm:w-auto sm:flex-row">
               <a
+                target="_blank"
                 href={`mailto:${siteTheme.contact.email}`}
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#2D3436] px-12 py-6 text-xl font-bold text-white transition duration-300 hover:scale-[1.02] hover:rotate-1 hover:shadow-[0_20px_60px_rgba(45,52,54,0.2)]"
+                className="relative inline-flex items-center justify-center gap-3 rounded-full bg-[#2D3436] px-12 py-6 text-xl font-bold text-white transition duration-300 hover:scale-[1.02] hover:rotate-1 hover:shadow-[0_20px_60px_rgba(45,52,54,0.2)]"
               >
+                <SymbolIcon name="open_in_new" className="absolute right-3 top-2 text-sm opacity-60" />
                 <SymbolIcon name="send" className="text-2xl" />
                 {contact.emailCta}
               </a>

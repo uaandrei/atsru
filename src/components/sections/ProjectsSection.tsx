@@ -38,14 +38,22 @@ export function ProjectsSection({
             >
               <div
                 className={[
-                  'mb-8 aspect-4/3 rounded-4xl',
+                  'mb-8 flex aspect-4/3 items-center justify-center rounded-4xl',
                   index === 0
                     ? 'bg-[linear-gradient(135deg,#E8F3F1,#FCF8F3)]'
                     : index === 1
                       ? 'bg-[linear-gradient(135deg,#FCF8F3,#F4EBDD)]'
                       : 'bg-[linear-gradient(135deg,#F5F0EA,#E8F3F1)]',
                 ].join(' ')}
-              />
+              >
+                {item.image && (
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="max-h-3/4 max-w-3/4 object-contain"
+                  />
+                )}
+              </div>
 
               <div className="flex flex-1 flex-col gap-5">
                 <div className="flex flex-wrap gap-2">

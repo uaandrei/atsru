@@ -75,6 +75,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Brand', 'E-commerce', 'Product page'],
           href: 'https://essentum-rufeea.ro/',
           cta: 'Visit site',
+          image: '/essentum.png',
         },
         {
           title: 'RC Partners',
@@ -83,6 +84,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Law firm', 'Corporate', 'Responsive UI'],
           href: 'https://rcpartners.ro/',
           cta: 'Visit site',
+          image: '/rcpartners.png',
         },
         {
           title: 'Minded Counsels',
@@ -91,6 +93,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Law firm', 'Professional', 'Multi-page'],
           href: 'https://minded-counsels.ro/',
           cta: 'Visit site',
+          image: '/minded.png',
         },
       ],
     },
@@ -184,6 +187,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Brand', 'E-commerce', 'Pagina produs'],
           href: 'https://essentum-rufeea.ro/',
           cta: 'Vezi site-ul',
+          image: '/essentum.png',
         },
         {
           title: 'RC Partners',
@@ -192,6 +196,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Firma juridica', 'Corporate', 'Interfata responsive'],
           href: 'https://rcpartners.ro/',
           cta: 'Vezi site-ul',
+          image: '/rcpartners.png',
         },
         {
           title: 'Minded Counsels',
@@ -200,6 +205,7 @@ export const translations: Record<Locale, Translation> = {
           tags: ['Firma juridica', 'Profesional', 'Multi-pagina'],
           href: 'https://minded-counsels.ro/',
           cta: 'Vezi site-ul',
+          image: '/minded.png',
         },
       ],
     },

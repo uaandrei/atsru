@@ -5,7 +5,7 @@ export const siteTheme = {
   },
   contact: {
     email: 'ro.atsru@gmail.com',
-    resumeUrl: '#',
+    resumeUrl: 'https://drive.google.com/file/d/1DCeCg4EBAPBIhitzmmeGmmvYzMRVa79A/view?usp=sharing',
   },
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/' },

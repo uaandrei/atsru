@@ -22,6 +22,7 @@ export type ProjectItem = {
   tags: string[]
   href: string
   cta: string
+  image?: string
 }
 
 export type Translation = {

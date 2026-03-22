@@ -38,8 +38,9 @@ export function ContactSection({ contact }: ContactSectionProps) {
               <a
                 target="_blank"
                 href={siteTheme.contact.resumeUrl}
-                className="inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#2D3436] bg-white px-12 py-6 text-xl font-bold text-[#2D3436] transition duration-300 hover:bg-[#2D3436] hover:text-white"
+                className="relative inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#2D3436] bg-white px-12 py-6 text-xl font-bold text-[#2D3436] transition duration-300 hover:bg-[#2D3436] hover:text-white"
               >
+                <SymbolIcon name="open_in_new" className="absolute right-3 top-2 text-sm opacity-60" />
                 {contact.resumeCta}
               </a>
             </div>

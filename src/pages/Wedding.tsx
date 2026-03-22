@@ -130,25 +130,16 @@ const Wedding = () => (
               <h3 className="font-serif italic text-3xl text-rustic-wood mb-2">Locație Eveniment</h3>
               <div className="w-12 h-0.5 bg-primary/40 mx-auto" />
             </div>
-            <div className="relative w-full aspect-video md:aspect-21/9 rounded-xl overflow-hidden border-4 border-white shadow-xl group cursor-pointer">
-              <div className="absolute inset-0 bg-slate-200 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-                <div
-                  className="absolute inset-0 opacity-20 grayscale bg-cover bg-center"
-                  style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFw6LQE2w7PJVSnHLyptJ2dIpO0OUrWO3bJX6qYR92kNhkLrO35-i5mU32ikhAqlbb2rFWr1tw9fvgGCPAAPRuXJJWQ_Qw-w46lq4O9QwNu07xILoQdfNUFgTfouabwiBfljVkKUfo7N8aSVePTC1cHiMdUXEzvfq6qC9P-g8i7yxnxpg25IWdLaUg1KudTANXwWdbdTgwXoyHbzkwzWs5sTdTjBd5TUIa-D0w4vj4I_7U90lY2hsDGi-dNvlXL_N0Hf1UGxfOWcQ')" }}
-                />
-                <div className="relative z-10 flex flex-col items-center gap-4">
-                  <div className="size-16 bg-white rounded-full flex items-center justify-center shadow-lg text-primary">
-                    <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: '"FILL" 1' }}>location_on</span>
-                  </div>
-                  <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-md text-center">
-                    <p className="font-serif text-lg text-rustic-wood">Castelul Templul Cavalerilor</p>
-                    <p className="text-sm text-slate-500">Valea Aiudului, Județul Alba, România</p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
-                <span className="bg-primary text-rustic-wood px-4 py-2 rounded-full font-bold text-sm shadow-lg">Vezi pe Google Maps</span>
-              </div>
+            <div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.6210001668614!2d24.725900713059996!3d46.23788117097653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474b9fd669657fe9%3A0x2477d062b435dfc0!2sThe%20Dallas%20Barn!5e0!3m2!1sen!2sro!4v1774191392440!5m2!1sen!2sro"
+                width="600"
+                height="450"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </section>
 

@@ -8,9 +8,8 @@ export const siteTheme = {
     resumeUrl: 'https://drive.google.com/file/d/1DCeCg4EBAPBIhitzmmeGmmvYzMRVa79A/view?usp=sharing',
   },
   socialLinks: [
-    { label: 'GitHub', href: 'https://github.com/' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/' },
-    { label: 'Twitter', href: 'https://x.com/' },
+    { label: 'GitHub', href: 'https://github.com/uaandrei' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/andrei-ursta-61b10b162/' },
   ],
   classes: {
     page: "min-h-screen bg-[#FCF8F3] text-[#2D3436] antialiased font-[Quicksand]",

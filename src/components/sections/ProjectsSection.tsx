@@ -38,12 +38,12 @@ export function ProjectsSection({
             >
               <div
                 className={[
-                  'mb-8 aspect-[4/3] rounded-[2rem]',
+                  'mb-8 aspect-4/3 rounded-4xl',
                   index === 0
-                    ? 'bg-[linear-gradient(135deg,_#E8F3F1,_#FCF8F3)]'
+                    ? 'bg-[linear-gradient(135deg,#E8F3F1,#FCF8F3)]'
                     : index === 1
-                      ? 'bg-[linear-gradient(135deg,_#FCF8F3,_#F4EBDD)]'
-                      : 'bg-[linear-gradient(135deg,_#F5F0EA,_#E8F3F1)]',
+                      ? 'bg-[linear-gradient(135deg,#FCF8F3,#F4EBDD)]'
+                      : 'bg-[linear-gradient(135deg,#F5F0EA,#E8F3F1)]',
                 ].join(' ')}
               />
 
@@ -76,6 +76,8 @@ export function ProjectsSection({
                 <div className="mt-auto pt-4">
                   <a
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-base font-bold text-[#2D3436] transition hover:translate-x-1"
                   >
                     {item.cta}

@@ -117,7 +117,7 @@ export const translations: Record<Locale, Translation> = {
     meta: {
       title: 'Handmade by atsru | Dezvoltator Prietenos',
       description:
-        'Un portofoliu jucaus de dezvoltator, construit cu React, Tailwind si continut bilingv.',
+        'Un portofoliu jucăuș de dezvoltator, construit cu React, Tailwind și conținut bilingv.',
     },
     nav: [
       { href: '#home', label: 'Salut' },
@@ -126,65 +126,65 @@ export const translations: Record<Locale, Translation> = {
       { href: '#contact', label: 'Spune-mi salut' },
     ],
     hero: {
-      badge: 'Disponibil pentru discutii si proiecte',
-      titleLead: 'Hai sa construim',
+      badge: 'Disponibil pentru discuții și proiecte',
+      titleLead: 'Hai să construim',
       titleHighlight: 'lucruri faine',
-      titleTail: 'impreuna.',
+      titleTail: 'împreună.',
       description:
-        'Imi place sa transform ideile neclare in produse digitale curate si utile. Fara jargon de robot, doar energie buna si cod solid.',
+        'Îmi place să transform ideile neclare în produse digitale curate și utile. Fără jargon de robot, doar energie bună și cod solid.',
       primaryCta: 'Vezi proiectele',
       secondaryCta: 'Despre mine',
-      imageAlt: 'Birou modern cu laptop si o atmosfera creativa relaxata',
+      imageAlt: 'Birou modern cu laptop și o atmosferă creativă relaxată',
     },
     stats: [
-      { value: '150+', label: 'Povesti fericite' },
-      { value: '80+', label: 'Discutii la cafea' },
+      { value: '150+', label: 'Povești fericite' },
+      { value: '80+', label: 'Discuții la cafea' },
       { value: '5+', label: 'Ani de explorare' },
-      { value: 'Zi de zi', label: 'Cu consecventa' },
+      { value: 'Zi de zi', label: 'Cu consecvență' },
     ],
     services: {
       eyebrow: 'Cum pot ajuta',
-      title: 'Port mai multe palarii...',
+      title: 'Port mai multe pălării...',
       description:
-        'De la o pagina simpla de prezentare pana la un instrument de business mai serios, am baza tehnica si curiozitatea potrivita.',
+        'De la o pagină simplă de prezentare până la un instrument de business mai serios, am baza tehnică și curiozitatea potrivită.',
       items: [
         {
           icon: 'face_retouching_natural',
-          title: 'Prezenta online',
+          title: 'Prezență online',
           description:
-            'Pot crea o pagina de prezentare care spune povestea ta clar si convingator.',
+            'Pot crea o pagină de prezentare care spune povestea ta clar și convingător.',
         },
         {
           icon: 'emoji_objects',
-          title: 'Aplicatii inteligente',
+          title: 'Aplicații inteligente',
           description:
-            'Daca ai nevoie de ceva care chiar face treaba grea, construiesc aplicatii web puternice si usor de folosit.',
+            'Dacă ai nevoie de ceva care chiar face treaba grea, construiesc aplicații web puternice și ușor de folosit.',
         },
         {
           icon: 'touch_app',
           title: 'Unelte de buzunar',
           description:
-            'Experiente mobile-first fluide, rapide si prietenoase chiar de la prima interactiune.',
+            'Experiențe mobile-first fluide, rapide și prietenoase chiar de la prima interacțiune.',
         },
         {
           icon: 'laptop_mac',
           title: 'Flux de lucru',
           description:
-            'Instrumente interne si interfete care fac lucrurile complicate sa para mai simple.',
+            'Instrumente interne și interfețe care fac lucrurile complicate să pară mai simple.',
         },
       ],
     },
     projects: {
       eyebrow: 'Proiecte selectate',
-      title: 'Cateva constructii jucause',
+      title: 'Câteva construcții jucăușe',
       description:
-        'Un mic esantion al tipului de interfete si al gandirii de produs pe care aceasta directie vizuala il poate sustine.',
+        'Un mic eșantion al tipului de interfețe și al gândirii de produs pe care această direcție vizuală îl poate susține.',
       items: [
         {
           title: 'Essentum Rufeea',
           description:
-            'Site de brand pentru o companie romaneasca de parfumuri textile, cu vizualuri bogate si prezentare de produs.',
-          tags: ['Brand', 'E-commerce', 'Pagina produs'],
+            'Site de brand pentru o companie românească de parfumuri textile, cu vizualuri bogate și prezentare de produs.',
+          tags: ['Brand', 'E-commerce', 'Pagină produs'],
           href: 'https://essentum-rufeea.ro/',
           cta: 'Vezi site-ul',
           image: '/essentum.png',
@@ -192,8 +192,8 @@ export const translations: Record<Locale, Translation> = {
         {
           title: 'RC Partners',
           description:
-            'Site corporativ pentru o firma de avocatura specializata in fuziuni si achizitii.',
-          tags: ['Firma juridica', 'Corporate', 'Interfata responsive'],
+            'Site corporativ pentru o firmă de avocatură specializată în fuziuni și achiziții.',
+          tags: ['Firmă juridică', 'Corporate', 'Interfață responsive'],
           href: 'https://rcpartners.ro/',
           cta: 'Vezi site-ul',
           image: '/rcpartners.png',
@@ -201,8 +201,8 @@ export const translations: Record<Locale, Translation> = {
         {
           title: 'Minded Counsels',
           description:
-            'Site profesional pentru o firma boutique de proprietate intelectuala cu birouri in Bucuresti si Targu Mures.',
-          tags: ['Firma juridica', 'Profesional', 'Multi-pagina'],
+            'Site profesional pentru o firmă boutique de proprietate intelectuală cu birouri în București și Târgu Mureș.',
+          tags: ['Firmă juridică', 'Profesional', 'Multi-pagină'],
           href: 'https://minded-counsels.ro/',
           cta: 'Vezi site-ul',
           image: '/minded.png',
@@ -210,19 +210,19 @@ export const translations: Record<Locale, Translation> = {
       ],
     },
     contact: {
-      title: 'Ai o idee indrazneata?',
+      title: 'Ai o idee îndrăzneață?',
       description:
-        'Sunt mereu deschis la o noua aventura. Fie ca este un proiect mare sau doar o intrebare scurta, mi-ar placea sa aud mai multe.',
+        'Sunt mereu deschis la o nouă aventură. Fie că este un proiect mare sau doar o întrebare scurtă, mi-ar plăcea să aud mai multe.',
       emailCta: 'Trimite-mi un mesaj',
       resumeCta: 'Vezi CV-ul',
     },
     footer: {
-      madeWith: 'Facut cu suflet si multa cafea.',
+      madeWith: 'Făcut cu suflet și multă cafea.',
     },
     languageToggle: {
-      label: 'Limba',
-      english: 'Engleza',
-      romanian: 'Romana',
+      label: 'Limbă',
+      english: 'Engleză',
+      romanian: 'Română',
     },
   },
 }

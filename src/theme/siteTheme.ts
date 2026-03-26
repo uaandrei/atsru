@@ -5,7 +5,7 @@ export const siteTheme = {
   },
   contact: {
     email: 'ro.atsru@gmail.com',
-    resumeUrl: 'https://drive.google.com/file/d/1DCeCg4EBAPBIhitzmmeGmmvYzMRVa79A/view?usp=sharing',
+    resumeUrl: 'https://drive.google.com/file/d/1klUm44ZaDhP8zYRVLQyeeaAQJm8OArAQ/view?usp=sharing',
   },
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/uaandrei' },
@@ -14,7 +14,7 @@ export const siteTheme = {
   classes: {
     page: "min-h-screen bg-[#FCF8F3] text-[#2D3436] antialiased font-[Quicksand]",
     container: 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8',
-    displayFont: 'font-[Gaegu]',
+    displayFont: 'font-[Patrick_Hand]',
     sectionEyebrow:
       'text-sm font-bold uppercase tracking-[0.2em] text-[#2D3436]/60',
     primaryButton:

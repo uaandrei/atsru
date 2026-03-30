@@ -54,7 +54,7 @@ const Wedding = () => {
     if (!topFlap || !seal || !instruction || !overlay || !container || !letter || !main) return
 
     topFlap.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
-    topFlap.style.transform = 'rotate3d(1, 0, 0, 180deg)'
+    topFlap.style.transform = 'rotate3d(1, 0, 0, -180deg)'
     seal.style.transition = 'opacity 0.4s ease'
     seal.style.opacity = '0'
     instruction.style.opacity = '0'
@@ -223,10 +223,13 @@ const Wedding = () => {
             </div>
 
             {/* Top Flap */}
+            {/* Top Flap — rotates around top edge via origin-top; preserve-3d enables front/back faces */}
             <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-[25] preserve-3d">
+              {/* Top Flap Front Face — visible when flap is closed (0°), hidden past 90° via backface-hidden */}
               <div className="absolute inset-0 backface-hidden" style={{ filter: 'drop-shadow(0 5px 8px rgba(0,0,0,0.2))' }}>
                 <div className="absolute inset-0 bg-gradient-to-b from-stone-200 to-stone-300 clip-top" />
               </div>
+              {/* Top Flap Back Face — pre-rotated 180° so it faces viewer when flap is fully open */}
               <div className="absolute inset-0 bg-gradient-to-t from-stone-300 to-stone-400 clip-top backface-hidden" style={{ transform: 'rotateX(180deg)' }} />
 
               {/* Wax Seal */}

@@ -184,7 +184,7 @@ const Wedding = () => {
       {!envelopeRemoved && (
         <div
           ref={overlayRef}
-          className="fixed inset-0 z-[100] bg-stone-900 flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
+          className="fixed inset-0 z-100g-stone-900 flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
         >
           <div className="text-center absolute top-24 w-full px-6">
             <h2 className="italic text-champagne text-3xl mb-2 opacity-80" style={{ fontFamily: "'Bodoni Moda', serif" }}>You're Invited</h2>
@@ -197,7 +197,7 @@ const Wedding = () => {
             style={{ perspective: '1200px', aspectRatio: '3/2' }}
           >
             {/* Envelope Back */}
-            <div className="absolute inset-0 bg-gradient-to-br from-stone-300 to-stone-400 shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-sm" />
+            <div className="absolute inset-0 bg-linear-to-br from-stone-300 to-stone-400 shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-sm" />
 
             {/* Letter Preview */}
             <div
@@ -211,31 +211,31 @@ const Wedding = () => {
 
             {/* Side Flaps */}
             <div className="absolute inset-0 z-20 pointer-events-none" style={{ filter: 'drop-shadow(3px 0 5px rgba(0,0,0,0.15))' }}>
-              <div className="absolute inset-0 bg-gradient-to-r from-stone-200 to-stone-300 clip-left" />
+              <div className="absolute inset-0 bg-linear-to-r from-stone-200 to-stone-300 clip-left" />
             </div>
             <div className="absolute inset-0 z-20 pointer-events-none" style={{ filter: 'drop-shadow(-3px 0 5px rgba(0,0,0,0.15))' }}>
-              <div className="absolute inset-0 bg-gradient-to-l from-stone-200 to-stone-300 clip-right" />
+              <div className="absolute inset-0 bg-linear-to-l from-stone-200 to-stone-300 clip-right" />
             </div>
 
             {/* Bottom Flap */}
-            <div className="absolute inset-0 z-[21] pointer-events-none" style={{ filter: 'drop-shadow(0 -3px 5px rgba(0,0,0,0.15))' }}>
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-100 to-stone-200 clip-bottom" />
+            <div className="absolute inset-0 z-21 pointer-events-none" style={{ filter: 'drop-shadow(0 -3px 5px rgba(0,0,0,0.15))' }}>
+              <div className="absolute inset-0 bg-linear-to-t from-stone-100 to-stone-200 clip-bottom" />
             </div>
 
             {/* Top Flap */}
             {/* Top Flap — rotates around top edge via origin-top; preserve-3d enables front/back faces */}
-            <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-[25] preserve-3d">
+            <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-25 preserve-3d">
               {/* Top Flap Front Face — visible when flap is closed (0°), hidden past 90° via backface-hidden */}
               <div className="absolute inset-0 backface-hidden" style={{ filter: 'drop-shadow(0 5px 8px rgba(0,0,0,0.2))' }}>
-                <div className="absolute inset-0 bg-gradient-to-b from-stone-200 to-stone-300 clip-top" />
+                <div className="absolute inset-0 bg-linear-to-b from-stone-200 to-stone-300 clip-top" />
               </div>
               {/* Top Flap Back Face — pre-rotated 180° so it faces viewer when flap is fully open */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-300 to-stone-400 clip-top backface-hidden" style={{ transform: 'rotateX(180deg)' }} />
+              <div className="absolute inset-0 bg-linear-to-t from-stone-300 to-stone-400 clip-top backface-hidden" style={{ transform: 'rotateX(180deg)' }} />
 
               {/* Wax Seal */}
               <div
                 ref={sealRef}
-                className="absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-champagne-light to-champagne rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
+                className="absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-champagne-light to-champagne rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
                 style={{ transform: 'translateZ(1px)' }}
                 onMouseDown={handleSealStart}
                 onTouchStart={handleSealStart}
@@ -293,9 +293,9 @@ const Wedding = () => {
           {/* Our Story */}
           <section className="py-32 px-6 bg-white border-y border-stone-100" id="story">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-4/5 overflow-hidden">
                 <img alt="Elegant couple" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80" />
-                <div className="absolute inset-0 border-[16px] border-white/20 pointer-events-none" />
+                <div className="absolute inset-0 border-16 border-white/20 pointer-events-none" />
               </div>
               <div className="flex flex-col gap-8">
                 <h2 className="text-4xl md:text-5xl italic text-champagne" style={{ fontFamily: "'Bodoni Moda', serif" }}>The Story</h2>
@@ -331,7 +331,7 @@ const Wedding = () => {
 
                 {/* Ceremony */}
                 <div className="flex flex-col gap-6 scale-105 z-10 bg-white p-8 shadow-sm border border-stone-100">
-                  <div className="aspect-[4/5] bg-stone-200 overflow-hidden">
+                  <div className="aspect-4/5 bg-stone-200 overflow-hidden">
                     <img alt="Wedding greenhouse" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80" />
                   </div>
                   <h3 className="text-2xl" style={{ fontFamily: "'Bodoni Moda', serif" }}>Ceremony &amp; Reception</h3>

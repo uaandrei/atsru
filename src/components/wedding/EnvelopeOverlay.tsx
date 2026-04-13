@@ -83,7 +83,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         </div>
 
         {/* Top flap — rotates around top edge; preserve-3d enables front/back faces */}
-        <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-25 preserve-3d" style={{transform:'rotate3d(1, 0, 0, 95deg)'}}>
+        <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-25 preserve-3d">
           {/* Front face — visible when closed (0deg), hidden past 90deg */}
           <div className="absolute inset-0 backface-hidden" style={{ filter: 'drop-shadow(0 5px 8px rgba(0,0,0,0.2))' }}>
             <div className="absolute inset-0 bg-linear-to-b from-stone-200 to-stone-300 clip-top" />

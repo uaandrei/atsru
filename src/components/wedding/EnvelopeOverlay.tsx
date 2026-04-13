@@ -41,7 +41,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
       {/* Envelope container — perspective enables 3D flap rotation */}
       <div
         ref={containerRef}
-        className="relative w-[92vw] max-w-3xl max-h-[60vh] mx-auto transition-transform duration-1000"
+        className="relative w-[92vw] max-w-3xl max-h-[40vh] mx-auto transition-transform duration-1000"
         style={{ perspective: '1200px', aspectRatio: '3/2' }}
       >
         {/* Envelope back face */}

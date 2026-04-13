@@ -26,7 +26,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[100] bg-stone-900 flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
+      className="fixed inset-0 z-100 bg-stone-900 flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
       <div className="text-center absolute top-24 w-full px-6">
@@ -78,12 +78,12 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         </div>
 
         {/* Bottom flap (decorative) */}
-        <div className="absolute inset-0 z-[21] pointer-events-none" style={{ filter: 'drop-shadow(0 -3px 5px rgba(0,0,0,0.15))' }}>
+        <div className="absolute inset-0 z-21 pointer-events-none" style={{ filter: 'drop-shadow(0 -3px 5px rgba(0,0,0,0.15))' }}>
           <div className="absolute inset-0 bg-linear-to-t from-stone-100 to-stone-200 clip-bottom" />
         </div>
 
         {/* Top flap — rotates around top edge; preserve-3d enables front/back faces */}
-        <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-[25] preserve-3d">
+        <div ref={topFlapRef} className="absolute top-0 left-0 w-full h-full origin-top z-25 preserve-3d" style={{transform:'rotate3d(1, 0, 0, 95deg)'}}>
           {/* Front face — visible when closed (0deg), hidden past 90deg */}
           <div className="absolute inset-0 backface-hidden" style={{ filter: 'drop-shadow(0 5px 8px rgba(0,0,0,0.2))' }}>
             <div className="absolute inset-0 bg-linear-to-b from-stone-200 to-stone-300 clip-top" />

@@ -120,6 +120,9 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (deltaY > 0) {
         // Convert upward pixel distance to degrees (1.5x multiplier)
         currentRotation.current = Math.min(deltaY * 1.5, 180)
+        
+        //if (currentRotation.current > 81) currentRotation.current = 81
+
         topFlap.style.transform = `rotate3d(1, 0, 0, ${currentRotation.current}deg)`
       } else {
         currentRotation.current = 0

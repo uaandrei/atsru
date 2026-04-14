@@ -73,7 +73,7 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
     // Step 1: Open the flap and hide the seal
     topFlap.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
-    topFlap.style.transform = 'rotate3d(1, 0, 0, -180deg)'
+    topFlap.style.transform = 'rotateZ(180deg)'
     seal.style.transition = 'opacity 0.4s ease'
     seal.style.opacity = '0'
     instruction.style.opacity = '0'
@@ -122,16 +122,16 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (deltaY > 0) {
         // Convert upward pixel distance to degrees (1.5x multiplier)
         currentRotation.current = Math.min(deltaY * 1.5, MAX_ROTATION)
-
+        console.log(currentRotation.current)
         if (currentRotation.current > 78) {
           // flip interval is from [79,180] and should be transformed to [-101,0]
-          topFlap.style.transform = `rotate3d(1, 0, 0, ${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
+          topFlap.style.transform = `rotateX(${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
         } else {
-          topFlap.style.transform = `rotate3d(1, 0, 0, ${currentRotation.current}deg)`
+          topFlap.style.transform = `rotateX(${currentRotation.current}deg)`
         }
       } else {
         currentRotation.current = 0
-        topFlap.style.transform = 'rotate3d(1, 0, 0, 0deg)'
+        topFlap.style.transform = 'rotateX(0deg)'
       }
     }
 
@@ -147,8 +147,11 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (currentRotation.current >= OPEN_THRESHOLD) {
         triggerOpenSequence()
       } else {
+        // if (currentRotation.current > 78) {
+        //   topFlap.style.transform = 'rotateX(-101deg) rotateZ(180deg)'
+        // }
+        topFlap.style.transform = 'rotateX(0deg)'
         currentRotation.current = 0
-        topFlap.style.transform = 'rotate3d(1, 0, 0, 0deg)'
       }
     }
 
@@ -175,12 +178,12 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
   /** Clicking the seal (without dragging) also opens the envelope */
   const handleSealClick = () => {
-    if (!envelopeOpen && currentRotation.current < OPEN_THRESHOLD) {
-      if (topFlapRef.current) {
-        topFlapRef.current.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
-      }
-      triggerOpenSequence()
-    }
+    // if (!envelopeOpen && currentRotation.current < OPEN_THRESHOLD) {
+    //   if (topFlapRef.current) {
+    //     topFlapRef.current.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
+    //   }
+    //   triggerOpenSequence()
+    // }
   }
 
   return {

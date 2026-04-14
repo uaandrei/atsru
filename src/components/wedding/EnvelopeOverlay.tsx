@@ -95,7 +95,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           {/* Wax seal — click or drag upward to open */}
           <div
             ref={sealRef}
-            className="absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-champagne-light to-champagne rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
+            className="select-none absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-champagne-light to-champagne rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
             style={{ transform: 'translateZ(1px)' }}
             onMouseDown={handleSealStart}
             onTouchStart={handleSealStart}

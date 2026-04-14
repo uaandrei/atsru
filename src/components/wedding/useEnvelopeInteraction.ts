@@ -147,10 +147,26 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (currentRotation.current >= OPEN_THRESHOLD) {
         triggerOpenSequence()
       } else {
-        // if (currentRotation.current > 78) {
-        //   topFlap.style.transform = 'rotateX(-101deg) rotateZ(180deg)'
-        // }
-        topFlap.style.transform = 'rotateX(0deg)'
+        const animationFrames: Keyframe[] = [
+          { transform: topFlap.style.transform },                        // current state
+          { transform: 'rotateX(0deg)' },                                // closed
+        ];
+        if (currentRotation.current > 78) {
+          animationFrames.splice(1,0,
+            { transform: 'rotateX(-101deg) rotateZ(180deg)', offset: 0.4 },// flip threshold
+            { transform: 'rotateX(78deg)', offset: 0.41 }, // instant swap — no rotateZ
+          );
+        }
+        const animation = topFlap.animate(animationFrames, {
+          duration: 1000,
+          easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+          fill: 'forwards',
+        });
+        animation.onfinish = () => {
+          // Persist final state on the element's inline style
+          topFlap.style.transform = 'rotateX(0deg)'
+          animation.cancel();
+        }
         currentRotation.current = 0
       }
     }

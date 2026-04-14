@@ -17,6 +17,8 @@ export type EnvelopeHandlers = {
 /** Minimum rotation (in degrees) needed to trigger the open sequence */
 const OPEN_THRESHOLD = 95
 
+const MAX_ROTATION = 180
+
 /**
  * Manages the interactive envelope opening animation.
  *
@@ -119,10 +121,11 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
       if (deltaY > 0) {
         // Convert upward pixel distance to degrees (1.5x multiplier)
-        currentRotation.current = Math.min(deltaY * 1.5, 180)
-        
+        currentRotation.current = Math.min(deltaY * 1.5, MAX_ROTATION)
+
         if (currentRotation.current > 78) {
-          topFlap.style.transform = `rotate3d(1, 0, 0, ${360-currentRotation.current}deg) rotateZ(180deg)`
+          // flip interval is from [79,180] and should be transformed to [-101,0]
+          topFlap.style.transform = `rotate3d(1, 0, 0, ${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
         } else {
           topFlap.style.transform = `rotate3d(1, 0, 0, ${currentRotation.current}deg)`
         }

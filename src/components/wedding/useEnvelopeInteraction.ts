@@ -80,6 +80,7 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
     // Step 2: Letter rises out of the envelope
     setTimeout(() => {
+      // TODO! this still needs some work
       letter.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
       letter.style.transform = 'translateY(-40%) scale(1.02)'
       letter.style.zIndex = '30'

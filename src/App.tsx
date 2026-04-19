@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { LanguageProvider } from './i18n/LanguageProvider'
 import { HomePage } from './pages/HomePage'
-import WeddingPage from './pages/Wedding'
+import { WeddingPage } from './pages/wedding'
 
 function App() {
   return (

@@ -20,6 +20,27 @@
   --font-wedding-serif: "Bodoni Moda", serif;
   --font-wedding-sans: "Montserrat", sans-serif;
   --font-wedding-body: "Public Sans", sans-serif;
+  --font-allura: "Allura", cursive;
+  --font-manrope: "Manrope", sans-serif;
+  --font-newsreader: "Newsreader", serif;
+  --font-noto-serif: "Noto Serif", serif;
+  /* Wedding page color tokens */
+  --color-w-background: #f2fcf5;
+  --color-w-on-background: #151d1a;
+  --color-w-surface: #f2fcf5;
+  --color-w-surface-container-lowest: #ffffff;
+  --color-w-surface-container-low: #ecf6ef;
+  --color-w-surface-container: #e6f0ea;
+  --color-w-surface-container-high: #e0ebe4;
+  --color-w-surface-variant: #dbe5de;
+  --color-w-on-surface: #151d1a;
+  --color-w-on-surface-variant: #4f453b;
+  --color-w-primary: #7a582f;
+  --color-w-on-primary: #ffffff;
+  --color-w-primary-container: #c69c6d;
+  --color-w-primary-fixed-dim: #ecbe8d;
+  --color-w-outline: #81756a;
+  --color-w-outline-variant: #d3c4b7;
 }
 
 * {

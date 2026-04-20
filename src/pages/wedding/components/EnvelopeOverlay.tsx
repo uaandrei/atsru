@@ -62,7 +62,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             className="text-3xl md:text-5xl font-light text-center"
             style={{ fontFamily: weddingFonts.display }}
           >
-            Eleanor <span className="serif-italic">&amp;</span> James
+            Evelyn <span className="serif-italic">&amp;</span> James
           </h1>
           <div className="w-16 h-px bg-champagne mt-6 md:mt-8" />
         </div>
@@ -106,7 +106,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
               className="italic text-xl md:text-2xl drop-shadow-md"
               style={{ fontFamily: weddingFonts.display }}
             >
-              S&J
+              E&J
             </span>
             {/* Pulsing ring to draw attention */}
             <div className="absolute inset-0 rounded-full bg-champagne animate-ping opacity-20 group-hover:hidden" />

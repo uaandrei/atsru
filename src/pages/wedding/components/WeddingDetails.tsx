@@ -1,16 +1,23 @@
-import { weddingFonts } from './weddingTheme'
+import { weddingFonts, weddingColors } from './weddingTheme'
 
-/** Event schedule (Welcome Drinks, Ceremony, Brunch) and accommodation info */
+/** Event schedule and accommodation info */
 export function WeddingDetails() {
   return (
-    <section className="py-32 px-6 bg-stone-50" id="details">
+    <section
+      className="py-32 px-6"
+      id="details"
+      style={{ background: weddingColors.background }}
+    >
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: weddingFonts.display }}>
+          <h2
+            className="text-5xl md:text-6xl mb-4"
+            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+          >
             The Details
           </h2>
-          <div className="w-24 h-px bg-champagne mx-auto" />
+          <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
 
         {/* Three-column event grid */}
@@ -19,36 +26,38 @@ export function WeddingDetails() {
             image="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80"
             imageAlt="Welcome cocktails"
             title="Welcome Drinks"
-            when="Friday &bull; 7:00 PM"
+            when="Friday · 7:00 PM"
             where={<>The Terrace at Willow Brook<br />122 Old Forge Rd, Hudson, NY</>}
-            imageClass="opacity-80"
           />
 
-          {/* Ceremony card is slightly larger and elevated */}
-          <div className="flex flex-col gap-6 scale-105 z-10 bg-white p-8 shadow-sm border border-stone-100">
-            <div className="aspect-4/5 bg-stone-200 overflow-hidden">
+          {/* Ceremony card — elevated */}
+          <div
+            className="flex flex-col gap-6 z-10 p-8 rounded border shadow-sm scale-105"
+            style={{
+              background: weddingColors.surfaceContainerLowest,
+              borderColor: weddingColors.surfaceContainerLow,
+            }}
+          >
+            <div className="aspect-4/5 overflow-hidden rounded">
               <img
                 alt="Wedding greenhouse"
                 className="w-full h-full object-cover"
                 src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80"
               />
             </div>
-            <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display }}>
+            <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}>
               Ceremony &amp; Reception
             </h3>
-            <p
-              className="text-sm text-stone-500 uppercase tracking-widest"
-              style={{ fontFamily: weddingFonts.body }}
-            >
-              Saturday &bull; 4:30 PM
+            <p className="text-sm uppercase tracking-widest" style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}>
+              Saturday · 4:30 PM
             </p>
-            <p className="text-stone-600" style={{ fontFamily: weddingFonts.body }}>
+            <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
               The Glass House<br />45 Sky Top Lane, Hudson, NY
             </p>
             <a
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-champagne hover:text-stone-900 transition-colors"
               href="#"
-              style={{ fontFamily: weddingFonts.body }}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest transition-opacity hover:opacity-70"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
               <span className="material-symbols-outlined text-sm">map</span> View Map
             </a>
@@ -58,18 +67,23 @@ export function WeddingDetails() {
             image="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80"
             imageAlt="Brunch table"
             title="Farewell Brunch"
-            when="Sunday &bull; 10:00 AM"
+            when="Sunday · 10:00 AM"
             where={<>The Garden Cafe<br />12 Main Street, Hudson, NY</>}
-            imageClass="opacity-80"
           />
         </div>
 
         {/* Accommodations */}
-        <div className="bg-white p-12 border border-stone-100">
+        <div
+          className="p-12 rounded border"
+          style={{
+            background: weddingColors.surfaceContainerLowest,
+            borderColor: weddingColors.surfaceContainerLow,
+          }}
+        >
           <div className="max-w-3xl mx-auto text-center">
             <h3
-              className="text-3xl mb-8 italic"
-              style={{ fontFamily: weddingFonts.display }}
+              className="text-4xl mb-8 italic"
+              style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
             >
               Accommodations
             </h3>
@@ -100,27 +114,23 @@ type EventCardProps = {
   title: string
   when: string
   where: React.ReactNode
-  imageClass?: string
 }
 
-/** Reusable card for a single event (Welcome Drinks, Brunch, etc.) */
-function EventCard({ image, imageAlt, title, when, where, imageClass }: EventCardProps) {
+function EventCard({ image, imageAlt, title, when, where }: EventCardProps) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="aspect-square bg-stone-200 overflow-hidden">
-        <img alt={imageAlt} className={`w-full h-full object-cover ${imageClass ?? ''}`} src={image} />
+      <div className="aspect-square overflow-hidden rounded">
+        <img alt={imageAlt} className="w-full h-full object-cover opacity-80" src={image} />
       </div>
-      <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display }}>{title}</h3>
-      <p
-        className="text-sm text-stone-500 uppercase tracking-widest"
-        style={{ fontFamily: weddingFonts.body }}
-        dangerouslySetInnerHTML={{ __html: when }}
-      />
-      <p className="text-stone-600" style={{ fontFamily: weddingFonts.body }}>{where}</p>
+      <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}>{title}</h3>
+      <p className="text-sm uppercase tracking-widest" style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}>
+        {when}
+      </p>
+      <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>{where}</p>
       <a
-        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-champagne hover:text-stone-900 transition-colors"
         href="#"
-        style={{ fontFamily: weddingFonts.body }}
+        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest transition-opacity hover:opacity-70"
+        style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
       >
         <span className="material-symbols-outlined text-sm">map</span> View Map
       </a>
@@ -133,26 +143,22 @@ type HotelCardProps = {
   description: string
 }
 
-/** Accommodation recommendation card */
 function HotelCard({ name, description }: HotelCardProps) {
   return (
     <div>
       <h4
         className="text-xs uppercase tracking-widest font-semibold mb-2"
-        style={{ fontFamily: weddingFonts.body }}
+        style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurface }}
       >
         {name}
       </h4>
-      <p
-        className="text-sm text-stone-600 mb-4"
-        style={{ fontFamily: weddingFonts.body }}
-      >
+      <p className="text-sm mb-4" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
         {description}
       </p>
       <a
-        className="text-xs uppercase tracking-widest border-b border-stone-200 hover:border-champagne pb-1"
         href="#"
-        style={{ fontFamily: weddingFonts.body }}
+        className="text-xs uppercase tracking-widest border-b pb-1 transition-colors hover:opacity-70"
+        style={{ fontFamily: weddingFonts.label, color: weddingColors.primary, borderColor: weddingColors.outlineVariant }}
       >
         Book Room
       </a>

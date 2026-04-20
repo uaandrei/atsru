@@ -1,39 +1,73 @@
-import { weddingFonts } from './weddingTheme'
+import { weddingFonts, weddingColors } from './weddingTheme'
 
 type WeddingRsvpProps = {
-  form: { name: string; email: string; guests: string; accommodation: string; notes: string }
+  form: {
+    fullName: string
+    attendance: 'attending' | 'declining' | ''
+    guests: string
+    meal: 'beef' | 'chicken' | 'vegetarian' | ''
+    dietary: string
+  }
   submitted: boolean
   submitting: boolean
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   handleSubmit: () => void
 }
 
-/** RSVP section — shows the form or a thank-you message after submission */
+/** RSVP section — card-based form or thank-you message after submission */
 export function WeddingRsvp({ form, submitted, submitting, handleChange, handleSubmit }: WeddingRsvpProps) {
   return (
-    <section className="py-32 px-6 bg-white" id="rsvp">
-      <div className="max-w-2xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4" style={{ fontFamily: weddingFonts.display }}>
-            RSVP
-          </h2>
-          <p
-            className="text-stone-500 text-sm tracking-widest uppercase"
-            style={{ fontFamily: weddingFonts.body }}
-          >
-            Kindly respond by September 1st
-          </p>
-        </div>
+    <section
+      className="py-32 px-4 md:px-8 relative"
+      id="rsvp"
+      style={{ background: weddingColors.background }}
+    >
+      {/* Botanical background texture */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+        <img
+          alt=""
+          className="w-full h-full object-cover"
+          style={{ mixBlendMode: 'multiply', filter: 'grayscale(1) sepia(0.3)' }}
+          src="https://images.unsplash.com/photo-1490750967868-88df5691cc02?auto=format&fit=crop&q=80"
+        />
+      </div>
 
-        {submitted ? <ThankYouMessage /> : (
-          <RsvpForm
-            form={form}
-            submitting={submitting}
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-          />
-        )}
+      <div className="relative z-10 max-w-2xl mx-auto">
+        {/* RSVP card */}
+        <div
+          className="rounded p-8 md:p-16 flex flex-col items-center gap-12 border"
+          style={{
+            background: 'rgba(255,255,255,0.9)',
+            backdropFilter: 'blur(12px)',
+            borderColor: weddingColors.surfaceContainerLow,
+            boxShadow: '0 10px 40px -5px rgba(21,29,26,0.06)',
+          }}
+        >
+          {/* Heading */}
+          <div className="text-center space-y-4 w-full">
+            <h2
+              className="text-6xl md:text-7xl -ml-4"
+              style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            >
+              Kindly Respond
+            </h2>
+            <p
+              className="text-lg md:text-xl max-w-md mx-auto"
+              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
+            >
+              We look forward to celebrating with you. Please let us know your plans by September 15th.
+            </p>
+          </div>
+
+          {submitted ? <ThankYouMessage /> : (
+            <RsvpForm
+              form={form}
+              submitting={submitting}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+            />
+          )}
+        </div>
       </div>
     </section>
   )
@@ -43,15 +77,16 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
 /*  Sub-components (private to this file)                             */
 /* ------------------------------------------------------------------ */
 
-/** Confirmation message shown after successful RSVP */
 function ThankYouMessage() {
   return (
-    <div className="text-center py-16">
-      <span className="material-symbols-outlined text-6xl text-champagne mb-6 block">favorite</span>
-      <h3 className="text-3xl mb-4 italic" style={{ fontFamily: weddingFonts.display }}>
+    <div className="text-center py-16 w-full">
+      <span className="material-symbols-outlined text-6xl mb-6 block" style={{ color: weddingColors.primaryContainer }}>
+        favorite
+      </span>
+      <h3 className="text-4xl mb-4" style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}>
         Thank You!
       </h3>
-      <p className="text-stone-600 text-lg" style={{ fontFamily: weddingFonts.body }}>
+      <p className="text-lg" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
         Your response has been recorded. We can't wait to celebrate with you!
       </p>
     </div>
@@ -65,97 +100,187 @@ type RsvpFormProps = {
   handleSubmit: WeddingRsvpProps['handleSubmit']
 }
 
-/** The actual RSVP form with name, email, guest count, accommodation, and notes */
 function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProps) {
-  /** Shared classes for text inputs */
-  const inputClass = 'w-full bg-transparent border-0 border-b border-stone-200 focus:ring-0 focus:border-champagne py-3 px-0 text-lg placeholder:text-stone-300 transition-colors outline-none'
-
   return (
-    <div className="space-y-8">
-      {/* Name + Email row */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <label className="block text-[10px] uppercase tracking-widest text-stone-400 mb-1" style={{ fontFamily: weddingFonts.body }}>Name</label>
-          <input
-            className={inputClass}
-            style={{ fontFamily: weddingFonts.display }}
-            placeholder="Full Name"
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label className="block text-[10px] uppercase tracking-widest text-stone-400 mb-1" style={{ fontFamily: weddingFonts.body }}>Email</label>
-          <input
-            className={inputClass}
-            style={{ fontFamily: weddingFonts.display }}
-            placeholder="Email Address"
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-
-      {/* Guest count + Accommodation row */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <label className="block text-[10px] uppercase tracking-widest text-stone-400 mb-1" style={{ fontFamily: weddingFonts.body }}>Number of Persons</label>
-          <select
-            className="w-full bg-transparent border-0 border-b border-stone-200 focus:ring-0 focus:border-champagne py-3 px-0 text-lg text-stone-800 transition-colors appearance-none outline-none"
-            style={{ fontFamily: weddingFonts.display }}
-            name="guests"
-            value={form.guests}
-            onChange={handleChange}
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="block text-[10px] uppercase tracking-widest text-stone-400" style={{ fontFamily: weddingFonts.body }}>Help with Accommodation?</label>
-          <div className="flex gap-8 py-3">
-            <label className="flex items-center gap-3 cursor-pointer group">
-              <input className="w-4 h-4 border-stone-300 text-stone-900 focus:ring-0 accent-champagne" name="accommodation" type="radio" value="yes" checked={form.accommodation === 'yes'} onChange={handleChange} />
-              <span className="text-sm text-stone-600 group-hover:text-stone-900" style={{ fontFamily: weddingFonts.body }}>Yes</span>
-            </label>
-            <label className="flex items-center gap-3 cursor-pointer group">
-              <input className="w-4 h-4 border-stone-300 text-stone-900 focus:ring-0 accent-champagne" name="accommodation" type="radio" value="no" checked={form.accommodation === 'no'} onChange={handleChange} />
-              <span className="text-sm text-stone-600 group-hover:text-stone-900" style={{ fontFamily: weddingFonts.body }}>No</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      {/* Special requirements */}
-      <div>
-        <label className="block text-[10px] uppercase tracking-widest text-stone-400 mb-1" style={{ fontFamily: weddingFonts.body }}>Special Requirements</label>
-        <textarea
-          className="w-full bg-transparent border-0 border-b border-stone-200 focus:ring-0 focus:border-champagne py-3 px-0 text-lg placeholder:text-stone-300 transition-colors resize-none outline-none"
-          style={{ fontFamily: weddingFonts.display }}
-          placeholder="Dietary restrictions or notes..."
-          rows={1}
-          name="notes"
-          value={form.notes}
+    <div className="w-full space-y-10">
+      {/* Full Name */}
+      <div className="flex flex-col gap-2">
+        <label
+          className="text-sm tracking-wide uppercase"
+          htmlFor="fullName"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+        >
+          M(s).
+        </label>
+        <input
+          id="fullName"
+          name="fullName"
+          type="text"
+          required
+          placeholder="Enter your full name(s)"
+          value={form.fullName}
           onChange={handleChange}
+          className="ghost-border-input w-full py-2 text-xl placeholder:opacity-40"
+          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
         />
       </div>
 
-      {/* Submit button */}
-      <button
-        className="w-full py-5 bg-stone-900 text-white text-xs uppercase tracking-[0.3em] hover:bg-champagne transition-colors mt-8 disabled:opacity-50"
-        style={{ fontFamily: weddingFonts.body }}
-        type="button"
-        onClick={handleSubmit}
-        disabled={submitting}
-      >
-        {submitting ? 'Sending...' : 'Send Response'}
-      </button>
+      {/* Attendance */}
+      <div className="flex flex-col gap-4">
+        <p
+          className="text-sm tracking-wide uppercase"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+        >
+          Will you be attending?
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { value: 'attending', label: 'Joyfully Accepts' },
+            { value: 'declining', label: 'Regretfully Declines' },
+          ].map(({ value, label }) => (
+            <label
+              key={value}
+              className="relative flex cursor-pointer items-center justify-center rounded p-4 border transition-colors"
+              style={{
+                borderColor: form.attendance === value ? weddingColors.primary : weddingColors.surfaceContainer,
+                background: form.attendance === value ? weddingColors.surfaceContainer : undefined,
+              }}
+            >
+              <input
+                className="sr-only"
+                name="attendance"
+                type="radio"
+                value={value}
+                required
+                checked={form.attendance === value}
+                onChange={handleChange}
+              />
+              <span
+                className="text-lg"
+                style={{
+                  fontFamily: weddingFonts.body,
+                  color: form.attendance === value ? weddingColors.primary : weddingColors.onSurface,
+                }}
+              >
+                {label}
+              </span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Number of Guests */}
+      <div className="flex flex-col gap-2 relative">
+        <label
+          className="text-sm tracking-wide uppercase"
+          htmlFor="guests"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+        >
+          Number of Guests
+        </label>
+        <select
+          id="guests"
+          name="guests"
+          value={form.guests}
+          onChange={handleChange}
+          className="ghost-border-input w-full py-2 text-xl appearance-none bg-transparent"
+          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+        >
+          {['1', '2', '3', '4'].map(n => <option key={n} value={n}>{n}</option>)}
+        </select>
+        <div className="absolute right-0 top-8 pointer-events-none" style={{ color: weddingColors.outline }}>
+          <span className="material-symbols-outlined text-sm">expand_more</span>
+        </div>
+      </div>
+
+      {/* Meal Preference */}
+      <div className="flex flex-col gap-4">
+        <p
+          className="text-sm tracking-wide uppercase"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+        >
+          Meal Preference (if applicable)
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {[
+            { value: 'beef', label: 'Beef', icon: 'restaurant' },
+            { value: 'chicken', label: 'Chicken', icon: 'set_meal' },
+            { value: 'vegetarian', label: 'Vegetarian', icon: 'eco' },
+          ].map(({ value, label, icon }) => (
+            <label
+              key={value}
+              className="relative flex flex-col cursor-pointer items-center justify-center rounded p-3 border transition-colors"
+              style={{
+                borderColor: form.meal === value ? weddingColors.primary : weddingColors.surfaceContainer,
+                background: form.meal === value ? weddingColors.surfaceContainer : undefined,
+              }}
+            >
+              <input
+                className="sr-only"
+                name="meal"
+                type="radio"
+                value={value}
+                checked={form.meal === value}
+                onChange={handleChange}
+              />
+              <span
+                className="material-symbols-outlined mb-1"
+                style={{ color: form.meal === value ? weddingColors.primary : weddingColors.outline }}
+              >
+                {icon}
+              </span>
+              <span
+                className="text-base"
+                style={{
+                  fontFamily: weddingFonts.body,
+                  color: form.meal === value ? weddingColors.primary : weddingColors.onSurface,
+                }}
+              >
+                {label}
+              </span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Dietary Restrictions */}
+      <div className="flex flex-col gap-2">
+        <label
+          className="text-sm tracking-wide uppercase"
+          htmlFor="dietary"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+        >
+          Dietary Restrictions
+        </label>
+        <input
+          id="dietary"
+          name="dietary"
+          type="text"
+          placeholder="e.g., Gluten-free, nut allergy"
+          value={form.dietary}
+          onChange={handleChange}
+          className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40"
+          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+        />
+      </div>
+
+      {/* Submit */}
+      <div className="pt-8 flex justify-center w-full">
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={submitting}
+          className="w-full md:w-auto py-4 px-12 rounded text-sm tracking-widest uppercase transition-opacity hover:opacity-90 disabled:opacity-50"
+          style={{
+            fontFamily: weddingFonts.label,
+            background: `linear-gradient(135deg, ${weddingColors.primary}, ${weddingColors.primaryContainer})`,
+            color: weddingColors.onPrimary,
+            boxShadow: '0 4px 20px -5px rgba(122,88,47,0.3)',
+          }}
+        >
+          {submitting ? 'Sending...' : 'Send Reply'}
+        </button>
+      </div>
     </div>
   )
 }

@@ -3,11 +3,11 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from './firebaseConfig'
 
 type RsvpFormData = {
-  name: string
-  email: string
+  fullName: string
+  attendance: 'attending' | 'declining' | ''
   guests: string
-  accommodation: string
-  notes: string
+  meal: 'beef' | 'chicken' | 'vegetarian' | ''
+  dietary: string
 }
 
 /**
@@ -21,11 +21,11 @@ export function useRsvpForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [form, setForm] = useState<RsvpFormData>({
-    name: '',
-    email: '',
+    fullName: '',
+    attendance: '',
     guests: '1',
-    accommodation: '',
-    notes: '',
+    meal: '',
+    dietary: '',
   })
 
   /** Update a single form field by its `name` attribute */
@@ -35,7 +35,7 @@ export function useRsvpForm() {
 
   /** Validate required fields and submit to Firestore */
   const handleSubmit = async () => {
-    if (!form.name || !form.email) return
+    if (!form.fullName || !form.attendance) return
     setSubmitting(true)
     try {
       await addDoc(collection(db, 'invitations'), {

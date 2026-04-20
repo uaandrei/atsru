@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { weddingFonts } from './components/weddingTheme'
+import { weddingColors } from './components/weddingTheme'
 import { useEnvelopeInteraction } from './components/useEnvelopeInteraction'
 import { useRsvpForm } from './components/useRsvpForm'
 import { EnvelopeOverlay } from './components/EnvelopeOverlay'
@@ -27,10 +27,10 @@ const Wedding = () => {
 
   return (
     <div
-      className="bg-stone-50 text-stone-800 selection:bg-champagne/20"
-      style={{ fontFamily: weddingFonts.base }}
+      className="min-h-screen"
+      style={{ background: weddingColors.background, color: weddingColors.onBackground }}
     >
-      {/* Scoped styles: override global lowercase, define clip-paths for envelope flaps */}
+      {/* Scoped styles: override global lowercase, ghost input, clip-paths for envelope flaps */}
       <style>{`
         .wedding-page * { text-transform: none; }
         .serif-italic { font-family: 'Bodoni Moda', serif; font-style: italic; }
@@ -40,6 +40,18 @@ const Wedding = () => {
         .clip-right { clip-path: polygon(100% 0, 40% 50%, 100% 100%); }
         .preserve-3d { transform-style: preserve-3d; }
         .backface-hidden { backface-visibility: hidden; }
+        .ghost-border-input {
+          border: none;
+          border-bottom: 1px solid rgba(211, 196, 183, 0.4);
+          border-radius: 0;
+          background-color: transparent;
+          transition: border-color 0.3s ease;
+        }
+        .ghost-border-input:focus {
+          outline: none;
+          box-shadow: none;
+          border-bottom: 1px solid #7a582f;
+        }
       `}</style>
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}

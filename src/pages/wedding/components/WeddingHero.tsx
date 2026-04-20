@@ -1,40 +1,42 @@
-import { weddingFonts } from './weddingTheme'
+import { weddingFonts, weddingColors } from './weddingTheme'
 
 /** Full-screen hero section styled as a formal wedding invitation */
 export function WeddingHero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 text-center bg-stone-50">
+    <section
+      className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 text-center"
+      style={{ background: weddingColors.background }}
+    >
       <div className="max-w-3xl mx-auto">
         <p
-          className="text-xs uppercase tracking-[0.3em] mb-12 text-stone-500"
-          style={{ fontFamily: weddingFonts.body }}
+          className="text-xs uppercase tracking-[0.3em] mb-12"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
           Together with their families
         </p>
 
         <h1
-          className="text-5xl md:text-7xl lg:text-8xl mb-8 font-light"
-          style={{ fontFamily: weddingFonts.display }}
+          className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
+          style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
         >
-          Eleanor <span className="serif-italic">&amp;</span> James
+          Evelyn &amp; James
         </h1>
 
-        {/* Vertical divider — date — vertical divider */}
         <div className="flex flex-col items-center gap-8">
-          <div className="w-px h-24 bg-champagne" />
+          <div className="w-px h-24" style={{ background: weddingColors.primaryContainer }} />
           <div
             className="text-2xl md:text-3xl tracking-wide"
-            style={{ fontFamily: weddingFonts.display }}
+            style={{ fontFamily: weddingFonts.headline, color: weddingColors.onSurface }}
           >
             <p>Saturday, the Twelfth of October</p>
             <p className="mt-2 italic">Two Thousand Twenty Four</p>
           </div>
-          <div className="w-px h-24 bg-champagne" />
+          <div className="w-px h-24" style={{ background: weddingColors.primaryContainer }} />
         </div>
 
         <p
-          className="mt-12 text-xs uppercase tracking-[0.2em] text-stone-500"
-          style={{ fontFamily: weddingFonts.body }}
+          className="mt-12 text-xs uppercase tracking-[0.2em]"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
           The Glass House &bull; Hudson Valley, NY
         </p>

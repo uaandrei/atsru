@@ -21,7 +21,7 @@ export function WeddingNav() {
           className="text-3xl mx-auto"
           style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
         >
-          Zsófi &amp; Andrei
+          Zsófi Andrei
         </h1>
 
         {/* <button

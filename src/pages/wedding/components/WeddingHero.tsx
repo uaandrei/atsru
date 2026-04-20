@@ -20,7 +20,7 @@ export function WeddingHero() {
           className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
           style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
         >
-          Zsófi &amp; Andrei
+          Zsófi Andrei
         </h1>
 
         <div className="flex flex-col items-center gap-8">

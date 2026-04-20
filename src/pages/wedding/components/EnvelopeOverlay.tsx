@@ -62,7 +62,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             className="text-3xl md:text-5xl font-light text-center"
             style={{ fontFamily: weddingFonts.display }}
           >
-            Zsófi <span className="serif-italic">&amp;</span> Andrei
+            Zsófi & Andrei
           </h1>
           <p
             className="mt-3 text-[9px] md:text-sm text-stone-500 text-center"

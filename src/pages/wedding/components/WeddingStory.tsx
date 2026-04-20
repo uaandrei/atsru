@@ -53,7 +53,7 @@ export function WeddingStory() {
               De reținut
             </h3>
             {[
-              { icon: 'hiking', text: 'Din cauza terenului, încălțămintea comodă va fi cea mai bună alegere — ca să puteți dansa până dimineața!' },
+              { icon: 'hiking', text: 'Din cauza terenului și ca să puteți dansa până dimineața, încălțămintea comodă va fi cea mai bună alegere.' },
               { icon: 'directions_car', text: 'Dacă se poate, lăsați mașina la cazare. Deși există suficiente locuri de parcare, vă recomandăm să nu planificați să conduceți.' },
               { icon: 'directions_bus', text: 'De transportul pe ruta Sighișoara–locație ne ocupăm noi.' },
             ].map(({ icon, text }) => (

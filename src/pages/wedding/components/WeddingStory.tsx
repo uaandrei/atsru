@@ -1,47 +1,74 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import dallasImg from "../dallasbarn.png"
 
-/** "Our Story" section with a photo and narrative text */
+/** Locație — description of the venue with practical info */
 export function WeddingStory() {
   return (
     <section
       className="py-32 px-6 border-y"
-      id="story"
+      id="location"
       style={{ background: weddingColors.surfaceContainerLowest, borderColor: weddingColors.surfaceContainerLow }}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Photo */}
         <div className="relative aspect-4/5 overflow-hidden rounded">
           <img
-            alt="Elegant couple"
+            alt="Locație pe malul lacului"
             className="w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
+            src={dallasImg}
           />
         </div>
 
-        {/* Story text */}
+        {/* Venue description */}
         <div className="flex flex-col gap-8">
           <h2
             className="text-5xl md:text-6xl italic"
             style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
           >
-            The Story
+            Locația
           </h2>
           <div
-            className="space-y-6 leading-relaxed text-lg font-light"
+            className="space-y-5 leading-relaxed text-lg"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
           >
             <p>
-              It began in the quiet corner of a rainy London cafe, where a shared umbrella
-              and a misplaced sketchbook turned into a conversation that lasted until the
-              sun went down. Evelyn, an architectural restorer, and James, a landscape
-              designer, found common ground in their love for preserving beauty.
+              Iubim natura, dansul, buna dispoziție și momentele petrecute împreună cu voi.
             </p>
             <p>
-              Over the past five years, they have built a life defined by quiet mornings,
-              adventurous travels, and a deep respect for the art of living. This October,
-              they invite you to celebrate the beginning of their next chapter in a place
-              that reflects their shared passion for light and structure.
+              De aceea, pentru a ne sărbători nunta, am ales un loc relaxant, aproape de natură,
+              pe malul unui lac. Nu ne-am imaginat o nuntă clasică, ci o petrecere pe cinste,
+              cu muzica noastră preferată și cu oamenii care ne sunt cei mai dragi.
             </p>
+          </div>
+
+          {/* Practical tips */}
+          <div
+            className="space-y-3 p-6 rounded border"
+            style={{ background: weddingColors.surfaceContainerLow, borderColor: weddingColors.surfaceContainer }}
+          >
+            <h3
+              className="text-sm uppercase tracking-widest mb-4"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+            >
+              De reținut
+            </h3>
+            {[
+              { icon: 'hiking', text: 'Din cauza terenului, încălțămintea comodă va fi cea mai bună alegere — ca să puteți dansa până dimineața!' },
+              { icon: 'directions_car', text: 'Dacă se poate, lăsați mașina la cazare. Deși există suficiente locuri de parcare, vă recomandăm să nu planificați să conduceți.' },
+              { icon: 'directions_bus', text: 'De transportul pe ruta Sighișoara–locație ne ocupăm noi.' },
+            ].map(({ icon, text }) => (
+              <div key={icon} className="flex items-start gap-3">
+                <span
+                  className="material-symbols-outlined text-xl mt-0.5 shrink-0"
+                  style={{ color: weddingColors.primaryContainer }}
+                >
+                  {icon}
+                </span>
+                <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
+                  {text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

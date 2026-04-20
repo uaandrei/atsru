@@ -1,102 +1,79 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
 
-/** Event schedule and accommodation info */
+/** Program — church info and event schedule */
 export function WeddingDetails() {
   return (
     <section
       className="py-32 px-6"
-      id="details"
+      id="program"
       style={{ background: weddingColors.background }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-24">
+        <div className="text-center mb-20">
           <h2
             className="text-5xl md:text-6xl mb-4"
             style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
           >
-            The Details
+            Programul
           </h2>
           <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
 
-        {/* Three-column event grid */}
-        <div className="grid md:grid-cols-3 gap-12 mb-32">
-          <EventCard
-            image="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80"
-            imageAlt="Welcome cocktails"
-            title="Welcome Drinks"
-            when="Friday · 7:00 PM"
-            where={<>The Terrace at Willow Brook<br />122 Old Forge Rd, Hudson, NY</>}
+        {/* Timeline */}
+        <div className="space-y-8">
+          <ProgramItem
+            time="13:00"
+            title="Cununia religioasă"
+            description="Vă așteptăm la biserică pentru slujba de cununie. Vă rugăm să rețineți că accesul la biserică se face pe piatră cubică — vă recomandăm să lăsați mașina mai jos și să urcați pe jos."
+            icon="church"
+            note="Fără mașini pe piatră cubică"
           />
-
-          {/* Ceremony card — elevated */}
-          <div
-            className="flex flex-col gap-6 z-10 p-8 rounded border shadow-sm scale-105"
-            style={{
-              background: weddingColors.surfaceContainerLowest,
-              borderColor: weddingColors.surfaceContainerLow,
-            }}
-          >
-            <div className="aspect-4/5 overflow-hidden rounded">
-              <img
-                alt="Wedding greenhouse"
-                className="w-full h-full object-cover"
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80"
-              />
-            </div>
-            <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}>
-              Ceremony &amp; Reception
-            </h3>
-            <p className="text-sm uppercase tracking-widest" style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}>
-              Saturday · 4:30 PM
-            </p>
-            <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
-              The Glass House<br />45 Sky Top Lane, Hudson, NY
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest transition-opacity hover:opacity-70"
-              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
-            >
-              <span className="material-symbols-outlined text-sm">map</span> View Map
-            </a>
-          </div>
-
-          <EventCard
-            image="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80"
-            imageAlt="Brunch table"
-            title="Farewell Brunch"
-            when="Sunday · 10:00 AM"
-            where={<>The Garden Cafe<br />12 Main Street, Hudson, NY</>}
+          <ProgramItem
+            time="16:00"
+            title="Petrecerea"
+            description="Ne mutăm la locație, pe malul lacului, unde începe petrecerea pe cinste! Muzica noastră preferată, oamenii dragi și dans până dimineața."
+            icon="celebration"
           />
         </div>
 
-        {/* Accommodations */}
+        {/* Contact info */}
         <div
-          className="p-12 rounded border"
+          className="mt-20 p-8 rounded border text-center"
           style={{
             background: weddingColors.surfaceContainerLowest,
             borderColor: weddingColors.surfaceContainerLow,
           }}
         >
-          <div className="max-w-3xl mx-auto text-center">
-            <h3
-              className="text-4xl mb-8 italic"
-              style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+          <h3
+            className="text-3xl italic mb-6"
+            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+          >
+            Contact
+          </h3>
+          <p
+            className="mb-4"
+            style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
+          >
+            Pentru orice întrebare, nu ezitați să ne contactați!
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+              href="tel:0743197946"
+              className="flex items-center gap-2 justify-center transition-opacity hover:opacity-70"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
-              Accommodations
-            </h3>
-            <div className="grid md:grid-cols-2 gap-12 text-left">
-              <HotelCard
-                name="The Maker Hotel"
-                description="A boutique experience in the heart of downtown Hudson. Mention the E&J wedding for a preferred rate."
-              />
-              <HotelCard
-                name="Rivertown Lodge"
-                description="A restored motor lodge with modern amenities. Perfect for groups and families."
-              />
-            </div>
+              <span className="material-symbols-outlined text-base">call</span>
+              Zsófi · 0743 197 946
+            </a>
+            <a
+              href="tel:0743215090"
+              className="flex items-center gap-2 justify-center transition-opacity hover:opacity-70"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+            >
+              <span className="material-symbols-outlined text-base">call</span>
+              Andrei · 0743 215 090
+            </a>
           </div>
         </div>
       </div>
@@ -105,63 +82,61 @@ export function WeddingDetails() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Sub-components (private to this file)                             */
-/* ------------------------------------------------------------------ */
 
-type EventCardProps = {
-  image: string
-  imageAlt: string
+type ProgramItemProps = {
+  time: string
   title: string
-  when: string
-  where: React.ReactNode
-}
-
-function EventCard({ image, imageAlt, title, when, where }: EventCardProps) {
-  return (
-    <div className="flex flex-col gap-6">
-      <div className="aspect-square overflow-hidden rounded">
-        <img alt={imageAlt} className="w-full h-full object-cover opacity-80" src={image} />
-      </div>
-      <h3 className="text-2xl" style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}>{title}</h3>
-      <p className="text-sm uppercase tracking-widest" style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}>
-        {when}
-      </p>
-      <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>{where}</p>
-      <a
-        href="#"
-        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest transition-opacity hover:opacity-70"
-        style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
-      >
-        <span className="material-symbols-outlined text-sm">map</span> View Map
-      </a>
-    </div>
-  )
-}
-
-type HotelCardProps = {
-  name: string
   description: string
+  icon: string
+  note?: string
 }
 
-function HotelCard({ name, description }: HotelCardProps) {
+function ProgramItem({ time, title, description, icon, note }: ProgramItemProps) {
   return (
-    <div>
-      <h4
-        className="text-xs uppercase tracking-widest font-semibold mb-2"
-        style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurface }}
-      >
-        {name}
-      </h4>
-      <p className="text-sm mb-4" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
-        {description}
-      </p>
-      <a
-        href="#"
-        className="text-xs uppercase tracking-widest border-b pb-1 transition-colors hover:opacity-70"
-        style={{ fontFamily: weddingFonts.label, color: weddingColors.primary, borderColor: weddingColors.outlineVariant }}
-      >
-        Book Room
-      </a>
+    <div
+      className="flex gap-6 p-6 rounded border"
+      style={{
+        background: weddingColors.surfaceContainerLowest,
+        borderColor: weddingColors.surfaceContainerLow,
+      }}
+    >
+      <div className="flex flex-col items-center gap-2 shrink-0">
+        <span
+          className="material-symbols-outlined text-2xl"
+          style={{ color: weddingColors.primaryContainer }}
+        >
+          {icon}
+        </span>
+        <span
+          className="text-xs tracking-widest font-semibold"
+          style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+        >
+          {time}
+        </span>
+      </div>
+      <div className="flex-1">
+        <h3
+          className="text-2xl mb-2"
+          style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}
+        >
+          {title}
+        </h3>
+        <p
+          className="leading-relaxed"
+          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
+        >
+          {description}
+        </p>
+        {note && (
+          <p
+            className="mt-3 text-sm flex items-center gap-1"
+            style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+          >
+            <span className="material-symbols-outlined text-sm">info</span>
+            {note}
+          </p>
+        )}
+      </div>
     </div>
   )
 }

@@ -3,44 +3,40 @@ import { collection, addDoc } from 'firebase/firestore'
 import { db } from './firebaseConfig'
 
 type RsvpFormData = {
-  fullName: string
   attendance: 'attending' | 'declining' | ''
-  guests: string
-  meal: 'beef' | 'chicken' | 'vegetarian' | ''
+  names: string
+  accommodation: 'sat-sun' | 'fri-sun' | 'none' | ''
   dietary: string
+  message: string
 }
 
 /**
  * Manages RSVP form state and submission to Firebase.
  *
  * Submissions are stored in the Firestore 'invitations' collection with
- * the form fields plus a `createdAt` ISO timestamp. The `guests` field
- * is converted from string to number before saving.
+ * the form fields plus a `createdAt` ISO timestamp.
  */
 export function useRsvpForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [form, setForm] = useState<RsvpFormData>({
-    fullName: '',
     attendance: '',
-    guests: '1',
-    meal: '',
+    names: '',
+    accommodation: '',
     dietary: '',
+    message: '',
   })
 
-  /** Update a single form field by its `name` attribute */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  /** Validate required fields and submit to Firestore */
   const handleSubmit = async () => {
-    if (!form.fullName || !form.attendance) return
+    if (!form.attendance || (form.attendance === 'attending' && !form.names)) return
     setSubmitting(true)
     try {
       await addDoc(collection(db, 'invitations'), {
         ...form,
-        guests: Number(form.guests),
         createdAt: new Date().toISOString(),
       })
       setSubmitted(true)

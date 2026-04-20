@@ -34,7 +34,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           className="italic text-champagne text-3xl mb-2 opacity-80"
           style={{ fontFamily: weddingFonts.display }}
         >
-          You're Invited
+          Suntem nerăbdători să sărbătorim împreună!
         </h2>
       </div>
 
@@ -54,16 +54,22 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         >
           <p
             className="text-[8px] md:text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
-            style={{ fontFamily: weddingFonts.body }}
+            style={{ fontFamily: weddingFonts.label }}
           >
-            Together with their families
+            Vă invităm cu drag la nunta noastră
           </p>
           <h1
             className="text-3xl md:text-5xl font-light text-center"
             style={{ fontFamily: weddingFonts.display }}
           >
-            Evelyn <span className="serif-italic">&amp;</span> James
+            Zsófi <span className="serif-italic">&amp;</span> Andrei
           </h1>
+          <p
+            className="mt-3 text-[9px] md:text-sm text-stone-500 text-center"
+            style={{ fontFamily: weddingFonts.label }}
+          >
+            8 august 2026 · Sighișoara
+          </p>
           <div className="w-16 h-px bg-champagne mt-6 md:mt-8" />
         </div>
 
@@ -106,7 +112,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
               className="italic text-xl md:text-2xl drop-shadow-md"
               style={{ fontFamily: weddingFonts.display }}
             >
-              E&J
+              Z&A
             </span>
             {/* Pulsing ring to draw attention */}
             <div className="absolute inset-0 rounded-full bg-champagne animate-ping opacity-20 group-hover:hidden" />
@@ -118,9 +124,9 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
       <p
         ref={instructionRef}
         className="absolute bottom-24 text-stone-400 text-[10px] tracking-[0.3em] uppercase transition-opacity duration-300"
-        style={{ fontFamily: weddingFonts.body }}
+        style={{ fontFamily: weddingFonts.label }}
       >
-        Drag seal up to open
+        Trage sigiliul în sus pentru a deschide
       </p>
     </div>
   )

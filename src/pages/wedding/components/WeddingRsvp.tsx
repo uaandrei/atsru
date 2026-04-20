@@ -1,13 +1,15 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
 
+type RsvpForm = {
+  attendance: 'attending' | 'declining' | ''
+  names: string
+  accommodation: 'sat-sun' | 'fri-sun' | 'none' | ''
+  dietary: string
+  message: string
+}
+
 type WeddingRsvpProps = {
-  form: {
-    fullName: string
-    attendance: 'attending' | 'declining' | ''
-    guests: string
-    meal: 'beef' | 'chicken' | 'vegetarian' | ''
-    dietary: string
-  }
+  form: RsvpForm
   submitted: boolean
   submitting: boolean
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
@@ -33,7 +35,6 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
       </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        {/* RSVP card */}
         <div
           className="rounded p-8 md:p-16 flex flex-col items-center gap-12 border"
           style={{
@@ -49,13 +50,14 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
               className="text-6xl md:text-7xl -ml-4"
               style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
             >
-              Kindly Respond
+              Confirmați participarea
             </h2>
             <p
-              className="text-lg md:text-xl max-w-md mx-auto"
+              className="text-base md:text-lg max-w-md mx-auto"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
-              We look forward to celebrating with you. Please let us know your plans by September 15th.
+              Vă rugăm să ne confirmați participarea cel târziu până la{' '}
+              <span style={{ color: weddingColors.primary, fontWeight: 600 }}>13 iulie 2026</span>.
             </p>
           </div>
 
@@ -74,56 +76,35 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
 }
 
 /* ------------------------------------------------------------------ */
-/*  Sub-components (private to this file)                             */
-/* ------------------------------------------------------------------ */
 
 function ThankYouMessage() {
   return (
-    <div className="text-center py-16 w-full">
+    <div className="text-center py-12 w-full">
       <span className="material-symbols-outlined text-6xl mb-6 block" style={{ color: weddingColors.primaryContainer }}>
         favorite
       </span>
       <h3 className="text-4xl mb-4" style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}>
-        Thank You!
+        Mulțumim!
       </h3>
       <p className="text-lg" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
-        Your response has been recorded. We can't wait to celebrate with you!
+        Răspunsul vostru a fost înregistrat. Abia așteptăm să sărbătorim împreună!
       </p>
     </div>
   )
 }
 
 type RsvpFormProps = {
-  form: WeddingRsvpProps['form']
+  form: RsvpForm
   submitting: boolean
   handleChange: WeddingRsvpProps['handleChange']
   handleSubmit: WeddingRsvpProps['handleSubmit']
 }
 
 function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProps) {
+  const isAttending = form.attendance === 'attending'
+
   return (
     <div className="w-full space-y-10">
-      {/* Full Name */}
-      <div className="flex flex-col gap-2">
-        <label
-          className="text-sm tracking-wide uppercase"
-          htmlFor="fullName"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-        >
-          M(s).
-        </label>
-        <input
-          id="fullName"
-          name="fullName"
-          type="text"
-          required
-          placeholder="Enter your full name(s)"
-          value={form.fullName}
-          onChange={handleChange}
-          className="ghost-border-input w-full py-2 text-xl placeholder:opacity-40"
-          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
-        />
-      </div>
 
       {/* Attendance */}
       <div className="flex flex-col gap-4">
@@ -131,12 +112,12 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
           className="text-sm tracking-wide uppercase"
           style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
-          Will you be attending?
+          Veți sărbători alături de noi?
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { value: 'attending', label: 'Joyfully Accepts' },
-            { value: 'declining', label: 'Regretfully Declines' },
+            { value: 'attending', label: 'Da' },
+            { value: 'declining', label: 'Din păcate nu putem fi prezenți' },
           ].map(({ value, label }) => (
             <label
               key={value}
@@ -156,7 +137,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
                 onChange={handleChange}
               />
               <span
-                className="text-lg"
+                className="text-lg text-center"
                 style={{
                   fontFamily: weddingFonts.body,
                   color: form.attendance === value ? weddingColors.primary : weddingColors.onSurface,
@@ -169,103 +150,140 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
         </div>
       </div>
 
-      {/* Number of Guests */}
-      <div className="flex flex-col gap-2 relative">
-        <label
-          className="text-sm tracking-wide uppercase"
-          htmlFor="guests"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-        >
-          Number of Guests
-        </label>
-        <select
-          id="guests"
-          name="guests"
-          value={form.guests}
-          onChange={handleChange}
-          className="ghost-border-input w-full py-2 text-xl appearance-none bg-transparent"
-          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
-        >
-          {['1', '2', '3', '4'].map(n => <option key={n} value={n}>{n}</option>)}
-        </select>
-        <div className="absolute right-0 top-8 pointer-events-none" style={{ color: weddingColors.outline }}>
-          <span className="material-symbols-outlined text-sm">expand_more</span>
-        </div>
-      </div>
-
-      {/* Meal Preference */}
-      <div className="flex flex-col gap-4">
-        <p
-          className="text-sm tracking-wide uppercase"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-        >
-          Meal Preference (if applicable)
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {[
-            { value: 'beef', label: 'Beef', icon: 'restaurant' },
-            { value: 'chicken', label: 'Chicken', icon: 'set_meal' },
-            { value: 'vegetarian', label: 'Vegetarian', icon: 'eco' },
-          ].map(({ value, label, icon }) => (
+      {/* Names — shown only when attending */}
+      {isAttending && (
+        <>
+          <div className="flex flex-col gap-2">
             <label
-              key={value}
-              className="relative flex flex-col cursor-pointer items-center justify-center rounded p-3 border transition-colors"
+              className="text-sm tracking-wide uppercase"
+              htmlFor="names"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+            >
+              Câte persoane veniți?
+            </label>
+            <p
+              className="text-sm mb-1"
+              style={{ fontFamily: weddingFonts.body, color: weddingColors.outline }}
+            >
+              Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.
+            </p>
+            <textarea
+              id="names"
+              name="names"
+              required
+              rows={3}
+              placeholder="Ex: Ion Ionescu, Maria Ionescu, Sofia (5 ani)"
+              value={form.names}
+              onChange={handleChange}
+              className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
+              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+            />
+          </div>
+
+          {/* Accommodation */}
+          <div className="flex flex-col gap-4">
+            <p
+              className="text-sm tracking-wide uppercase"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+            >
+              Doriți să vă rezervăm cazare în Sighișoara?
+            </p>
+            <div
+              className="text-sm p-4 rounded border flex items-start gap-2"
               style={{
-                borderColor: form.meal === value ? weddingColors.primary : weddingColors.surfaceContainer,
-                background: form.meal === value ? weddingColors.surfaceContainer : undefined,
+                fontFamily: weddingFonts.body,
+                color: weddingColors.onSurfaceVariant,
+                background: weddingColors.surfaceContainerLow,
+                borderColor: weddingColors.surfaceContainer,
               }}
             >
-              <input
-                className="sr-only"
-                name="meal"
-                type="radio"
-                value={value}
-                checked={form.meal === value}
-                onChange={handleChange}
-              />
-              <span
-                className="material-symbols-outlined mb-1"
-                style={{ color: form.meal === value ? weddingColors.primary : weddingColors.outline }}
-              >
-                {icon}
+              <span className="material-symbols-outlined text-base shrink-0 mt-0.5" style={{ color: weddingColors.primaryContainer }}>
+                info
               </span>
-              <span
-                className="text-base"
-                style={{
-                  fontFamily: weddingFonts.body,
-                  color: form.meal === value ? weddingColors.primary : weddingColors.onSurface,
-                }}
-              >
-                {label}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
+              Sighișoara este o destinație turistică populară și, fiind un oraș mic, locurile de cazare se ocupă rapid. Este recomandat să faceți rezervarea din timp.
+            </div>
+            <div className="space-y-3">
+              {[
+                { value: 'sat-sun', label: 'Da — 8–9 august (o noapte, sâmbătă–duminică)' },
+                { value: 'fri-sun', label: 'Da — 7–9 august (două nopți, vineri–duminică)' },
+                { value: 'none', label: 'Nu este necesar, ne ocupăm noi.' },
+              ].map(({ value, label }) => (
+                <label
+                  key={value}
+                  className="flex cursor-pointer items-center rounded p-4 border transition-colors"
+                  style={{
+                    borderColor: form.accommodation === value ? weddingColors.primary : weddingColors.surfaceContainer,
+                    background: form.accommodation === value ? weddingColors.surfaceContainer : undefined,
+                  }}
+                >
+                  <input
+                    className="sr-only"
+                    name="accommodation"
+                    type="radio"
+                    value={value}
+                    checked={form.accommodation === value}
+                    onChange={handleChange}
+                  />
+                  <span
+                    className="text-base"
+                    style={{
+                      fontFamily: weddingFonts.body,
+                      color: form.accommodation === value ? weddingColors.primary : weddingColors.onSurface,
+                    }}
+                  >
+                    {label}
+                  </span>
+                </label>
+              ))}
+            </div>
+          </div>
 
-      {/* Dietary Restrictions */}
+          {/* Dietary */}
+          <div className="flex flex-col gap-2">
+            <label
+              className="text-sm tracking-wide uppercase"
+              htmlFor="dietary"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+            >
+              Alergii alimentare sau regim special?
+            </label>
+            <input
+              id="dietary"
+              name="dietary"
+              type="text"
+              placeholder="ex: fără gluten, vegetarian..."
+              value={form.dietary}
+              onChange={handleChange}
+              className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40"
+              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+            />
+          </div>
+        </>
+      )}
+
+      {/* Message — always visible */}
       <div className="flex flex-col gap-2">
         <label
           className="text-sm tracking-wide uppercase"
-          htmlFor="dietary"
+          htmlFor="message"
           style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
-          Dietary Restrictions
+          Doriți să ne mai transmiteți ceva?
         </label>
-        <input
-          id="dietary"
-          name="dietary"
-          type="text"
-          placeholder="e.g., Gluten-free, nut allergy"
-          value={form.dietary}
+        <textarea
+          id="message"
+          name="message"
+          rows={2}
+          placeholder="Mesajul vostru..."
+          value={form.message}
           onChange={handleChange}
-          className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40"
+          className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
           style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
         />
       </div>
 
       {/* Submit */}
-      <div className="pt-8 flex justify-center w-full">
+      <div className="pt-4 flex justify-center w-full">
         <button
           type="button"
           onClick={handleSubmit}
@@ -278,7 +296,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
             boxShadow: '0 4px 20px -5px rgba(122,88,47,0.3)',
           }}
         >
-          {submitting ? 'Sending...' : 'Send Reply'}
+          {submitting ? 'Se trimite...' : 'Trimite răspunsul'}
         </button>
       </div>
     </div>

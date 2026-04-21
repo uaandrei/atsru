@@ -30,7 +30,7 @@ export function WeddingNav() {
                 color: weddingColors.onSurfaceVariant,
               }}
             >
-              <span className="material-symbols-outlined text-2xl md:text-3xl">{icon}</span>
+              <span className="material-symbols-outlined">{icon}</span>
               <span className="hidden md:inline text-base lg:text-lg tracking-widest uppercase">{label}</span>
             </a>
           ))}

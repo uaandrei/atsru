@@ -20,7 +20,7 @@ type WeddingRsvpProps = {
 export function WeddingRsvp({ form, submitted, submitting, handleChange, handleSubmit }: WeddingRsvpProps) {
   return (
     <section
-      className="py-32 px-4 md:px-8 relative"
+      className="py-8 px-4 md:px-8 relative"
       id="rsvp"
       style={{ background: weddingColors.background }}
     >

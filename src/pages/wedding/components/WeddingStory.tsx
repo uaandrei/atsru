@@ -5,7 +5,7 @@ import dallasImg from "../dallasbarn.png"
 export function WeddingStory() {
   return (
     <section
-      className="py-32 px-6 border-y"
+      className="py-8 px-6 border-y"
       id="location"
       style={{ background: weddingColors.surfaceContainerLowest, borderColor: weddingColors.surfaceContainerLow }}
     >

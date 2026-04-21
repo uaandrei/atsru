@@ -8,6 +8,7 @@ import { WeddingHero } from './components/WeddingHero'
 import { WeddingStory } from './components/WeddingStory'
 import { WeddingDetails } from './components/WeddingDetails'
 import { WeddingRsvp } from './components/WeddingRsvp'
+import { WeddingContact } from './components/WeddingContact'
 
 /**
  * Wedding RSVP page with an interactive envelope intro animation.
@@ -67,6 +68,7 @@ const Wedding = () => {
           <WeddingStory />
           <WeddingDetails />
           <WeddingRsvp {...rsvp} />
+          <WeddingContact />
         </main>
       </div>
     </div>

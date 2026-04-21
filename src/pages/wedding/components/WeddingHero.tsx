@@ -4,7 +4,7 @@ import { weddingFonts, weddingColors } from './weddingTheme'
 export function WeddingHero() {
   return (
     <section
-      className="min-h-screen flex flex-col items-center justify-center px-6 pt-32 md:pt-40 pb-12 text-center"
+      className="flex flex-col items-center justify-center px-6 pt-32 md:pt-40 pb-12 text-center"
       id="home"
       style={{ background: weddingColors.background }}
     >

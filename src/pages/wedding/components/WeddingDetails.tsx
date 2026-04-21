@@ -37,6 +37,17 @@ export function WeddingDetails() {
           />
         </div>
 
+        {/* Section header */}
+        <div className="text-center my-20">
+          <h2
+            className="text-5xl md:text-6xl mb-4"
+            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+          >
+            Contact
+          </h2>
+          <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
+        </div>
+
         {/* Contact info */}
         <div
           className="mt-20 p-8 rounded border text-center"
@@ -45,12 +56,6 @@ export function WeddingDetails() {
             borderColor: weddingColors.surfaceContainerLow,
           }}
         >
-          <h3
-            className="text-3xl italic mb-6"
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
-          >
-            Contact
-          </h3>
           <p
             className="mb-4"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}

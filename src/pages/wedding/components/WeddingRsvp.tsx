@@ -155,14 +155,14 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
         <>
           <div className="flex flex-col gap-2">
             <label
-              className="text-sm tracking-wide uppercase"
+              className="text-xl tracking-wide uppercase"
               htmlFor="names"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
               Câte persoane veniți?
             </label>
             <p
-              className="text-sm mb-1"
+              className="text-xl mb-1"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.outline }}
             >
               Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.
@@ -183,7 +183,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
           {/* Accommodation */}
           <div className="flex flex-col gap-4">
             <p
-              className="text-sm tracking-wide uppercase"
+              className="text-xl tracking-wide uppercase"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
               Doriți să vă rezervăm cazare în Sighișoara?
@@ -224,7 +224,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
             </div>
 
             <div
-              className="text-sm p-4 rounded border flex items-start gap-2"
+              className="text-xl p-4 rounded border flex items-start gap-2"
               style={{
                 fontFamily: weddingFonts.body,
                 color: weddingColors.onSurfaceVariant,
@@ -242,7 +242,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
           {/* Dietary */}
           <div className="flex flex-col gap-2">
             <label
-              className="text-sm tracking-wide uppercase"
+              className="text-xl tracking-wide uppercase"
               htmlFor="dietary"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
@@ -262,7 +262,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
 
           <div className="flex flex-col gap-2">
             <label
-              className="text-sm tracking-wide uppercase"
+              className="text-xl tracking-wide uppercase"
               htmlFor="message"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
@@ -288,7 +288,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
           type="button"
           onClick={handleSubmit}
           disabled={submitting}
-          className="w-full md:w-auto py-4 px-12 rounded text-sm tracking-widest uppercase transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="w-full md:w-auto py-4 px-12 rounded text-xl tracking-widest uppercase transition-opacity hover:opacity-90 disabled:opacity-50"
           style={{
             fontFamily: weddingFonts.label,
             background: `linear-gradient(135deg, ${weddingColors.primary}, ${weddingColors.primaryContainer})`,

@@ -6,6 +6,7 @@ import { EnvelopeOverlay } from './components/EnvelopeOverlay'
 import { WeddingNav } from './components/WeddingNav'
 import { WeddingHero } from './components/WeddingHero'
 import { WeddingStory } from './components/WeddingLocation'
+import { WeddingChurch } from './components/WeddingChurch'
 import { WeddingDetails } from './components/WeddingDetails'
 import { WeddingRsvp } from './components/WeddingRsvp'
 import { WeddingContact } from './components/WeddingContact'
@@ -66,6 +67,7 @@ const Wedding = () => {
         <main>
           <WeddingHero />
           <WeddingStory />
+          <WeddingChurch />
           <WeddingDetails />
           <WeddingRsvp {...rsvp} />
           <WeddingContact />

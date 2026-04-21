@@ -23,17 +23,14 @@ export function WeddingDetails() {
         {/* Timeline */}
         <div className="space-y-8">
           <ProgramItem
-            time="14:00"
-            title="Cununia religioasă"
-            description="Vă așteptăm la biserică pentru slujba de cununie. Vă rugăm să rețineți că accesul la biserică se face pe piatră cubică — vă recomandăm să lăsați mașina mai jos și să urcați pe jos."
-            icon="church"
-            note="Fără mașini pe piatră cubică"
-          />
-          <ProgramItem
             time="16:00"
             title="Petrecerea"
-            description="Ne mutăm la locație, pe malul lacului, unde începe petrecerea pe cinste! Muzica noastră preferată, oamenii dragi și dans până dimineața."
             icon="celebration"
+          />
+          <ProgramItem
+            time="14:00"
+            title="Cununia religioasă"
+            icon="church"
           />
         </div>
 
@@ -47,12 +44,11 @@ export function WeddingDetails() {
 type ProgramItemProps = {
   time: string
   title: string
-  description: string
   icon: string
   note?: string
 }
 
-function ProgramItem({ time, title, description, icon, note }: ProgramItemProps) {
+function ProgramItem({ time, title, icon, note }: ProgramItemProps) {
   return (
     <div
       className="flex gap-6 p-6 rounded border"
@@ -82,12 +78,6 @@ function ProgramItem({ time, title, description, icon, note }: ProgramItemProps)
         >
           {title}
         </h3>
-        <p
-          className="leading-relaxed"
-          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
-        >
-          {description}
-        </p>
         {note && (
           <p
             className="mt-3 text-sm flex items-center gap-1"

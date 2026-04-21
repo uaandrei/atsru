@@ -188,20 +188,6 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
             >
               Doriți să vă rezervăm cazare în Sighișoara?
             </p>
-            <div
-              className="text-sm p-4 rounded border flex items-start gap-2"
-              style={{
-                fontFamily: weddingFonts.body,
-                color: weddingColors.onSurfaceVariant,
-                background: weddingColors.surfaceContainerLow,
-                borderColor: weddingColors.surfaceContainer,
-              }}
-            >
-              <span className="material-symbols-outlined text-base shrink-0 mt-0.5" style={{ color: weddingColors.primaryContainer }}>
-                info
-              </span>
-              Sighișoara este o destinație turistică populară și, fiind un oraș mic, locurile de cazare se ocupă rapid. Este recomandat să faceți rezervarea din timp.
-            </div>
             <div className="space-y-3">
               {[
                 { value: 'sat-sun', label: 'Da — 8–9 august (o noapte, sâmbătă–duminică)' },
@@ -235,6 +221,21 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
                   </span>
                 </label>
               ))}
+            </div>
+
+            <div
+              className="text-sm p-4 rounded border flex items-start gap-2"
+              style={{
+                fontFamily: weddingFonts.body,
+                color: weddingColors.onSurfaceVariant,
+                background: weddingColors.surfaceContainerLow,
+                borderColor: weddingColors.surfaceContainer,
+              }}
+            >
+              <span className="material-symbols-outlined text-base shrink-0 mt-0.5" style={{ color: weddingColors.primaryContainer }}>
+                info
+              </span>
+              Sighișoara este o destinație turistică populară și, fiind un oraș mic, locurile de cazare se ocupă rapid. Este recomandat să faceți rezervarea din timp.
             </div>
           </div>
 

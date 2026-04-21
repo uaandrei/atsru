@@ -1,4 +1,5 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import churchImg from '../church.png'
 
 /** Cununia religioasă — church ceremony details */
 export function WeddingChurch() {
@@ -19,28 +20,16 @@ export function WeddingChurch() {
           <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
 
-        <div
-          className="flex gap-6 p-6 rounded border"
-          style={{
-            background: weddingColors.surfaceContainerLowest,
-            borderColor: weddingColors.surfaceContainerLow,
-          }}
-        >
-          <div className="flex flex-col items-center gap-2 shrink-0">
-            <span
-              className="material-symbols-outlined text-2xl"
-              style={{ color: weddingColors.primaryContainer }}
-            >
-              church
-            </span>
-            <span
-              className="text-xs tracking-widest font-semibold"
-              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
-            >
-              14:00
-            </span>
-          </div>
-          <div className="flex-1">
+        <div className="overflow-hidden rounded border" style={{ borderColor: weddingColors.surfaceContainerLow }}>
+          <img
+            alt="Biserica pentru cununia religioasă"
+            className="w-full h-64 md:h-80 object-cover"
+            src={churchImg}
+          />
+          <div
+            className="p-6"
+            style={{ background: weddingColors.surfaceContainerLowest }}
+          >
             <p
               className="leading-relaxed"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}

@@ -20,7 +20,7 @@ type EnvelopeOverlayProps = {
  *   - Wax seal: click/drag target to trigger the open animation
  */
 export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
-  const { overlayRef, containerRef, letterRef, topFlapRef, sealRef, instructionRef } = refs
+  const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
   const { handleSealStart, handleSealClick, triggerCloseSequence } = handlers
 
   return (
@@ -125,15 +125,6 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           </div>
         </div>
       </div>
-
-      {/* Instruction text below envelope */}
-      <p
-        ref={instructionRef}
-        className="absolute bottom-24 text-stone-400 text-[10px] tracking-[0.3em] uppercase transition-opacity duration-300"
-        style={{ fontFamily: weddingFonts.label }}
-      >
-        Trage sigiliul în sus pentru a deschide
-      </p>
     </div>
   )
 }

@@ -1,6 +1,12 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
 
-/** Program — church info and event schedule */
+const schedule = [
+  { time: '14:00', title: 'Cununia religioasă', icon: 'church' },
+  { time: '15:30', title: 'Sosirea la locație', icon: 'directions_car' },
+  { time: '16:00', title: 'Petrecerea', icon: 'celebration' },
+]
+
+/** Program — compact vertical timeline */
 export function WeddingDetails() {
   return (
     <section
@@ -8,9 +14,8 @@ export function WeddingDetails() {
       id="program"
       style={{ background: weddingColors.background }}
     >
-      <div className="max-w-4xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-20">
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-16">
           <h2
             className="text-5xl md:text-6xl mb-4"
             style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
@@ -21,73 +26,45 @@ export function WeddingDetails() {
         </div>
 
         {/* Timeline */}
-        <div className="space-y-8">
-          <ProgramItem
-            time="16:00"
-            title="Petrecerea"
-            icon="celebration"
+        <div className="relative pl-8 md:pl-12">
+          {/* Vertical line */}
+          <div
+            className="absolute left-3 md:left-5 top-1 bottom-1 w-px"
+            style={{ background: weddingColors.outlineVariant }}
           />
-          <ProgramItem
-            time="14:00"
-            title="Cununia religioasă"
-            icon="church"
-          />
-        </div>
 
+          {schedule.map(({ time, title, icon }, i) => (
+            <div key={time} className={`relative flex items-center gap-4 md:gap-6 ${i < schedule.length - 1 ? 'pb-8' : ''}`}>
+              {/* Dot on the timeline */}
+              <div
+                className="absolute -left-8 md:-left-12 flex items-center justify-center w-7 h-7 md:w-11 md:h-11 rounded-full shrink-0"
+                style={{ background: weddingColors.surfaceContainerLow }}
+              >
+                <span
+                  className="material-symbols-outlined text-base md:text-xl"
+                  style={{ color: weddingColors.primary }}
+                >
+                  {icon}
+                </span>
+              </div>
+
+              {/* Time + title */}
+              <span
+                className="text-sm md:text-base font-semibold tracking-widest shrink-0 w-14 md:w-16"
+                style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+              >
+                {time}
+              </span>
+              <span
+                className="text-lg md:text-xl"
+                style={{ fontFamily: weddingFonts.headline, color: weddingColors.onSurface }}
+              >
+                {title}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-
-type ProgramItemProps = {
-  time: string
-  title: string
-  icon: string
-  note?: string
-}
-
-function ProgramItem({ time, title, icon, note }: ProgramItemProps) {
-  return (
-    <div
-      className="flex gap-6 p-6 rounded border"
-      style={{
-        background: weddingColors.surfaceContainerLowest,
-        borderColor: weddingColors.surfaceContainerLow,
-      }}
-    >
-      <div className="flex flex-col items-center gap-2 shrink-0">
-        <span
-          className="material-symbols-outlined text-2xl"
-          style={{ color: weddingColors.primaryContainer }}
-        >
-          {icon}
-        </span>
-        <span
-          className="text-xs tracking-widest font-semibold"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
-        >
-          {time}
-        </span>
-      </div>
-      <div className="flex-1">
-        <h3
-          className="text-2xl mb-2"
-          style={{ fontFamily: weddingFonts.display, color: weddingColors.onSurface }}
-        >
-          {title}
-        </h3>
-        {note && (
-          <p
-            className="mt-3 text-sm flex items-center gap-1"
-            style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
-          >
-            <span className="material-symbols-outlined text-sm">info</span>
-            {note}
-          </p>
-        )}
-      </div>
-    </div>
   )
 }

@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 export type EnvelopeRefs = {
   topFlapRef: React.RefObject<HTMLDivElement | null>
   sealRef: React.RefObject<HTMLDivElement | null>
-  instructionRef: React.RefObject<HTMLParagraphElement | null>
   overlayRef: React.RefObject<HTMLDivElement | null>
   containerRef: React.RefObject<HTMLDivElement | null>
   letterRef: React.RefObject<HTMLDivElement | null>
@@ -47,7 +46,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
   // DOM refs for animated envelope elements
   const topFlapRef = useRef<HTMLDivElement>(null)
   const sealRef = useRef<HTMLDivElement>(null)
-  const instructionRef = useRef<HTMLParagraphElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const letterRef = useRef<HTMLDivElement>(null)
@@ -65,19 +63,17 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
     const topFlap = topFlapRef.current
     const seal = sealRef.current
-    const instruction = instructionRef.current
     const overlay = overlayRef.current
     const container = containerRef.current
     const letter = letterRef.current
     const main = mainRef.current
-    if (!topFlap || !seal || !instruction || !overlay || !container || !letter || !main) return
+    if (!topFlap || !seal || !overlay || !container || !letter || !main) return
 
     // Step 1: Open the flap and hide the seal
     topFlap.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
     topFlap.style.transform = 'rotateZ(180deg)'
     seal.style.transition = 'opacity 0.4s ease'
     seal.style.opacity = '0'
-    instruction.style.opacity = '0'
 
     // Step 2: Letter rises out of the envelope
     setTimeout(() => {
@@ -212,7 +208,7 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
   return {
     envelopeOpen,
     envelopeRemoved,
-    refs: { topFlapRef, sealRef, instructionRef, overlayRef, containerRef, letterRef },
+    refs: { topFlapRef, sealRef, overlayRef, containerRef, letterRef },
     handlers: { handleSealStart, handleSealClick, triggerCloseSequence },
   }
 }

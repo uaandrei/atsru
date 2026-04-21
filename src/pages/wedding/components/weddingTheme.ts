@@ -2,8 +2,8 @@
 export const weddingFonts = {
   /** Allura — elegant script font for display/headings */
   display: "'Allura', cursive",
-  /** Newsreader — refined serif for body text */
-  body: "'Newsreader', serif",
+  /** Manrope — clean sans-serif for body text */
+  body: "'Manrope', sans-serif",
   /** Manrope — clean sans-serif for labels and UI elements */
   label: "'Manrope', sans-serif",
   /** Noto Serif — traditional serif for headlines */

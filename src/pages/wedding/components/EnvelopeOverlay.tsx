@@ -52,19 +52,19 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 bg-stone-50 shadow-inner rounded-sm z-10 flex flex-col items-center justify-center px-4 transition-transform duration-800 ease-in-out"
         >
           <p
-            className="text-[8px] md:text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
+            className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.label }}
           >
             Vă invităm cu drag la nunta noastră
           </p>
           <h1
-            className="text-3xl md:text-5xl font-light text-center"
+            className="text-5xl font-light text-center"
             style={{ fontFamily: weddingFonts.display }}
           >
             Zsófi & Andrei
           </h1>
           <p
-            className="mt-3 text-[9px] md:text-sm text-stone-500 text-center"
+            className="mt-3 text-base text-stone-500 text-center"
             style={{ fontFamily: weddingFonts.label }}
           >
             8 august 2026 · Sighișoara

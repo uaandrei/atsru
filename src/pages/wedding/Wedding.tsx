@@ -34,6 +34,7 @@ const Wedding = () => {
       {/* Scoped styles: override global lowercase, ghost input, clip-paths for envelope flaps */}
       <style>{`
         .wedding-page * { text-transform: none; }
+        .wedding-page section[id] { scroll-margin-top: 5rem; }
         .serif-italic { font-family: 'Bodoni Moda', serif; font-style: italic; }
         .clip-top { clip-path: polygon(0 0, 100% 0, 50% 55%); }
         .clip-bottom { clip-path: polygon(0 100%, 100% 100%, 50% 45%); }

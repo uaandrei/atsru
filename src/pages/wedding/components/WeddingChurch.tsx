@@ -31,7 +31,7 @@ export function WeddingChurch() {
             style={{ background: weddingColors.surfaceContainerLowest }}
           >
             <p
-              className="leading-relaxed"
+              className="leading-relaxed text-xl"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
               Vă așteptăm la biserică pentru slujba de cununie. Vă rugăm să rețineți că accesul la biserică se face pe piatră cubică — vă recomandăm să lăsați mașina mai jos și să urcați pe jos.

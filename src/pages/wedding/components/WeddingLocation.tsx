@@ -22,11 +22,12 @@ export function WeddingStory() {
         {/* Venue description */}
         <div className="flex flex-col gap-8">
           <h2
-            className="text-5xl md:text-6xl italic"
+            className="mx-auto text-6xl italic"
             style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
           >
             Locația
           </h2>
+          <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
           <p
             className="text-2xl md:text-3xl"
             style={{ fontFamily: weddingFonts.headline, color: weddingColors.primary }}
@@ -34,7 +35,7 @@ export function WeddingStory() {
             The Dallas Barn
           </p>
           <div
-            className="space-y-5 leading-relaxed text-lg"
+            className="space-y-5 leading-relaxed text-xl"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
           >
             <p>

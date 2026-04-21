@@ -17,7 +17,7 @@ export function WeddingDetails() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-16">
           <h2
-            className="text-5xl md:text-6xl mb-4"
+            className="text-6xl mb-4"
             style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
           >
             Programul

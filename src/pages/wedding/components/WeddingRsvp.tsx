@@ -53,7 +53,7 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
               Confirmați participarea
             </h2>
             <p
-              className="text-base md:text-lg max-w-md mx-auto"
+              className="text-xl max-w-md mx-auto"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
               Vă rugăm să ne confirmați participarea cel târziu până la{' '}
@@ -109,12 +109,12 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
       {/* Attendance */}
       <div className="flex flex-col gap-4">
         <p
-          className="text-sm tracking-wide uppercase"
+          className="text-xl tracking-wide uppercase"
           style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
           Veți sărbători alături de noi?
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4" >
           {[
             { value: 'attending', label: 'Da' },
             { value: 'declining', label: 'Din păcate nu putem fi prezenți' },

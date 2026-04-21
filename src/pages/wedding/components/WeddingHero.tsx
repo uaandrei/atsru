@@ -13,7 +13,7 @@ export function WeddingHero() {
           className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
           style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
         >
-          Zsófi Andrei
+          Zsófi & Andrei
         </h1>
 
         <div className="flex flex-col items-center gap-8">
@@ -33,13 +33,13 @@ export function WeddingHero() {
         {/* Welcome text */}
         <div className="mt-12 max-w-xl mx-auto space-y-4">
           <p
-            className="text-lg md:text-xl"
+            className="text-2xl"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
           >
             Bine ați venit pe pagina noastră de nuntă!
           </p>
           <p
-            className="text-base leading-relaxed"
+            className="text-xl leading-relaxed"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
           >
             Am creat această pagină pentru ca voi să găsiți într-un singur loc toate informațiile

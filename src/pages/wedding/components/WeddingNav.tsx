@@ -1,89 +1,70 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
 
-/** Top app bar + desktop pill nav + mobile bottom nav */
+const navItems = [
+  { icon: 'home', label: 'Acasă', href: '#home' },
+  { icon: 'calendar_today', label: 'Program', href: '#program' },
+  { icon: 'location_on', label: 'Locație', href: '#location' },
+  { icon: 'mail', label: 'Confirmare', href: '#rsvp' },
+]
+
+const contacts = [
+  { name: 'Zsófi', href: 'tel:0743197946', number: '0743 197 946' },
+  { name: 'Andrei', href: 'tel:0743215090', number: '0743 215 090' },
+]
+
+/** Sticky header combining navigation, contact info and branding */
 export function WeddingNav() {
   return (
-    <>
-      {/* Fixed top app bar */}
-      <header
-        className="fixed w-full flex justify-between items-center px-6 py-4 z-50 backdrop-blur-xl"
-        style={{ background: `${weddingColors.background}cc` }}
-      >
-        <h1
-          className="text-3xl mx-auto"
-          style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
-        >
-          Zsófi Andrei
-        </h1>
-      </header>
+    <header
+      className="fixed top-0 w-full z-50 backdrop-blur-xl border-b"
+      style={{
+        background: `${weddingColors.background}e6`,
+        borderColor: weddingColors.outlineVariant,
+      }}
+    >
+      <div className="flex flex-col items-center px-4 md:px-8 py-3 md:py-4 gap-2 md:gap-3">
 
-      {/* Desktop centered pill nav */}
-      <div className="hidden md:flex fixed top-0 w-full justify-center items-center h-[72px] z-40 pointer-events-none">
-        <nav
-          className="flex gap-8 pointer-events-auto px-8 py-2 rounded-full border shadow-sm mt-4"
-          style={{
-            background: `${weddingColors.surfaceContainerLowest}80`,
-            backdropFilter: 'blur(12px)',
-            borderColor: weddingColors.surfaceContainerLow,
-          }}
-        >
-          {[
-            { label: 'Acasă', href: '#home' },
-            { label: 'Program', href: '#program' },
-            { label: 'Locație', href: '#location' },
-            { label: 'RSVP', href: '#rsvp', active: true },
-          ].map(({ label, href, active }) => (
+        {/* Nav links + contacts */}
+        <nav className="flex items-center gap-3 sm:gap-4 md:gap-6">
+          {navItems.map(({ icon, label, href }) => (
             <a
               key={href}
               href={href}
-              className="text-sm tracking-widest uppercase transition-colors"
+              className="flex items-center gap-1.5 transition-opacity hover:opacity-70"
               style={{
                 fontFamily: weddingFonts.label,
-                color: active ? weddingColors.primary : weddingColors.onSurfaceVariant,
-                fontWeight: active ? 700 : undefined,
+                color: weddingColors.onSurfaceVariant,
               }}
             >
-              {label}
+              <span className="material-symbols-outlined text-xl md:text-2xl">{icon}</span>
+              <span className="hidden md:inline text-sm tracking-widest uppercase">{label}</span>
+            </a>
+          ))}
+
+          {/* Divider */}
+          <div
+            className="w-px h-5 md:h-6"
+            style={{ background: weddingColors.outlineVariant }}
+          />
+
+          {/* Contact links */}
+          {contacts.map(({ name, href, number }) => (
+            <a
+              key={href}
+              href={href}
+              className="flex items-center gap-1.5 transition-opacity hover:opacity-70"
+              style={{
+                fontFamily: weddingFonts.label,
+                color: weddingColors.outline,
+              }}
+            >
+              <span className="material-symbols-outlined text-xl md:text-2xl">call</span>
+              <span className="text-xs md:text-sm">{name}</span>
+              <span className="hidden lg:inline text-xs"> · {number}</span>
             </a>
           ))}
         </nav>
       </div>
-
-      {/* Mobile bottom nav */}
-      <nav
-        className="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-4 z-50 rounded-t-xl shadow-[0_-4px_40px_rgba(21,29,26,0.06)]"
-        style={{ background: `${weddingColors.background}e6`, backdropFilter: 'blur(12px)' }}
-      >
-        {[
-          { icon: 'home', label: 'Acasă', href: '#home' },
-          { icon: 'calendar_today', label: 'Program', href: '#program' },
-          { icon: 'location_on', label: 'Locație', href: '#location' },
-          { icon: 'mail', label: 'RSVP', href: '#rsvp', active: true },
-        ].map(({ icon, label, href, active }) => (
-          <a
-            key={href}
-            href={href}
-            className="flex flex-col items-center justify-center p-2 transition-opacity duration-200"
-            style={{
-              color: active ? weddingColors.primary : weddingColors.onSurfaceVariant,
-              background: active ? weddingColors.surfaceContainer : undefined,
-              borderRadius: active ? '9999px' : undefined,
-              padding: active ? '4px 16px' : undefined,
-              opacity: active ? 1 : 0.7,
-            }}
-          >
-            <span
-              className="material-symbols-outlined mb-1"
-              style={{ fontVariationSettings: `'FILL' ${active ? 1 : 0}` }}
-            >
-              {icon}
-            </span>
-            <span className="text-[11px] tracking-wider uppercase" style={{ fontFamily: weddingFonts.label }}>
-              {label}
-            </span>
-          </a>
-        ))}
-      </nav>
-    </>
+    </header>
   )
 }

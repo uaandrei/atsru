@@ -9,28 +9,12 @@ export function WeddingNav() {
         className="fixed w-full flex justify-between items-center px-6 py-4 z-50 backdrop-blur-xl"
         style={{ background: `${weddingColors.background}cc` }}
       >
-        {/* <button
-          aria-label="Meniu"
-          className="p-2 rounded-full transition-colors duration-200 hover:opacity-70 active:scale-95"
-          style={{ color: weddingColors.primary }}
-        >
-          <span className="material-symbols-outlined">menu</span>
-        </button> */}
-
         <h1
           className="text-3xl mx-auto"
           style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
         >
           Zsófi Andrei
         </h1>
-
-        {/* <button
-          aria-label="Favorite"
-          className="p-2 rounded-full transition-colors duration-200 hover:opacity-70 active:scale-95"
-          style={{ color: weddingColors.primary }}
-        >
-          <span className="material-symbols-outlined">favorite</span>
-        </button> */}
       </header>
 
       {/* Desktop centered pill nav */}

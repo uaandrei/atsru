@@ -12,7 +12,7 @@ const navItems = [
 export function WeddingNav() {
   return (
     <header
-      className="fixed top-0 w-full z-50 backdrop-blur-xl border-b"
+      className="sticky top-0 w-full z-50 backdrop-blur-xl border-b"
       style={{
         background: `${weddingColors.background}e6`,
         borderColor: weddingColors.outlineVariant,

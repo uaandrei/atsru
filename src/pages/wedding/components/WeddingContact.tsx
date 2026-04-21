@@ -38,16 +38,16 @@ export function WeddingContact() {
               className="flex items-center gap-2 justify-center transition-opacity hover:opacity-70"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
-              <span className="material-symbols-outlined text-base">call</span>
-              Zsófi · 0743 197 946
+              <span className="material-symbols-outlined">call</span>
+              <div className="text-xl">Zsófi · 0743 197 946</div>
             </a>
             <a
               href="tel:0743215090"
               className="flex items-center gap-2 justify-center transition-opacity hover:opacity-70"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
-              <span className="material-symbols-outlined text-base">call</span>
-              Andrei · 0743 215 090
+              <span className="material-symbols-outlined">call</span>
+              <div className="text-xl">Andrei · 0743 215 090</div>
             </a>
           </div>
         </div>

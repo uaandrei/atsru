@@ -6,8 +6,8 @@ export const weddingFonts = {
   body: "'Manrope', sans-serif",
   /** Manrope — clean sans-serif for labels and UI elements */
   label: "'Manrope', sans-serif",
-  /** Noto Serif — traditional serif for headlines */
-  headline: "'Noto Serif', serif",
+  /** Manrope — clean sans-serif for headlines */
+  headline: "'Manrope', sans-serif",
 } as const
 
 /** Shared colors for the wedding page */

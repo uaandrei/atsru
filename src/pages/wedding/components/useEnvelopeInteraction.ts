@@ -12,6 +12,7 @@ export type EnvelopeRefs = {
 export type EnvelopeHandlers = {
   handleSealStart: (e: React.MouseEvent | React.TouchEvent) => void
   handleSealClick: () => void
+  triggerCloseSequence: () => void
 }
 
 /** Minimum rotation (in degrees) needed to trigger the open sequence */
@@ -86,22 +87,27 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       letter.style.zIndex = '30'
       container.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
       container.style.transform = 'scale(0.95) rotateX(2deg)'
-
-      // Step 3: Crossfade from envelope to main wedding page
-      setTimeout(() => {
-        overlay.style.opacity = '0'
-        overlay.style.transform = 'scale(1.1)'
-        main.classList.remove('opacity-0', 'translate-y-12', 'scale-95', 'pointer-events-none')
-        main.classList.add('opacity-100', 'translate-y-0', 'scale-100')
-        document.body.classList.remove('overflow-hidden')
-
-        // Step 4: Clean up — remove envelope from DOM
-        setTimeout(() => {
-          setEnvelopeRemoved(true)
-        }, 1000)
-      }, 800)
     }, 400)
   }, [mainRef])
+
+  const triggerCloseSequence = () => {
+    const overlay = overlayRef.current
+    const main = mainRef.current
+    if (!overlay || !main) return
+    // Step 3: Crossfade from envelope to main wedding page
+    setTimeout(() => {
+      overlay.style.opacity = '0'
+      overlay.style.transform = 'scale(1.1)'
+      main.classList.remove('opacity-0', 'translate-y-12', 'scale-95', 'pointer-events-none')
+      main.classList.add('opacity-100', 'translate-y-0', 'scale-100')
+      document.body.classList.remove('overflow-hidden')
+
+      // Step 4: Clean up — remove envelope from DOM
+      setTimeout(() => {
+        setEnvelopeRemoved(true)
+      }, 1000)
+    }, 50)
+  }
 
   // Lock body scroll while envelope is visible
   useEffect(() => {
@@ -153,7 +159,7 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
           { transform: 'rotateX(0deg)' },                                // closed
         ];
         if (currentRotation.current > 78) {
-          animationFrames.splice(1,0,
+          animationFrames.splice(1, 0,
             { transform: 'rotateX(-101deg) rotateZ(180deg)', offset: 0.4 },// flip threshold
             { transform: 'rotateX(78deg)', offset: 0.41 }, // instant swap — no rotateZ
           );
@@ -207,6 +213,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
     envelopeOpen,
     envelopeRemoved,
     refs: { topFlapRef, sealRef, instructionRef, overlayRef, containerRef, letterRef },
-    handlers: { handleSealStart, handleSealClick },
+    handlers: { handleSealStart, handleSealClick, triggerCloseSequence },
   }
 }

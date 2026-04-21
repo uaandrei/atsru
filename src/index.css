@@ -52,3 +52,8 @@
   background-image: radial-gradient(#e6e1d6 0.5px, transparent 0.5px);
   background-size: 20px 20px;
 }
+
+@keyframes jiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}

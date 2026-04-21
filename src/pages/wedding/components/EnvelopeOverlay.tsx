@@ -21,7 +21,7 @@ type EnvelopeOverlayProps = {
  */
 export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef, instructionRef } = refs
-  const { handleSealStart, handleSealClick } = handlers
+  const { handleSealStart, handleSealClick, triggerCloseSequence } = handlers
 
   return (
     <div
@@ -34,7 +34,6 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           className="italic text-champagne text-3xl mb-2 opacity-80"
           style={{ fontFamily: weddingFonts.display }}
         >
-          Suntem nerăbdători să sărbătorim împreună!
         </h2>
       </div>
 
@@ -71,6 +70,13 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             8 august 2026 · Sighișoara
           </p>
           <div className="w-16 h-px bg-champagne mt-6 md:mt-8" />
+          <button 
+            onClick={triggerCloseSequence} 
+            className="mt-4 md:mt-6 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            style={{ animation: 'jiggle 0.5s ease-in-out infinite' }}
+          >
+            Apăsați pentru detalii
+          </button>
         </div>
 
         {/* Left side flap (decorative) */}

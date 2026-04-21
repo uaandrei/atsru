@@ -66,9 +66,9 @@ const Wedding = () => {
         <WeddingNav />
         <main>
           <WeddingHero />
+          <WeddingDetails />
           <WeddingStory />
           <WeddingChurch />
-          <WeddingDetails />
           <WeddingRsvp {...rsvp} />
           <WeddingContact />
         </main>

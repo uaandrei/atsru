@@ -44,8 +44,8 @@ const CallIcon = (props: IconProps) => (
 
 const navItems = [
   { Icon: HomeIcon, label: '', href: '#home' },
-  { Icon: LocationIcon, label: 'Locație', href: '#location' },
   { Icon: CalendarIcon, label: 'Program', href: '#program' },
+  { Icon: LocationIcon, label: 'Locație', href: '#location' },
   { Icon: MailIcon, label: 'Confirmare', href: '#rsvp' },
   { Icon: CallIcon, label: 'Contact', href: '#contact' },
 ]

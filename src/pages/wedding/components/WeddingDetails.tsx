@@ -23,7 +23,7 @@ export function WeddingDetails() {
         {/* Timeline */}
         <div className="space-y-8">
           <ProgramItem
-            time="13:00"
+            time="14:00"
             title="Cununia religioasă"
             description="Vă așteptăm la biserică pentru slujba de cununie. Vă rugăm să rețineți că accesul la biserică se face pe piatră cubică — vă recomandăm să lăsați mașina mai jos și să urcați pe jos."
             icon="church"

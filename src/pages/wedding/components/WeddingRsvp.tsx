@@ -258,29 +258,28 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
             />
           </div>
+
+          <div className="flex flex-col gap-2">
+            <label
+              className="text-sm tracking-wide uppercase"
+              htmlFor="message"
+              style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
+            >
+              Doriți să ne mai transmiteți ceva?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={2}
+              placeholder="Mesajul vostru..."
+              value={form.message}
+              onChange={handleChange}
+              className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
+              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+            />
+          </div>
         </>
       )}
-
-      {/* Message — always visible */}
-      <div className="flex flex-col gap-2">
-        <label
-          className="text-sm tracking-wide uppercase"
-          htmlFor="message"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-        >
-          Doriți să ne mai transmiteți ceva?
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={2}
-          placeholder="Mesajul vostru..."
-          value={form.message}
-          onChange={handleChange}
-          className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
-          style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
-        />
-      </div>
 
       {/* Submit */}
       <div className="pt-4 flex justify-center w-full">

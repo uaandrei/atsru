@@ -9,13 +9,6 @@ export function WeddingHero() {
       style={{ background: weddingColors.background }}
     >
       <div className="max-w-3xl mx-auto">
-        <p
-          className="text-xs uppercase tracking-[0.3em] mb-12"
-          style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-        >
-          Dragi prieteni și membri ai familiei
-        </p>
-
         <h1
           className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
           style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
@@ -29,7 +22,7 @@ export function WeddingHero() {
             className="text-xl md:text-2xl tracking-wide"
             style={{ fontFamily: weddingFonts.headline, color: weddingColors.onSurface }}
           >
-            <p>Sâmbătă, 8 august 2026</p>
+            <p>8 august 2026 (Sâmbătă)</p>
             <p className="mt-2 italic text-lg md:text-xl" style={{ color: weddingColors.onSurfaceVariant }}>
               Sighișoara
             </p>
@@ -52,12 +45,6 @@ export function WeddingHero() {
             Am creat această pagină pentru ca voi să găsiți într-un singur loc toate informațiile
             importante despre program, locație, opțiuni de cazare și transport. Pagina va fi
             actualizată constant cu informații noi pe măsură ce ne apropiem de ziua nunții.
-          </p>
-          <p
-            className="text-base italic"
-            style={{ fontFamily: weddingFonts.body, color: weddingColors.primary }}
-          >
-            Abia așteptăm să sărbătorim împreună!
           </p>
         </div>
       </div>

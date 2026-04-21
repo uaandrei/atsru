@@ -23,7 +23,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
             <h1
               className={[
                 siteTheme.classes.displayFont,
-                'text-6xl leading-[1] font-bold text-[#2D3436] lg:text-8xl',
+                'text-6xl leading-none font-bold text-[#2D3436] lg:text-8xl',
               ].join(' ')}
             >
               {hero.titleLead}{' '}

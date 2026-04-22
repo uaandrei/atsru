@@ -15,7 +15,7 @@ export type EnvelopeHandlers = {
 }
 
 /** Minimum rotation (in degrees) needed to trigger the open sequence */
-const OPEN_THRESHOLD = 95
+const OPEN_THRESHOLD = 30
 
 const MAX_ROTATION = 180
 
@@ -70,8 +70,8 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
     if (!topFlap || !seal || !overlay || !container || !letter || !main) return
 
     // Step 1: Open the flap and hide the seal
-    topFlap.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
-    topFlap.style.transform = 'rotateZ(180deg)'
+    topFlap.style.transition = 'opacity 0.4s ease'
+    topFlap.style.opacity = '0'
     seal.style.transition = 'opacity 0.4s ease'
     seal.style.opacity = '0'
 
@@ -125,13 +125,16 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (deltaY > 0) {
         // Convert upward pixel distance to degrees (1.5x multiplier)
         currentRotation.current = Math.min(deltaY * 1.5, MAX_ROTATION)
-        console.log(currentRotation.current)
-        if (currentRotation.current > 78) {
-          // flip interval is from [79,180] and should be transformed to [-101,0]
-          topFlap.style.transform = `rotateX(${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
-        } else {
-          topFlap.style.transform = `rotateX(${currentRotation.current}deg)`
-        }
+        let rotation = currentRotation.current;
+        // if (currentRotation.current > 78) {
+        //   // flip interval is from [79,180] and should be transformed to [-101,0]
+        //   topFlap.style.transform = `rotateX(${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
+        // } else {
+        //   topFlap.style.transform = `rotateX(${currentRotation.current}deg)`
+        // }
+        if (rotation > 78)
+          rotation = 78;
+        topFlap.style.transform = `rotateX(${rotation}deg)`
       } else {
         currentRotation.current = 0
         topFlap.style.transform = 'rotateX(0deg)'
@@ -150,26 +153,27 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
       if (currentRotation.current >= OPEN_THRESHOLD) {
         triggerOpenSequence()
       } else {
-        const animationFrames: Keyframe[] = [
-          { transform: topFlap.style.transform },                        // current state
-          { transform: 'rotateX(0deg)' },                                // closed
-        ];
-        if (currentRotation.current > 78) {
-          animationFrames.splice(1, 0,
-            { transform: 'rotateX(-101deg) rotateZ(180deg)', offset: 0.4 },// flip threshold
-            { transform: 'rotateX(78deg)', offset: 0.41 }, // instant swap — no rotateZ
-          );
-        }
-        const animation = topFlap.animate(animationFrames, {
-          duration: 1000,
-          easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
-          fill: 'forwards',
-        });
-        animation.onfinish = () => {
-          // Persist final state on the element's inline style
-          topFlap.style.transform = 'rotateX(0deg)'
-          animation.cancel();
-        }
+        topFlap.style.transform = `rotateX(0deg)`
+        // const animationFrames: Keyframe[] = [
+        //   { transform: topFlap.style.transform },                        // current state
+        //   { transform: 'rotateX(0deg)' },                                // closed
+        // ];
+        // if (currentRotation.current > 78) {
+        //   animationFrames.splice(1, 0,
+        //     { transform: 'rotateX(-101deg) rotateZ(180deg)', offset: 0.4 },// flip threshold
+        //     { transform: 'rotateX(78deg)', offset: 0.41 }, // instant swap — no rotateZ
+        //   );
+        // }
+        // const animation = topFlap.animate(animationFrames, {
+        //   duration: 1000,
+        //   easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
+        //   fill: 'forwards',
+        // });
+        // animation.onfinish = () => {
+        //   // Persist final state on the element's inline style
+        //   topFlap.style.transform = 'rotateX(0deg)'
+        //   animation.cancel();
+        // }
         currentRotation.current = 0
       }
     }

@@ -1,5 +1,6 @@
 import type { EnvelopeRefs, EnvelopeHandlers } from './useEnvelopeInteraction'
 import { weddingFonts } from './weddingTheme'
+import blazonSvg from '../blazon_vector_90.svg'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
@@ -114,12 +115,13 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             onClick={handleSealClick}
           >
             <div className="absolute inset-1 border border-white/30 rounded-full shadow-inner" />
-            <span
-              className="italic text-xl md:text-2xl drop-shadow-md"
-              style={{ fontFamily: weddingFonts.display }}
-            >
-              Z&A
-            </span>
+            <img
+              src={blazonSvg}
+              alt="Zsófi & Andrei monogram"
+              draggable={false}
+              className="w-10 h-10 md:w-12 md:h-12 drop-shadow-md pointer-events-none select-none"
+              style={{ mixBlendMode: 'multiply' }}
+            />
             {/* Pulsing ring to draw attention */}
             <div className="absolute inset-0 rounded-full bg-champagne animate-ping opacity-20 group-hover:hidden" />
           </div>

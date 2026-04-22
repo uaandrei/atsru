@@ -10,7 +10,6 @@ export type EnvelopeRefs = {
 
 export type EnvelopeHandlers = {
   handleSealStart: (e: React.MouseEvent | React.TouchEvent) => void
-  handleSealClick: () => void
   triggerCloseSequence: () => void
 }
 
@@ -77,7 +76,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
 
     // Step 2: Letter rises out of the envelope
     setTimeout(() => {
-      // TODO! this still needs some work
       letter.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
       letter.style.transform = 'translateY(-40%) scale(1.02)'
       letter.style.zIndex = '30'
@@ -126,12 +124,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
         // Convert upward pixel distance to degrees (1.5x multiplier)
         currentRotation.current = Math.min(deltaY * 1.5, MAX_ROTATION)
         let rotation = currentRotation.current;
-        // if (currentRotation.current > 78) {
-        //   // flip interval is from [79,180] and should be transformed to [-101,0]
-        //   topFlap.style.transform = `rotateX(${currentRotation.current - MAX_ROTATION}deg) rotateZ(180deg)`
-        // } else {
-        //   topFlap.style.transform = `rotateX(${currentRotation.current}deg)`
-        // }
         if (rotation > 78)
           rotation = 78;
         topFlap.style.transform = `rotateX(${rotation}deg)`
@@ -154,26 +146,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
         triggerOpenSequence()
       } else {
         topFlap.style.transform = `rotateX(0deg)`
-        // const animationFrames: Keyframe[] = [
-        //   { transform: topFlap.style.transform },                        // current state
-        //   { transform: 'rotateX(0deg)' },                                // closed
-        // ];
-        // if (currentRotation.current > 78) {
-        //   animationFrames.splice(1, 0,
-        //     { transform: 'rotateX(-101deg) rotateZ(180deg)', offset: 0.4 },// flip threshold
-        //     { transform: 'rotateX(78deg)', offset: 0.41 }, // instant swap — no rotateZ
-        //   );
-        // }
-        // const animation = topFlap.animate(animationFrames, {
-        //   duration: 1000,
-        //   easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
-        //   fill: 'forwards',
-        // });
-        // animation.onfinish = () => {
-        //   // Persist final state on the element's inline style
-        //   topFlap.style.transform = 'rotateX(0deg)'
-        //   animation.cancel();
-        // }
         currentRotation.current = 0
       }
     }
@@ -199,20 +171,10 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
     if (topFlapRef.current) topFlapRef.current.style.transition = 'none'
   }
 
-  /** Clicking the seal (without dragging) also opens the envelope */
-  const handleSealClick = () => {
-    // if (!envelopeOpen && currentRotation.current < OPEN_THRESHOLD) {
-    //   if (topFlapRef.current) {
-    //     topFlapRef.current.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)'
-    //   }
-    //   triggerOpenSequence()
-    // }
-  }
-
   return {
     envelopeOpen,
     envelopeRemoved,
     refs: { topFlapRef, sealRef, overlayRef, containerRef, letterRef },
-    handlers: { handleSealStart, handleSealClick, triggerCloseSequence },
+    handlers: { handleSealStart, triggerCloseSequence },
   }
 }

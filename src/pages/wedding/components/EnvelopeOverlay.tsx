@@ -22,7 +22,7 @@ type EnvelopeOverlayProps = {
  */
 export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
-  const { handleSealStart, handleSealClick, triggerCloseSequence } = handlers
+  const { handleSealStart, triggerCloseSequence } = handlers
 
   return (
     <div
@@ -53,13 +53,13 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 bg-stone-50 shadow-inner rounded-sm z-10 flex flex-col items-center justify-center px-4 transition-transform duration-800 ease-in-out"
         >
           <p
-            className="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
+            className="text-base uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.label }}
           >
             Vă invităm cu drag la nunta noastră
           </p>
           <h1
-            className="text-5xl font-light text-center"
+            className="text-4xl font-light text-center text-champagne"
             style={{ fontFamily: weddingFonts.display }}
           >
             Zsófi & Andrei
@@ -70,10 +70,10 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           >
             8 august 2026 · Sighișoara
           </p>
-          <div className="w-16 h-px bg-champagne mt-6 md:mt-8" />
+          <div className="w-16 h-px bg-champagne mt-2" />
           <button 
             onClick={triggerCloseSequence} 
-            className="mt-4 md:mt-6 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite' }}
           >
             Apăsați pentru detalii
@@ -112,7 +112,6 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             style={{ transform: 'translateZ(1px)' }}
             onMouseDown={handleSealStart}
             onTouchStart={handleSealStart}
-            onClick={handleSealClick}
           >
             <div className="absolute inset-1 border border-white/30 rounded-full shadow-inner" />
             <img

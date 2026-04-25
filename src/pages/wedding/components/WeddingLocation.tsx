@@ -2,10 +2,14 @@ import { useState } from 'react'
 import { weddingFonts, weddingColors } from './weddingTheme'
 import dallasImg from "../dallasbarn.png"
 import dallasLakeImg from "../dallasbarn2.png"
+import dallasCar from "../dallasbarn3.png"
+import dallasTable from "../dallasbarn4.png"
 
 const venueImages = [
   { src: dallasImg, alt: 'Interiorul The Dallas Barn pregătit pentru nuntă' },
   { src: dallasLakeImg, alt: 'Masă de nuntă pe terasa The Dallas Barn, pe malul lacului' },
+  { src: dallasCar, alt: 'Mașină de nuntă The Dallas Barn, pe malul lacului' },
+  { src: dallasTable, alt: 'Masă de nuntă The Dallas Barn, pe malul lacului' },
 ]
 
 /** Locație — description of the venue with practical info */

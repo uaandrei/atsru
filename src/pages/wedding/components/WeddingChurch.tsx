@@ -43,6 +43,21 @@ export function WeddingChurch() {
               <span className="material-symbols-outlined text-sm">info</span>
               Fără mașini pe piatră cubică
             </p>
+          
+          <a
+            href="https://maps.app.goo.gl/Jd9L9hh3vQpcduYm6"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded px-5 py-3 text-sm uppercase tracking-widest transition hover:opacity-90"
+            style={{
+              background: weddingColors.primary,
+              color: weddingColors.onPrimary,
+              fontFamily: weddingFonts.label,
+            }}
+          >
+            <span className="material-symbols-outlined text-base">directions</span>
+            Cum ajungeți?
+          </a>
           </div>
         </div>
       </div>

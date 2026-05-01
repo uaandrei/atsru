@@ -11,6 +11,7 @@ export type EnvelopeRefs = {
 export type EnvelopeHandlers = {
   handleSealStart: (e: React.MouseEvent | React.TouchEvent) => void
   triggerCloseSequence: () => void
+  timeoutOpenSequence: () => void
 }
 
 /** Minimum rotation (in degrees) needed to trigger the open sequence */
@@ -48,6 +49,14 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
   const overlayRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const letterRef = useRef<HTMLDivElement>(null)
+
+  const timeoutOpenSequence = () => {
+    setTimeout(() => {
+      if (!envelopeOpen) {
+        triggerOpenSequence()
+      }
+    }, 2200)
+  }
 
   /**
    * Plays the choreographed envelope-open animation:
@@ -175,6 +184,6 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
     envelopeOpen,
     envelopeRemoved,
     refs: { topFlapRef, sealRef, overlayRef, containerRef, letterRef },
-    handlers: { handleSealStart, triggerCloseSequence },
+    handlers: { handleSealStart, triggerCloseSequence, timeoutOpenSequence },
   }
 }

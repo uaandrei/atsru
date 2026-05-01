@@ -2,7 +2,7 @@ import type { EnvelopeRefs, EnvelopeHandlers } from './useEnvelopeInteraction'
 import { weddingFonts } from './weddingTheme'
 import blazonSvg from '../blazon_vector_90.svg'
 import letterCover from '../letter_cover.png'
-import { Activity } from 'react'
+import { Activity, useEffect } from 'react'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
@@ -25,7 +25,11 @@ type EnvelopeOverlayProps = {
  */
 export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
-  const { handleSealStart, triggerCloseSequence } = handlers
+  const { handleSealStart, triggerCloseSequence, timeoutOpenSequence } = handlers
+
+  useEffect(() => {
+    timeoutOpenSequence()
+  }, [])
 
   return (
     <div

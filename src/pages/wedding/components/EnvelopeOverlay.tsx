@@ -61,8 +61,8 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             Vă invităm cu drag la nunta noastră
           </p>
           <div
-            className="md:text-6xl text-4xl font-light text-center text-champagne"
-            style={{ fontFamily: weddingFonts.body }}
+            className="md:text-7xl text-5xl font-light text-center text-champagne"
+            style={{ fontFamily: weddingFonts.caveat }}
           >
             Zsófi & Andrei
           </div>

@@ -42,8 +42,8 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
       {/* Envelope container — perspective enables 3D flap rotation */}
       <div
         ref={containerRef}
-        className="relative w-[92vw] max-w-3xl max-h-[60vh] mx-auto transition-transform duration-1000"
-        style={{ perspective: '1200px', aspectRatio: '3/2' }}
+        className="relative w-[92vw] max-w-3xl max-h-[60vh] md:max-h-[50vh] mx-auto transition-transform duration-1000"
+        style={{ perspective: '1200px', aspectRatio: '6/5' }}
       >
         {/* Envelope back face */}
         <div className="absolute inset-0 bg-linear-to-br from-stone-300 to-stone-400 shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-sm" />
@@ -51,7 +51,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         {/* Letter preview — visible through the open top flap */}
         <div
           ref={letterRef}
-          className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center justify-center px-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
+          className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center md:justify-center md:pt-0 pt-8 px-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${letterCover})`, backgroundSize: '100% 100%' }}
         >
           <p
@@ -60,26 +60,26 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           >
             Vă invităm cu drag la nunta noastră
           </p>
-          <h1
-            className="text-4xl font-light text-center text-champagne"
-            style={{ fontFamily: weddingFonts.display }}
+          <div
+            className="md:text-6xl text-4xl font-light text-center text-champagne"
+            style={{ fontFamily: weddingFonts.body }}
           >
             Zsófi & Andrei
-          </h1>
+          </div>
           <p
-            className="mt-3 text-base text-stone-500 text-center"
-            style={{ fontFamily: weddingFonts.display }}
+            className="md:bg-transparent bg-white/50 p-2 rounded-2xl text-base md:text-xl md:mt-2 mt-0 text-stone-500 text-center"
+            style={{ fontFamily: weddingFonts.body }}
           >
             8 august 2026 · Sighișoara
           </p>
-          <div className="w-16 h-px bg-champagne mt-2" />
-          <button 
+          {/* <div className="w-16 h-px bg-champagne mt-2" /> */}
+          {/* <button 
             onClick={triggerCloseSequence} 
             className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.display }}
           >
             Apăsați pentru detalii
-          </button>
+          </button> */}
         </div>
 
         {/* Left side flap (decorative) */}

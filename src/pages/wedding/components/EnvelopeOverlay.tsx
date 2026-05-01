@@ -28,7 +28,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-100 bg-[#dfd5bf] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
+      className="fixed inset-0 z-100 bg-[#dfdad1] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
       <div className="text-center absolute top-24 w-full px-6">
@@ -67,7 +67,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             Zsófi & Andrei
           </div>
           <p
-            className="md:bg-transparent bg-white/50 p-2 rounded-2xl text-base md:text-xl md:mt-2 mt-0 text-stone-500 text-center"
+            className="md:bg-transparent bg-white/50 p-2 rounded-2xl text-base md:text-xl mt-2 text-stone-500 text-center"
             style={{ fontFamily: weddingFonts.body }}
           >
             8 august 2026 · Sighișoara

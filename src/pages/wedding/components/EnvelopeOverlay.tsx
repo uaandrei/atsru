@@ -56,7 +56,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         >
           <p
             className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
-            style={{ fontFamily: weddingFonts.dancing }}
+            style={{ fontFamily: weddingFonts.body }}
           >
             Vă invităm cu drag la nunta noastră
           </p>

@@ -27,7 +27,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-100 bg-[#e8fcee] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
+      className="fixed inset-0 z-100 bg-[#ebfcf0] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
       <div className="text-center absolute top-24 w-full px-6">

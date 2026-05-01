@@ -3,11 +3,13 @@ import { weddingFonts } from './weddingTheme'
 import blazonSvg from '../blazon_vector_90.svg'
 import letterCover from '../letter_cover.png'
 import { Activity, useEffect } from 'react'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
   handlers: EnvelopeHandlers,
   envelopeOpen: boolean
+  t: WeddingTranslation['envelope']
 }
 
 /**
@@ -23,13 +25,13 @@ type EnvelopeOverlayProps = {
  *   - Back face: pre-rotated 180deg so it shows when fully open
  *   - Wax seal: click/drag target to trigger the open animation
  */
-export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverlayProps) {
+export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
   const { handleSealStart, triggerCloseSequence, timeoutOpenSequence } = handlers
 
   useEffect(() => {
-    timeoutOpenSequence()
-  }, [])
+    return timeoutOpenSequence()
+  }, [timeoutOpenSequence])
 
   return (
     <div
@@ -45,7 +47,7 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
             className="bottom-0 absolute w-full -translate-x-1/2 italic md:mb-24 mb-10 text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.body }}
           >
-            Apăsați pentru detalii
+            {t.detailsCta}
           </button>
         </div>
       </Activity>
@@ -69,7 +71,7 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
             className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.body }}
           >
-            Vă invităm cu drag la nunta noastră
+            {t.invitation}
           </p>
           <div
             className="md:text-7xl text-5xl font-light text-center text-champagne"
@@ -81,7 +83,7 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
             className="md:bg-transparent bg-white/50 p-2 rounded-2xl text-base md:text-xl mt-2 text-stone-500 text-center"
             style={{ fontFamily: weddingFonts.body }}
           >
-            8 august 2026 · Sighișoara
+            {t.datePlace}
           </p>
           {/* <div className="w-16 h-px bg-champagne mt-2" /> */}
         </div>
@@ -122,7 +124,7 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
             <div className="absolute inset-1 border border-white/30 rounded-full shadow-inner" />
             <img
               src={blazonSvg}
-              alt="Zsófi & Andrei monogram"
+              alt={t.monogramAlt}
               draggable={false}
               className="w-10 h-10 md:w-12 md:h-12 drop-shadow-md pointer-events-none select-none"
               style={{ mixBlendMode: 'multiply' }}

@@ -1,7 +1,8 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 /** Full-screen hero — invitation header with names, date and welcome text */
-export function WeddingHero() {
+export function WeddingHero({ t }: { t: WeddingTranslation['hero'] }) {
   return (
     <section
       className="flex flex-col items-center justify-center px-6 pt-32 md:pt-40 pb-12 text-center"
@@ -24,9 +25,9 @@ export function WeddingHero() {
             className="text-xl md:text-2xl tracking-wide"
             style={{ fontFamily: weddingFonts.headline, color: weddingColors.onSurface }}
           >
-            <p>8 august 2026 (Sâmbătă)</p>
+            <p>{t.date}</p>
             <p className="mt-2 italic text-lg md:text-xl" style={{ color: weddingColors.onSurfaceVariant }}>
-              Sighișoara
+              {t.place}
             </p>
           </div>
           <div className="w-px h-20" style={{ background: weddingColors.primaryContainer }} />
@@ -38,15 +39,13 @@ export function WeddingHero() {
             className="text-2xl"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
           >
-            Bine ați venit pe pagina noastră de nuntă!
+            {t.welcomeTitle}
           </p>
           <p
             className="text-xl leading-relaxed"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
           >
-            Am creat această pagină pentru ca voi să găsiți într-un singur loc toate informațiile
-            importante despre program, locație, opțiuni de cazare și transport. Pagina va fi
-            actualizată constant cu informații noi pe măsură ce ne apropiem de ziua nunții.
+            {t.welcomeBody}
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { SVGProps } from 'react'
 import { weddingFonts, weddingColors } from './weddingTheme'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 type IconProps = SVGProps<SVGSVGElement>
 
@@ -42,16 +43,18 @@ const CallIcon = (props: IconProps) => (
   </svg>
 )
 
-const navItems = [
-  { Icon: HomeIcon, label: '', href: '#home' },
-  { Icon: CalendarIcon, label: 'Program', href: '#program' },
-  { Icon: LocationIcon, label: 'Locație', href: '#location' },
-  { Icon: MailIcon, label: 'Confirmare', href: '#rsvp' },
-  { Icon: CallIcon, label: 'Contact', href: '#contact' },
+const getNavItems = (t: WeddingTranslation['nav']) => [
+  { Icon: HomeIcon, label: '', ariaLabel: t.home, href: '#home' },
+  { Icon: CalendarIcon, label: t.program, ariaLabel: t.program, href: '#program' },
+  { Icon: LocationIcon, label: t.location, ariaLabel: t.location, href: '#location' },
+  { Icon: MailIcon, label: t.rsvp, ariaLabel: t.rsvp, href: '#rsvp' },
+  { Icon: CallIcon, label: t.contact, ariaLabel: t.contact, href: '#contact' },
 ]
 
 /** Sticky header combining navigation, contact info and branding */
-export function WeddingNav() {
+export function WeddingNav({ t }: { t: WeddingTranslation['nav'] }) {
+  const navItems = getNavItems(t)
+
   return (
     <header
       className="sticky top-0 w-full z-50 backdrop-blur-xl border-b"
@@ -62,10 +65,11 @@ export function WeddingNav() {
     >
       <div className="flex items-center justify-center px-4 md:px-8 py-4 md:py-5">
         <nav className="flex items-center gap-4 sm:gap-5 md:gap-8">
-          {navItems.map(({ Icon, label, href }) => (
+          {navItems.map(({ Icon, label, ariaLabel, href }) => (
             <a
               key={href}
               href={href}
+              aria-label={ariaLabel}
               className="flex items-center gap-2 transition-opacity hover:opacity-70"
               style={{
                 fontFamily: weddingFonts.label,

@@ -1,4 +1,5 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 type RsvpForm = {
   attendance: 'attending' | 'declining' | ''
@@ -14,10 +15,11 @@ type WeddingRsvpProps = {
   submitting: boolean
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   handleSubmit: () => void
+  t: WeddingTranslation['rsvp']
 }
 
 /** RSVP section — card-based form or thank-you message after submission */
-export function WeddingRsvp({ form, submitted, submitting, handleChange, handleSubmit }: WeddingRsvpProps) {
+export function WeddingRsvp({ form, submitted, submitting, handleChange, handleSubmit, t }: WeddingRsvpProps) {
   return (
     <section
       className="py-8 px-4 md:px-8 relative"
@@ -50,23 +52,25 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
               className="text-6xl md:text-7xl -ml-4"
               style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
             >
-              Confirmați participarea
+              {t.title}
             </h2>
             <p
               className="text-xl max-w-md mx-auto"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
-              Vă rugăm să ne confirmați participarea cel târziu până la{' '}
-              <span className='text-2xl' style={{ color: weddingColors.primary, fontWeight: 600 }}>13 iulie 2026</span>.
+              {t.deadlinePrefix}{' '}
+              <span className='text-2xl' style={{ color: weddingColors.primary, fontWeight: 600 }}>{t.deadlineDate}</span>
+              {t.deadlineSuffix}
             </p>
           </div>
 
-          {submitted ? <ThankYouMessage /> : (
+          {submitted ? <ThankYouMessage t={t} /> : (
             <RsvpForm
               form={form}
               submitting={submitting}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
+              t={t}
             />
           )}
         </div>
@@ -77,17 +81,17 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
 
 /* ------------------------------------------------------------------ */
 
-function ThankYouMessage() {
+function ThankYouMessage({ t }: { t: WeddingTranslation['rsvp'] }) {
   return (
     <div className="text-center py-12 w-full">
       <span className="material-symbols-outlined text-6xl mb-6 block" style={{ color: weddingColors.primaryContainer }}>
         favorite
       </span>
       <h3 className="text-4xl mb-4" style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}>
-        Mulțumim!
+        {t.thankYouTitle}
       </h3>
       <p className="text-lg" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
-        Răspunsul vostru a fost înregistrat. Abia așteptăm să sărbătorim împreună!
+        {t.thankYouBody}
       </p>
     </div>
   )
@@ -98,9 +102,10 @@ type RsvpFormProps = {
   submitting: boolean
   handleChange: WeddingRsvpProps['handleChange']
   handleSubmit: WeddingRsvpProps['handleSubmit']
+  t: WeddingTranslation['rsvp']
 }
 
-function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProps) {
+function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormProps) {
   const isAttending = form.attendance === 'attending'
 
   return (
@@ -112,12 +117,12 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
           className="text-xl tracking-wide uppercase"
           style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
         >
-          Veți sărbători alături de noi?
+          {t.attendanceQuestion}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4" >
           {[
-            { value: 'attending', label: 'Da' },
-            { value: 'declining', label: 'Din păcate nu putem fi prezenți' },
+            { value: 'attending', label: t.attending },
+            { value: 'declining', label: t.declining },
           ].map(({ value, label }) => (
             <label
               key={value}
@@ -159,20 +164,20 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               htmlFor="names"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
-              Câte persoane veniți?
+              {t.namesLabel}
             </label>
             <p
               className="text-xl mb-1"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.outline }}
             >
-              Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.
+              {t.namesHelp}
             </p>
             <textarea
               id="names"
               name="names"
               required
               rows={3}
-              placeholder="Ex: Ion Ionescu, Maria Ionescu, Sofia (5 ani)"
+              placeholder={t.namesPlaceholder}
               value={form.names}
               onChange={handleChange}
               className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
@@ -186,14 +191,10 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               className="text-xl tracking-wide uppercase"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
-              Doriți să vă rezervăm cazare în Sighișoara?
+              {t.accommodationQuestion}
             </p>
             <div className="space-y-3">
-              {[
-                { value: 'sat-sun', label: 'Da — 8–9 august (o noapte, sâmbătă–duminică)' },
-                { value: 'fri-sun', label: 'Da — 7–9 august (două nopți, vineri–duminică)' },
-                { value: 'none', label: 'Nu este necesar, ne ocupăm noi.' },
-              ].map(({ value, label }) => (
+              {t.accommodationOptions.map(({ value, label }) => (
                 <label
                   key={value}
                   className="flex cursor-pointer items-center rounded p-4 border transition-colors"
@@ -235,7 +236,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               <span className="material-symbols-outlined text-base shrink-0 mt-0.5" style={{ color: weddingColors.primaryContainer }}>
                 info
               </span>
-              Sighișoara este o destinație turistică populară și, fiind un oraș mic, locurile de cazare se ocupă rapid. Este recomandat să faceți rezervarea din timp.
+              {t.accommodationInfo}
             </div>
           </div>
 
@@ -246,13 +247,13 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               htmlFor="dietary"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
-              Alergii alimentare sau regim special?
+              {t.dietaryLabel}
             </label>
             <input
               id="dietary"
               name="dietary"
               type="text"
-              placeholder="ex: fără gluten, vegetarian..."
+              placeholder={t.dietaryPlaceholder}
               value={form.dietary}
               onChange={handleChange}
               className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40"
@@ -266,13 +267,13 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
               htmlFor="message"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
             >
-              Doriți să ne mai transmiteți ceva?
+              {t.messageLabel}
             </label>
             <textarea
               id="message"
               name="message"
               rows={2}
-              placeholder="Mesajul vostru..."
+              placeholder={t.messagePlaceholder}
               value={form.message}
               onChange={handleChange}
               className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
@@ -296,7 +297,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit }: RsvpFormProp
             boxShadow: '0 4px 20px -5px rgba(122,88,47,0.3)',
           }}
         >
-          {submitting ? 'Se trimite...' : 'Trimite răspunsul'}
+          {submitting ? t.submitting : t.submit}
         </button>
       </div>
     </div>

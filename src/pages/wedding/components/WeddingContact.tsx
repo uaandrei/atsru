@@ -1,7 +1,8 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 /** Contact section with phone numbers */
-export function WeddingContact() {
+export function WeddingContact({ t }: { t: WeddingTranslation['contact'] }) {
   return (
     <section
       className="py-8 px-6"
@@ -14,7 +15,7 @@ export function WeddingContact() {
             className="text-5xl md:text-6xl mb-4"
             style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
-            Contact
+            {t.title}
           </h2>
           <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
@@ -30,7 +31,7 @@ export function WeddingContact() {
             className="mb-4"
             style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
           >
-            Pentru orice întrebare, nu ezitați să ne contactați!
+            {t.body}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6 items-center">
             <a

@@ -1,8 +1,9 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
 import churchImg from '../church.png'
+import type { WeddingTranslation } from '../weddingTranslations'
 
 /** Cununia religioasă — church ceremony details */
-export function WeddingChurch() {
+export function WeddingChurch({ t }: { t: WeddingTranslation['church'] }) {
   return (
     <section
       className="py-8 px-6"
@@ -15,14 +16,14 @@ export function WeddingChurch() {
             className="text-5xl md:text-6xl mb-4"
             style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
-            Cununia religioasă
+            {t.title}
           </h2>
           <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
 
         <div className="overflow-hidden rounded border" style={{ borderColor: weddingColors.surfaceContainerLow }}>
           <img
-            alt="Biserica pentru cununia religioasă"
+            alt={t.imageAlt}
             className="w-full h-64 md:h-80 object-cover"
             src={churchImg}
           />
@@ -30,20 +31,19 @@ export function WeddingChurch() {
             className="p-6"
             style={{ background: weddingColors.surfaceContainerLowest }}
           >
-            <p
+            <div
               className="leading-relaxed text-xl"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
-              <div>Vă așteptăm la biserică pentru slujba de cununie.</div>
-
-              Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis (doar pentru vehicule preautorizate), vă rugăm să lăsați mașina în parcarea de sub cetate.
-            </p>
+              <p>{t.intro}</p>
+              <p className="mt-3">{t.details}</p>
+            </div>
             <p
               className="mt-3 text-sm flex items-center gap-1"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
               <span className="material-symbols-outlined text-sm">info</span>
-              Fără mașini pe piatră cubică
+              {t.notice}
             </p>
           
           <a
@@ -58,7 +58,7 @@ export function WeddingChurch() {
             }}
           >
             <span className="material-symbols-outlined text-base">directions</span>
-            Cum ajungeți?
+            {t.mapCta}
           </a>
           </div>
         </div>

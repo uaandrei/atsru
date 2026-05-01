@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { weddingColors } from './components/weddingTheme'
 import { useEnvelopeInteraction } from './components/useEnvelopeInteraction'
 import { useRsvpForm } from './components/useRsvpForm'
@@ -10,6 +11,7 @@ import { WeddingChurch } from './components/WeddingChurch'
 import { WeddingDetails } from './components/WeddingSchedule'
 import { WeddingRsvp } from './components/WeddingRsvp'
 import { WeddingContact } from './components/WeddingContact'
+import { getWeddingLocale, weddingTranslations } from './weddingTranslations'
 
 /**
  * Wedding RSVP page with an interactive envelope intro animation.
@@ -23,12 +25,26 @@ import { WeddingContact } from './components/WeddingContact'
  */
 const Wedding = () => {
   const mainRef = useRef<HTMLDivElement>(null)
+  const [searchParams] = useSearchParams()
+  const locale = getWeddingLocale(searchParams)
+  const t = weddingTranslations[locale]
   const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef)
   const rsvp = useRsvpForm()
+
+  useEffect(() => {
+    document.documentElement.lang = locale
+    document.title = t.meta.title
+
+    const description = document.querySelector('meta[name="description"]')
+    if (description instanceof HTMLMetaElement) {
+      description.content = t.meta.description
+    }
+  }, [locale, t.meta.description, t.meta.title])
 
   return (
     <div
       className="min-h-screen"
+      lang={locale}
       style={{ background: weddingColors.background, color: weddingColors.onBackground }}
     >
       {/* Scoped styles: override global lowercase, ghost input, clip-paths for envelope flaps */}
@@ -57,21 +73,23 @@ const Wedding = () => {
       `}</style>
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}
-      {!envelopeRemoved && <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} />}
+      {!envelopeRemoved && (
+        <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} t={t.envelope} />
+      )}
 
       {/* Main wedding website — hidden until envelope opens, then fades in */}
       <div
         ref={mainRef}
         className="wedding-page opacity-0 translate-y-12 scale-95 pointer-events-none transition-all duration-1000 ease-out origin-top"
       >
-        <WeddingNav />
+        <WeddingNav t={t.nav} />
         <main>
-          <WeddingHero />
-          <WeddingDetails />
-          <WeddingStory />
-          <WeddingChurch />
-          <WeddingRsvp {...rsvp} />
-          <WeddingContact />
+          <WeddingHero t={t.hero} />
+          <WeddingDetails t={t.schedule} />
+          <WeddingStory t={t.location} />
+          <WeddingChurch t={t.church} />
+          <WeddingRsvp {...rsvp} t={t.rsvp} />
+          <WeddingContact t={t.contact} />
         </main>
       </div>
     </div>

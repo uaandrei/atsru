@@ -1,12 +1,8 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
-
-const schedule = [
-  { time: '14:00', title: 'Cununia religioasă', icon: 'church' },
-  { time: '16:00', title: 'Petrecerea', icon: 'celebration' },
-]
+import type { WeddingTranslation } from '../weddingTranslations'
 
 /** Program — compact vertical timeline */
-export function WeddingDetails() {
+export function WeddingDetails({ t }: { t: WeddingTranslation['schedule'] }) {
   return (
     <section
       className="py-8 px-6"
@@ -19,7 +15,7 @@ export function WeddingDetails() {
             className="text-6xl mb-4"
             style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
-            Programul
+            {t.title}
           </h2>
           <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
         </div>
@@ -32,8 +28,8 @@ export function WeddingDetails() {
             style={{ background: weddingColors.outlineVariant }}
           />
 
-          {schedule.map(({ time, title, icon }, i) => (
-            <div key={time} className={`relative flex items-center gap-4 md:gap-6 ${i < schedule.length - 1 ? 'pb-8' : ''}`}>
+          {t.events.map(({ time, title, icon }, i) => (
+            <div key={time} className={`relative flex items-center gap-4 md:gap-6 ${i < t.events.length - 1 ? 'pb-8' : ''}`}>
               {/* Dot on the timeline */}
               <div
                 className="absolute -left-8 md:-left-12 flex items-center justify-center w-7 h-7 md:w-11 md:h-11 rounded-full shrink-0"

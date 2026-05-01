@@ -14,9 +14,7 @@ export function WeddingHero({ t }: { t: WeddingTranslation['hero'] }) {
           className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
           style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
         >
-          Zsófi <span
-            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
-          >&</span> Andrei
+          Zsófi & Andrei
         </h1>
 
         <div className="flex flex-col items-center gap-8">

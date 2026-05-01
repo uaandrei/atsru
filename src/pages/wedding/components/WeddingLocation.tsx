@@ -84,7 +84,7 @@ export function WeddingStory() {
         <div className="flex flex-col gap-8">
           <h2
             className="mx-auto text-6xl italic"
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
             Locația
           </h2>
@@ -115,7 +115,7 @@ export function WeddingStory() {
             style={{ background: weddingColors.surfaceContainerLow, borderColor: weddingColors.surfaceContainer }}
           >
             <h3
-              className="text-sm uppercase tracking-widest mb-4"
+              className="text-base uppercase tracking-widest mb-4"
               style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
             >
               De reținut
@@ -162,7 +162,7 @@ export function WeddingStory() {
             <span className="material-symbols-outlined text-base">directions</span>
             Cum ajungeți?
           </a>
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4563.435634453744!2d24.725900713123785!3d46.23788117097673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474b9fd669657fe9%3A0x2477d062b435dfc0!2sThe%20Dallas%20Barn!5e1!3m2!1sen!2sro!4v1776789017586!5m2!1sen!2sro"
             className="w-full h-80 md:h-96 rounded"
             style={{ border: 0 }}
@@ -170,7 +170,7 @@ export function WeddingStory() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="The Dallas Barn pe Google Maps"
-          />
+          /> */}
         </div>
       </div>
     </section>

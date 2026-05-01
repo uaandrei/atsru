@@ -11,10 +11,10 @@ export function WeddingHero() {
       <div className="max-w-3xl mx-auto">
         <h1
           className="text-6xl md:text-8xl lg:text-9xl mb-8 font-light"
-          style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+          style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
         >
           Zsófi <span
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >&</span> Andrei
         </h1>
 

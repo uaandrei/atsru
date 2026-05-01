@@ -32,14 +32,14 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
       className="fixed inset-0 z-100 bg-[#dfdad1] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
-      <div className="text-center absolute top-0 w-full pt-4">
+      <div className="text-center absolute bottom-0 w-full pb-4">
         <h2
-          className="italic text-champagne text-3xl mb-2 opacity-80"
+          className="italic md:mb-24 mb-10 opacity-80"
           style={{ fontFamily: weddingFonts.display }}
         >
           <button
             onClick={triggerCloseSequence}
-            className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            className="text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.body }}
           >
             Apăsați pentru detalii

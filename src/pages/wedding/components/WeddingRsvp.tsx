@@ -48,7 +48,7 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
           <div className="text-center space-y-4 w-full">
             <h2
               className="text-6xl md:text-7xl -ml-4"
-              style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+              style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
             >
               Confirmați participarea
             </h2>
@@ -57,7 +57,7 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
               Vă rugăm să ne confirmați participarea cel târziu până la{' '}
-              <span style={{ color: weddingColors.primary, fontWeight: 600 }}>13 iulie 2026</span>.
+              <span className='text-2xl' style={{ color: weddingColors.primary, fontWeight: 600 }}>13 iulie 2026</span>.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ function ThankYouMessage() {
       <span className="material-symbols-outlined text-6xl mb-6 block" style={{ color: weddingColors.primaryContainer }}>
         favorite
       </span>
-      <h3 className="text-4xl mb-4" style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}>
+      <h3 className="text-4xl mb-4" style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}>
         Mulțumim!
       </h3>
       <p className="text-lg" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>

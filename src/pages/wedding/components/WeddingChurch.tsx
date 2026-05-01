@@ -13,7 +13,7 @@ export function WeddingChurch() {
         <div className="text-center mb-20">
           <h2
             className="text-5xl md:text-6xl mb-4"
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
             Cununia religioasă
           </h2>
@@ -34,7 +34,9 @@ export function WeddingChurch() {
               className="leading-relaxed text-xl"
               style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
             >
-              Vă așteptăm la biserică pentru slujba de cununie. Vă rugăm să rețineți că accesul la biserică se face pe piatră cubică — vă recomandăm să lăsați mașina mai jos și să urcați pe jos.
+              <div>Vă așteptăm la biserică pentru slujba de cununie.</div>
+
+              Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis (doar pentru vehicule preautorizate), vă rugăm să lăsați mașina în parcarea de sub cetate.
             </p>
             <p
               className="mt-3 text-sm flex items-center gap-1"

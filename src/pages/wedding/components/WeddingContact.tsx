@@ -12,7 +12,7 @@ export function WeddingContact() {
         <div className="text-center mb-20">
           <h2
             className="text-5xl md:text-6xl mb-4"
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
             Contact
           </h2>
@@ -32,7 +32,7 @@ export function WeddingContact() {
           >
             Pentru orice întrebare, nu ezitați să ne contactați!
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-6 items-center">
             <a
               href="tel:0743197946"
               className="flex items-center gap-2 justify-center transition-opacity hover:opacity-70"

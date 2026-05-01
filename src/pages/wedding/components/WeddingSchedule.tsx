@@ -2,7 +2,6 @@ import { weddingFonts, weddingColors } from './weddingTheme'
 
 const schedule = [
   { time: '14:00', title: 'Cununia religioasă', icon: 'church' },
-  { time: '15:30', title: 'Sosirea la locație', icon: 'directions_car' },
   { time: '16:00', title: 'Petrecerea', icon: 'celebration' },
 ]
 
@@ -18,7 +17,7 @@ export function WeddingDetails() {
         <div className="text-center mb-16">
           <h2
             className="text-6xl mb-4"
-            style={{ fontFamily: weddingFonts.display, color: weddingColors.primary }}
+            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
           >
             Programul
           </h2>

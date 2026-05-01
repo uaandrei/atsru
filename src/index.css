@@ -43,6 +43,10 @@
   --color-w-outline-variant: #d3c4b7;
 }
 
+body {
+  text-align: justify;
+}
+
 * {
   text-transform: lowercase;
 }

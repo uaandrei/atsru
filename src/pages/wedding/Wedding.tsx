@@ -23,7 +23,7 @@ import { WeddingContact } from './components/WeddingContact'
  */
 const Wedding = () => {
   const mainRef = useRef<HTMLDivElement>(null)
-  const { envelopeRemoved, refs, handlers } = useEnvelopeInteraction(mainRef)
+  const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef)
   const rsvp = useRsvpForm()
 
   return (
@@ -57,7 +57,7 @@ const Wedding = () => {
       `}</style>
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}
-      {!envelopeRemoved && <EnvelopeOverlay refs={refs} handlers={handlers} />}
+      {!envelopeRemoved && <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} />}
 
       {/* Main wedding website — hidden until envelope opens, then fades in */}
       <div

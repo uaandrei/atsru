@@ -5,7 +5,8 @@ import letterCover from '../letter_cover.png'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
-  handlers: EnvelopeHandlers
+  handlers: EnvelopeHandlers,
+  envelopeOpen: boolean
 }
 
 /**
@@ -21,7 +22,7 @@ type EnvelopeOverlayProps = {
  *   - Back face: pre-rotated 180deg so it shows when fully open
  *   - Wax seal: click/drag target to trigger the open animation
  */
-export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
+export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
   const { handleSealStart, triggerCloseSequence } = handlers
 
@@ -31,11 +32,18 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
       className="fixed inset-0 z-100 bg-[#dfdad1] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
-      <div className="text-center absolute top-24 w-full px-6">
+      <div className="text-center absolute top-0 w-full pt-4">
         <h2
           className="italic text-champagne text-3xl mb-2 opacity-80"
           style={{ fontFamily: weddingFonts.display }}
         >
+          <button
+            onClick={triggerCloseSequence}
+            className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.body }}
+          >
+            Apăsați pentru detalii
+          </button>
         </h2>
       </div>
 
@@ -73,13 +81,6 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
             8 august 2026 · Sighișoara
           </p>
           {/* <div className="w-16 h-px bg-champagne mt-2" /> */}
-          {/* <button 
-            onClick={triggerCloseSequence} 
-            className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
-            style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.display }}
-          >
-            Apăsați pentru detalii
-          </button> */}
         </div>
 
         {/* Left side flap (decorative) */}

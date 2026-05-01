@@ -1,6 +1,7 @@
 import type { EnvelopeRefs, EnvelopeHandlers } from './useEnvelopeInteraction'
 import { weddingFonts } from './weddingTheme'
 import blazonSvg from '../blazon_vector_90.svg'
+import letterCover from '../letter_cover.png'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
@@ -27,7 +28,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-100 bg-[#ebfcf0] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
+      className="fixed inset-0 z-100 bg-[#dfd5bf] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
       <div className="text-center absolute top-24 w-full px-6">
@@ -41,7 +42,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
       {/* Envelope container — perspective enables 3D flap rotation */}
       <div
         ref={containerRef}
-        className="relative w-[92vw] max-w-3xl max-h-[40vh] mx-auto transition-transform duration-1000"
+        className="relative w-[92vw] max-w-3xl max-h-[60vh] mx-auto transition-transform duration-1000"
         style={{ perspective: '1200px', aspectRatio: '3/2' }}
       >
         {/* Envelope back face */}
@@ -50,11 +51,12 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
         {/* Letter preview — visible through the open top flap */}
         <div
           ref={letterRef}
-          className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 bg-stone-50 shadow-inner rounded-sm z-10 flex flex-col items-center justify-center px-4 transition-transform duration-800 ease-in-out"
+          className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center justify-center px-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
+          style={{ backgroundImage: `url(${letterCover})`, backgroundSize: '100% 100%' }}
         >
           <p
-            className="text-base uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
-            style={{ fontFamily: weddingFonts.label }}
+            className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
+            style={{ fontFamily: weddingFonts.dancing }}
           >
             Vă invităm cu drag la nunta noastră
           </p>
@@ -66,7 +68,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           </h1>
           <p
             className="mt-3 text-base text-stone-500 text-center"
-            style={{ fontFamily: weddingFonts.label }}
+            style={{ fontFamily: weddingFonts.display }}
           >
             8 august 2026 · Sighișoara
           </p>
@@ -74,7 +76,7 @@ export function EnvelopeOverlay({ refs, handlers }: EnvelopeOverlayProps) {
           <button 
             onClick={triggerCloseSequence} 
             className="mt-4 text-lg uppercase tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
-            style={{ animation: 'jiggle 0.5s ease-in-out infinite' }}
+            style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.display }}
           >
             Apăsați pentru detalii
           </button>

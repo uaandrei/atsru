@@ -2,6 +2,7 @@ import type { EnvelopeRefs, EnvelopeHandlers } from './useEnvelopeInteraction'
 import { weddingFonts } from './weddingTheme'
 import blazonSvg from '../blazon_vector_90.svg'
 import letterCover from '../letter_cover.png'
+import { Activity } from 'react'
 
 type EnvelopeOverlayProps = {
   refs: EnvelopeRefs
@@ -32,20 +33,18 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen }: EnvelopeOverla
       className="fixed inset-0 z-100 bg-[#dfdad1] flex items-center justify-center touch-none transition-all duration-1000 ease-in-out wedding-page"
     >
       {/* Title above envelope */}
-      <div className="text-center absolute bottom-0 w-full pb-4">
-        <h2
-          className="italic md:mb-24 mb-10 opacity-80"
-          style={{ fontFamily: weddingFonts.display }}
+      <Activity mode={envelopeOpen ? 'visible' : 'hidden'}>
+        <div className="text-center absolute h-full w-full z-101"
+          onClick={triggerCloseSequence}
         >
           <button
-            onClick={triggerCloseSequence}
-            className="text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            className="bottom-0 absolute w-full -translate-x-1/2 italic md:mb-24 mb-10 text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.body }}
           >
             Apăsați pentru detalii
           </button>
-        </h2>
-      </div>
+        </div>
+      </Activity>
 
       {/* Envelope container — perspective enables 3D flap rotation */}
       <div

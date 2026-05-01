@@ -2,6 +2,8 @@
 export const weddingFonts = {
   /** Allura — elegant script font for display/headings */
   display: "'Allura', cursive",
+  /** Dancing Script — casual, handwritten script for accents */
+  script: "'Dancing Script', cursive",
   /** Manrope — clean sans-serif for body text */
   body: "'Manrope', sans-serif",
   /** Manrope — clean sans-serif for labels and UI elements */

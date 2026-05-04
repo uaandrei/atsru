@@ -10,6 +10,22 @@ type RsvpFormData = {
   message: string
 }
 
+export type RsvpFormErrors = {
+  attendance: boolean
+  names: boolean
+  accommodation: boolean
+}
+
+const NO_ERRORS: RsvpFormErrors = { attendance: false, names: false, accommodation: false }
+
+const computeErrors = (form: RsvpFormData): RsvpFormErrors => ({
+  attendance: !form.attendance,
+  names: form.attendance === 'attending' && !form.names.trim(),
+  accommodation: form.attendance === 'attending' && !form.accommodation,
+})
+
+const hasErrors = (e: RsvpFormErrors) => e.attendance || e.names || e.accommodation
+
 /**
  * Manages RSVP form state and submission to Firebase.
  *
@@ -19,6 +35,7 @@ type RsvpFormData = {
 export function useRsvpForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [showErrors, setShowErrors] = useState(false)
   const [form, setForm] = useState<RsvpFormData>({
     attendance: '',
     names: '',
@@ -27,12 +44,19 @@ export function useRsvpForm() {
     message: '',
   })
 
+  const errors = showErrors ? computeErrors(form) : NO_ERRORS
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   const handleSubmit = async () => {
-    if (!form.attendance || (form.attendance === 'attending' && !form.names)) return
+    const currentErrors = computeErrors(form)
+    if (hasErrors(currentErrors)) {
+      setShowErrors(true)
+      return
+    }
+    setShowErrors(false)
     setSubmitting(true)
     try {
       await addDoc(collection(db, 'invitations'), {
@@ -47,5 +71,5 @@ export function useRsvpForm() {
     }
   }
 
-  return { form, submitted, submitting, handleChange, handleSubmit }
+  return { form, submitted, submitting, errors, handleChange, handleSubmit }
 }

@@ -1,4 +1,5 @@
 import { weddingFonts, weddingColors } from './weddingTheme'
+import type { RsvpFormErrors } from './useRsvpForm'
 import type { WeddingTranslation } from '../weddingTranslations'
 
 type RsvpForm = {
@@ -13,13 +14,14 @@ type WeddingRsvpProps = {
   form: RsvpForm
   submitted: boolean
   submitting: boolean
+  errors: RsvpFormErrors
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void
   handleSubmit: () => void
   t: WeddingTranslation['rsvp']
 }
 
 /** RSVP section — card-based form or thank-you message after submission */
-export function WeddingRsvp({ form, submitted, submitting, handleChange, handleSubmit, t }: WeddingRsvpProps) {
+export function WeddingRsvp({ form, submitted, submitting, errors, handleChange, handleSubmit, t }: WeddingRsvpProps) {
   return (
     <section
       className="py-8 px-4 md:px-8 relative"
@@ -61,6 +63,7 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
             <RsvpForm
               form={form}
               submitting={submitting}
+              errors={errors}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
               t={t}
@@ -93,12 +96,13 @@ function ThankYouMessage({ t }: { t: WeddingTranslation['rsvp'] }) {
 type RsvpFormProps = {
   form: RsvpForm
   submitting: boolean
+  errors: RsvpFormErrors
   handleChange: WeddingRsvpProps['handleChange']
   handleSubmit: WeddingRsvpProps['handleSubmit']
   t: WeddingTranslation['rsvp']
 }
 
-function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormProps) {
+function RsvpForm({ form, submitting, errors, handleChange, handleSubmit, t }: RsvpFormProps) {
   const isAttending = form.attendance === 'attending'
 
   return (
@@ -121,7 +125,11 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
               key={value}
               className="relative flex cursor-pointer items-center justify-center rounded p-4 border transition-colors"
               style={{
-                borderColor: form.attendance === value ? weddingColors.primary : weddingColors.surfaceContainer,
+                borderColor: form.attendance === value
+                  ? weddingColors.primary
+                  : errors.attendance
+                    ? weddingColors.error
+                    : weddingColors.surfaceContainer,
                 background: form.attendance === value ? weddingColors.surfaceContainer : undefined,
               }}
             >
@@ -131,6 +139,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
                 type="radio"
                 value={value}
                 required
+                aria-invalid={errors.attendance}
                 checked={form.attendance === value}
                 onChange={handleChange}
               />
@@ -169,12 +178,17 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
               id="names"
               name="names"
               required
+              aria-invalid={errors.names}
               rows={3}
               placeholder={t.namesPlaceholder}
               value={form.names}
               onChange={handleChange}
               className="ghost-border-input w-full py-2 text-lg placeholder:opacity-40 resize-none"
-              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurface }}
+              style={{
+                fontFamily: weddingFonts.body,
+                color: weddingColors.onSurface,
+                borderBottomColor: errors.names ? weddingColors.error : undefined,
+              }}
             />
           </div>
 
@@ -192,7 +206,11 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
                   key={value}
                   className="flex cursor-pointer items-center rounded p-4 border transition-colors"
                   style={{
-                    borderColor: form.accommodation === value ? weddingColors.primary : weddingColors.surfaceContainer,
+                    borderColor: form.accommodation === value
+                      ? weddingColors.primary
+                      : errors.accommodation
+                        ? weddingColors.error
+                        : weddingColors.surfaceContainer,
                     background: form.accommodation === value ? weddingColors.surfaceContainer : undefined,
                   }}
                 >
@@ -202,6 +220,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
                     type="radio"
                     value={value}
                     required
+                    aria-invalid={errors.accommodation}
                     checked={form.accommodation === value}
                     onChange={handleChange}
                   />

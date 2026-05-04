@@ -33,4 +33,5 @@ export const weddingColors = {
   onSurfaceVariant: '#4f453b',
   outline: '#81756a',
   outlineVariant: '#d3c4b7',
+  error: '#b3261e',
 } as const

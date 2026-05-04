@@ -168,7 +168,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       namesHelp:
         'Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.',
       namesPlaceholder: 'Ex: Ion Ionescu, Maria Ionescu, Sofia (5 ani)',
-      accommodationQuestion: 'Doriți să vă rezervăm cazare în Sighișoara?',
+      accommodationQuestion: 'Doriți să vă rezervăm cazare în Sighișoara? (Nu avem posibilitatea de cazare la locația evenimentului)',
       accommodationOptions: [
         { value: 'sat-sun', label: 'Da — 8-9 august (o noapte, sâmbătă-duminică)' },
         { value: 'fri-sun', label: 'Da — 7-9 august (două nopți, vineri-duminică)' },
@@ -271,7 +271,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       namesHelp:
         'Kérjük, tüntessétek fel a neveiteket, és ha gyerekkel/gyerekekkel jösztök, az életkorukat is.',
       namesPlaceholder: 'Pl.: Kovács János, Kovács Mária, Zsófi (5 éves)',
-      accommodationQuestion: 'Szeretnétek, hogy foglaljunk nektek szállást Segesváron?',
+      accommodationQuestion: 'Szeretnétek, hogy foglaljunk nektek szállást Segesváron? (A rendezvény helyszínén nincs szálláslehetőség)',
       accommodationOptions: [
         { value: 'sat-sun', label: 'Igen — augusztus 8-9 (egy éjszaka, szombattól vasárnapig)' },
         { value: 'fri-sun', label: 'Igen — augusztus 7-9 (két éjszaka, péntektől vasárnapig)' },

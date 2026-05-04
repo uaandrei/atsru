@@ -201,6 +201,7 @@ function RsvpForm({ form, submitting, handleChange, handleSubmit, t }: RsvpFormP
                     name="accommodation"
                     type="radio"
                     value={value}
+                    required
                     checked={form.accommodation === value}
                     onChange={handleChange}
                   />

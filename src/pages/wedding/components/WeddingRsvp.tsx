@@ -26,15 +26,6 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
       id="rsvp"
       style={{ background: weddingColors.background }}
     >
-      {/* Botanical background texture */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
-        <img
-          alt=""
-          className="w-full h-full object-cover"
-          style={{ mixBlendMode: 'multiply', filter: 'grayscale(1) sepia(0.3)' }}
-          src="https://images.unsplash.com/photo-1490750967868-88df5691cc02?auto=format&fit=crop&q=80"
-        />
-      </div>
 
       <div className="relative z-10 max-w-2xl mx-auto">
         <div
@@ -47,22 +38,24 @@ export function WeddingRsvp({ form, submitted, submitting, handleChange, handleS
           }}
         >
           {/* Heading */}
-          <div className="text-center space-y-4 w-full">
-            <h2
-              className="text-6xl md:text-7xl -ml-4"
-              style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
-            >
-              {t.title}
-            </h2>
-            <p
-              className="text-xl max-w-md mx-auto"
-              style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
-            >
-              {t.deadlinePrefix}{' '}
-              <span className='text-2xl' style={{ color: weddingColors.primary, fontWeight: 600 }}>{t.deadlineDate}</span>
-              {t.deadlineSuffix}
-            </p>
-          </div>
+          {!submitted && (
+            <div className="text-center space-y-4 w-full">
+              <h2
+                className="text-6xl md:text-7xl -ml-4"
+                style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
+              >
+                {t.title}
+              </h2>
+              <p
+                className="text-xl max-w-md mx-auto"
+                style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
+              >
+                {t.deadlinePrefix}{' '}
+                <span className='text-2xl' style={{ color: weddingColors.primary, fontWeight: 600 }}>{t.deadlineDate}</span>
+                {t.deadlineSuffix}
+              </p>
+            </div>
+          )}
 
           {submitted ? <ThankYouMessage t={t} /> : (
             <RsvpForm

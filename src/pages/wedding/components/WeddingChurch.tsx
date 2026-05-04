@@ -24,7 +24,7 @@ export function WeddingChurch({ t }: { t: WeddingTranslation['church'] }) {
         <div className="overflow-hidden rounded border" style={{ borderColor: weddingColors.surfaceContainerLow }}>
           <img
             alt={t.imageAlt}
-            className="w-full h-64 md:h-80 object-cover"
+            className="w-full h-full object-cover"
             src={churchImg}
           />
           <div

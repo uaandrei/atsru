@@ -44,7 +44,7 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t }: EnvelopeOve
           onClick={triggerCloseSequence}
         >
           <button
-            className="bottom-0 absolute w-full -translate-x-1/2 italic md:mb-24 mb-10 text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
+            className="bottom-0 absolute w-full -translate-x-1/2 italic md:mb-24 mb-16 text-2xl md:text-4xl uppercase font-extrabold tracking-[0.2em] text-stone-500 cursor-pointer animate-[jiggle_0.5s_ease-in-out_infinite] hover:animate-none"
             style={{ animation: 'jiggle 0.5s ease-in-out infinite', fontFamily: weddingFonts.body }}
           >
             {t.detailsCta}

@@ -203,7 +203,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     },
     envelope: {
       detailsCta: 'Kattintsatok a részletekért',
-      invitation: 'Benneteket az esküvőnkre',
+      invitation: 'Örömmel hívunk meg Benneteket az esküvőnkre',
       datePlace: '2026 augusztus 8 · Segesvár',
       monogramAlt: 'Zsófi és Andrei monogramja',
     },
@@ -258,7 +258,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
         },
       ],
       mapLabel: 'A The Dallas Barn helyszíne a térképen',
-      mapCta: 'Útvonalterv',
+      mapCta: 'Hogyan tudnak eljutni?',
     },
     church: {
       title: 'Egyházi szertartás',
@@ -267,7 +267,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       details:
         'Kérjük, vegyétek figyelembe, hogy a megközelítés macskaköves úton történik, és a feljutás körülbelül 7-10 percet vesz igénybe, ezért kényelmes cipőt ajánlunk. Autóval behajtani nem lehet (csak előzetesen engedélyezett járművekkel), ezért kérjük, hagyjátok az autót a vár alatti parkolóban.',
       notice: 'Autóval nem lehet behajtani a macskaköves útra',
-      mapCta: 'Útvonalterv',
+      mapCta: 'Hogyan tudnak eljutni?',
     },
     rsvp: {
       title: 'Részvétel visszajelzése',

@@ -68,13 +68,6 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t, recipient }: 
           className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center md:justify-center md:pt-0 pt-8 px-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${letterCover})`, backgroundSize: '100% 100%' }}
         >
-          {recipient && (
-            <p
-              className="serif-italic md:text-3xl text-xl text-stone-600 mb-3 md:mb-4 text-center"
-            >
-              {recipient}
-            </p>
-          )}
           <p
             className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.body }}
@@ -116,6 +109,11 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t, recipient }: 
           {/* Front face — visible when closed (0deg), hidden past 90deg */}
           <div className="absolute inset-0 backface-hidden" style={{ filter: 'drop-shadow(0 5px 8px rgba(0,0,0,0.2))' }}>
             <div className="absolute inset-0 bg-linear-to-b from-[#dfc78c] to-[#dfc994] clip-top" />
+            <p
+              className="serif-italic absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold md:text-3xl text-xl text-stone-600 text-center"
+            >
+              {recipient}
+            </p>
           </div>
 
           {/* Back face — pre-rotated 180deg so it faces the viewer when flap is fully open */}

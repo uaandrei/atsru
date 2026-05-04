@@ -59,6 +59,7 @@ export type WeddingTranslation = {
     deadlineSuffix: string
     thankYouTitle: string
     thankYouBody: string
+    thankYouBodyDeclining: string
     attendanceQuestion: string
     attending: string
     declining: string
@@ -161,6 +162,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       deadlineSuffix: '.',
       thankYouTitle: 'Mulțumim!',
       thankYouBody: 'Răspunsul vostru a fost înregistrat. Abia așteptăm să sărbătorim împreună!',
+      thankYouBodyDeclining: 'Răspunsul vostru a fost înregistrat.',
       attendanceQuestion: 'Veți sărbători alături de noi?',
       attending: 'Da',
       declining: 'Din păcate nu putem fi prezenți',
@@ -264,6 +266,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       deadlineSuffix: '.',
       thankYouTitle: 'Köszönjük!',
       thankYouBody: 'Visszajelzéseteket rögzítettük. Alig várjuk, hogy együtt ünnepeljünk!',
+      thankYouBodyDeclining: 'Visszajelzéseteket rögzítettük.',
       attendanceQuestion: 'Velünk ünnepeltek?',
       attending: 'Igen',
       declining: 'Sajnos nem tudunk ott lenni',

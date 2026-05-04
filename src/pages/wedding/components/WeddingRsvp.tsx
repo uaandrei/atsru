@@ -59,7 +59,7 @@ export function WeddingRsvp({ form, submitted, submitting, errors, handleChange,
             </div>
           )}
 
-          {submitted ? <ThankYouMessage t={t} /> : (
+          {submitted ? <ThankYouMessage t={t} attendance={form.attendance} /> : (
             <RsvpForm
               form={form}
               submitting={submitting}
@@ -77,7 +77,8 @@ export function WeddingRsvp({ form, submitted, submitting, errors, handleChange,
 
 /* ------------------------------------------------------------------ */
 
-function ThankYouMessage({ t }: { t: WeddingTranslation['rsvp'] }) {
+function ThankYouMessage({ t, attendance }: { t: WeddingTranslation['rsvp']; attendance: RsvpForm['attendance'] }) {
+  const body = attendance === 'declining' ? t.thankYouBodyDeclining : t.thankYouBody
   return (
     <div className="text-center py-12 w-full">
       <span className="material-symbols-outlined text-6xl mb-6 block" style={{ color: weddingColors.primaryContainer }}>
@@ -87,7 +88,7 @@ function ThankYouMessage({ t }: { t: WeddingTranslation['rsvp'] }) {
         {t.thankYouTitle}
       </h3>
       <p className="text-lg" style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
-        {t.thankYouBody}
+        {body}
       </p>
     </div>
   )

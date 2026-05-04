@@ -28,8 +28,9 @@ const Wedding = () => {
   const [searchParams] = useSearchParams()
   const locale = getWeddingLocale(searchParams)
   const t = weddingTranslations[locale]
+  const recipient = searchParams.get('recipient') ?? ''
   const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef)
-  const rsvp = useRsvpForm()
+  const rsvp = useRsvpForm(recipient)
 
   return (
     <div
@@ -64,7 +65,7 @@ const Wedding = () => {
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}
       {!envelopeRemoved && (
-        <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} t={t.envelope} />
+        <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} t={t.envelope} recipient={recipient} />
       )}
 
       {/* Main wedding website — hidden until envelope opens, then fades in */}

@@ -8,6 +8,7 @@ type RsvpFormData = {
   accommodation: 'sat-sun' | 'fri-sun' | 'none' | ''
   dietary: string
   message: string
+  decliningNames: string
 }
 
 export type RsvpFormErrors = {
@@ -30,9 +31,9 @@ const hasErrors = (e: RsvpFormErrors) => e.attendance || e.names || e.accommodat
  * Manages RSVP form state and submission to Firebase.
  *
  * Submissions are stored in the Firestore 'invitations' collection with
- * the form fields plus a `createdAt` ISO timestamp.
+ * the form fields plus `recipient` (from the URL) and a `createdAt` timestamp.
  */
-export function useRsvpForm() {
+export function useRsvpForm(recipient: string) {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [showErrors, setShowErrors] = useState(false)
@@ -42,6 +43,7 @@ export function useRsvpForm() {
     accommodation: '',
     dietary: '',
     message: '',
+    decliningNames: recipient,
   })
 
   const errors = showErrors ? computeErrors(form) : NO_ERRORS
@@ -61,6 +63,7 @@ export function useRsvpForm() {
     try {
       await addDoc(collection(db, 'invitations'), {
         ...form,
+        recipient,
         createdAt: new Date().toISOString(),
       })
       setSubmitted(true)

@@ -10,6 +10,7 @@ type EnvelopeOverlayProps = {
   handlers: EnvelopeHandlers,
   envelopeOpen: boolean
   t: WeddingTranslation['envelope']
+  recipient: string
 }
 
 /**
@@ -25,7 +26,7 @@ type EnvelopeOverlayProps = {
  *   - Back face: pre-rotated 180deg so it shows when fully open
  *   - Wax seal: click/drag target to trigger the open animation
  */
-export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t }: EnvelopeOverlayProps) {
+export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t, recipient }: EnvelopeOverlayProps) {
   const { overlayRef, containerRef, letterRef, topFlapRef, sealRef } = refs
   const { handleSealStart, triggerCloseSequence, timeoutOpenSequence } = handlers
 
@@ -67,6 +68,13 @@ export function EnvelopeOverlay({ refs, handlers, envelopeOpen, t }: EnvelopeOve
           className="absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center md:justify-center md:pt-0 pt-8 px-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${letterCover})`, backgroundSize: '100% 100%' }}
         >
+          {recipient && (
+            <p
+              className="serif-italic md:text-3xl text-xl text-stone-600 mb-3 md:mb-4 text-center"
+            >
+              {recipient}
+            </p>
+          )}
           <p
             className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mb-4 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.body }}

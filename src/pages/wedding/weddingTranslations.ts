@@ -1,10 +1,6 @@
 export type WeddingLocale = 'ro' | 'hu'
 
 export type WeddingTranslation = {
-  meta: {
-    title: string
-    description: string
-  }
   envelope: {
     detailsCta: string
     invitation: string
@@ -90,10 +86,6 @@ export type WeddingTranslation = {
 
 export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
   ro: {
-    meta: {
-      title: 'Zsófi & Andrei | Nuntă',
-      description: 'Detalii despre nunta Zsófi & Andrei din 8 august 2026, la Sighișoara.',
-    },
     envelope: {
       detailsCta: 'Apăsați pentru detalii',
       invitation: 'Vă invităm cu drag la nunta noastră',
@@ -197,10 +189,6 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     },
   },
   hu: {
-    meta: {
-      title: 'Zsófi & Andrei | Esküvő',
-      description: 'Részletek Zsófi és Andrei 2026. augusztus 8-i segesvári esküvőjéről.',
-    },
     envelope: {
       detailsCta: 'Kattintsatok a részletekért',
       invitation: 'Örömmel hívunk meg Benneteket az esküvőnkre',

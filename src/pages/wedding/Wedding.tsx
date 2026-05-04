@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { weddingColors } from './components/weddingTheme'
 import { useEnvelopeInteraction } from './components/useEnvelopeInteraction'
@@ -30,16 +30,6 @@ const Wedding = () => {
   const t = weddingTranslations[locale]
   const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef)
   const rsvp = useRsvpForm()
-
-  useEffect(() => {
-    document.documentElement.lang = locale
-    document.title = t.meta.title
-
-    const description = document.querySelector('meta[name="description"]')
-    if (description instanceof HTMLMetaElement) {
-      description.content = t.meta.description
-    }
-  }, [locale, t.meta.description, t.meta.title])
 
   return (
     <div

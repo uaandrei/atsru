@@ -1,11 +1,3 @@
-import { Header } from "../components/layout/Header";
-import { Footer } from "../components/layout/Footer";
-import { HeroSection } from "../components/sections/HeroSection";
-import { StatsSection } from "../components/sections/StatsSection";
-import { ServicesSection } from "../components/sections/ServicesSection";
-import { ProjectsSection } from "../components/sections/ProjectsSection";
-import { ContactSection } from "../components/sections/ContactSection";
-import { useLanguage } from "../i18n/useLanguage";
 import { siteTheme } from "../theme/siteTheme";
 
 export function HomePage() {

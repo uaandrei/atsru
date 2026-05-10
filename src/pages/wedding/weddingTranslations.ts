@@ -299,7 +299,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
         { value: "none", label: "Nem szükséges, megoldjuk mi." },
       ],
       accommodationInfo:
-        "Kérünk benneteket, vegyétek figyelembe, hogy Segesvár népszerű turisztikai célpont, és mivel kisváros, a szálláshelyek hamar betelnek. Érdemes időben foglalni.",
+        "Kérünk Benneteket, vegyétek figyelembe, hogy Segesvár népszerű turisztikai célpont, és mivel kisváros, a szálláshelyek hamar betelnek. Érdemes időben foglalni.",
       dietaryLabel: "Van bármilyen ételallergiátok vagy speciális étrendetek?",
       dietaryPlaceholder: "pl.: gluténmentes, vegetáriánus...",
       messageLabel: "Szeretnétek még valamit megosztani velünk?",

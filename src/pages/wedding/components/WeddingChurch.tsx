@@ -51,13 +51,13 @@ export function WeddingChurch({ t }: { t: WeddingTranslation["church"] }) {
               <p className="mt-3">{t.details}</p>
             </div>
             <p
-              className="mt-3 text-sm flex items-center gap-1"
+              className="mt-3 text-lg flex items-center gap-1"
               style={{
                 fontFamily: weddingFonts.label,
                 color: weddingColors.primary,
               }}
             >
-              <span className="material-symbols-outlined text-sm">info</span>
+              <span className="material-symbols-outlined text-lg">info</span>
               {t.notice}
             </p>
 

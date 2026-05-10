@@ -89,7 +89,7 @@ export function useEnvelopeInteraction(mainRef: React.RefObject<HTMLDivElement |
     if (envelopeOpen) return () => undefined
 
     const timeoutId = window.setTimeout(() => {
-      triggerOpenSequence()
+      //triggerOpenSequence()
     }, 2200)
 
     return () => window.clearTimeout(timeoutId)

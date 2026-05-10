@@ -203,7 +203,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     envelope: {
       detailsCta: "Kattintsatok a részletekért!",
       invitation: "Örömmel hívunk meg Benneteket az esküvőnkre",
-      datePlace: "2026 augusztus 8 · Segesvár",
+      datePlace: "2026. augusztus 8. · Segesvár",
       monogramAlt: "Zsófi és Andrei monogramja",
     },
     nav: {

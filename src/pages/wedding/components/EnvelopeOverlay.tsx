@@ -75,14 +75,14 @@ export function EnvelopeOverlay({
         {/* Letter preview — visible through the open top flap */}
         <div
           ref={letterRef}
-          className="overflow-hidden absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center sm:justify-center md:pt-0 pt-4 transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
+          className="overflow-hidden absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center sm:justify-center transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
           style={{
             backgroundImage: `url(${letterCover})`,
             backgroundSize: "100% 100%",
           }}
         >
           <p
-            className="md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mx-2 mb-2 md:mb-6 text-center"
+            className="pt-10 md:text-3xl text-lg uppercase tracking-[0.2em] text-stone-500 mx-2 mb-2 md:mb-6 text-center"
             style={{ fontFamily: weddingFonts.body }}
           >
             {t.invitation}

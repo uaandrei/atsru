@@ -263,7 +263,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       title: "Egyházi szertartás",
       imageAlt: "Az egyházi szertartás temploma",
       intro:
-        "Várunk Benneteket a segesvári Szent József római katolikus templomban az esküvői szertartásra.",
+        "Várunk Benneteket a segesvári Szent József Római Katolikus Templomban az esküvői szertartásra.",
       details:
         "A templom autóval nem megközelíthető, ezért kérjük, hagyjátok az autót a vár alatti parkolóban. A templomhoz vezető út macskaköves, és gyalog kb. 7-10 percet vesz igénybe, ezért érdemes kényelmes cipőben érkezni.",
       notice: "A templom autóval nem megközelíthető",

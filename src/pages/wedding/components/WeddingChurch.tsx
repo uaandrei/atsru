@@ -47,7 +47,7 @@ export function WeddingChurch({ t }: { t: WeddingTranslation['church'] }) {
             </p>
           
           <a
-            href="https://maps.app.goo.gl/Jd9L9hh3vQpcduYm6"
+            href="https://maps.app.goo.gl/q7PCfAySWYwEhPb1A"
             target="_blank"
             rel="noreferrer"
             className="mt-5 inline-flex items-center gap-2 rounded px-5 py-3 text-sm uppercase tracking-widest transition hover:opacity-90"

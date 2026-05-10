@@ -149,9 +149,9 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     church: {
       title: 'Cununia religioasă',
       imageAlt: 'Biserica pentru cununia religioasă',
-      intro: 'Vă așteptăm la biserică pentru slujba de cununie.',
+      intro: 'Vă așteptăm la Biserica Romano-Catolică Sfântul Iosif din Sighișoara pentru slujba de cununie.',
       details:
-        'Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis (doar pentru vehicule preautorizate), vă rugăm să lăsați mașina în parcarea de sub cetate.',
+        'Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis, vă rugăm să lăsați mașina în parcarea de sub cetate.',
       notice: 'Fără mașini pe piatră cubică',
       mapCta: 'Cum ajungeți?',
     },
@@ -178,7 +178,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       ],
       accommodationInfo:
         'Sighișoara este o destinație turistică populară și, fiind un oraș mic, locurile de cazare se ocupă rapid. Este recomandat să faceți rezervarea din timp.',
-      dietaryLabel: 'Alergii alimentare sau regim special?',
+      dietaryLabel: 'Aveți alergii alimentare sau regim special?',
       dietaryPlaceholder: 'ex: fără gluten, vegetarian...',
       messageLabel: 'Doriți să ne mai transmiteți ceva?',
       messagePlaceholder: 'Mesajul vostru...',

@@ -1,6 +1,5 @@
 import type { EnvelopeRefs, EnvelopeHandlers } from "./useEnvelopeInteraction";
 import { weddingFonts } from "./weddingTheme";
-import blazonSvg from "../blazon_vector_90.svg";
 import letterCover from "../letter_cover.png";
 import { Activity, useEffect } from "react";
 import type { WeddingTranslation } from "../weddingTranslations";
@@ -139,7 +138,7 @@ export function EnvelopeOverlay({
           >
             <div className="absolute inset-0 bg-linear-to-b from-[#dfc78c] to-[#dfc994] clip-top" />
             <p
-              className="absolute top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold md:text-3xl text-xl text-stone-600 text-center"
+              className="bg-white/50 p-2 rounded-2xl absolute top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold md:text-3xl text-xl text-[#81613a] text-center"
               style={{ fontFamily: weddingFonts.body }}
             >
               {recipient}
@@ -155,19 +154,12 @@ export function EnvelopeOverlay({
           {/* Wax seal — click or drag upward to open */}
           <div
             ref={sealRef}
-            className="select-none absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-champagne-light to-champagne rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
+            className="select-none absolute left-1/2 -translate-x-1/2 top-[55%] -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-champagne-light to-[#81613a] rounded-full shadow-[0_5px_15px_rgba(0,0,0,0.2)] flex items-center justify-center text-white cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 backface-hidden z-30 group"
             style={{ transform: "translateZ(1px)" }}
             onMouseDown={handleSealStart}
             onTouchStart={handleSealStart}
           >
             <div className="absolute inset-1 border border-white/30 rounded-full shadow-inner" />
-            <img
-              src={blazonSvg}
-              alt={t.monogramAlt}
-              draggable={false}
-              className="w-10 h-10 md:w-12 md:h-12 drop-shadow-md pointer-events-none select-none"
-              style={{ mixBlendMode: "multiply" }}
-            />
             {/* Pulsing ring to draw attention */}
             <div className="absolute inset-0 rounded-full bg-champagne animate-ping opacity-20 group-hover:hidden" />
           </div>

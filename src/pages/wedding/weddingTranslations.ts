@@ -266,7 +266,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
         "Várunk Benneteket a segesvári Szent József Római Katolikus Templomban az esküvői szertartásra.",
       details:
         "A templom autóval nem megközelíthető, ezért kérjük, hagyjátok az autót a vár alatti parkolóban. A templomhoz vezető út macskaköves, és gyalog kb. 7-10 percet vesz igénybe, ezért érdemes kényelmes cipőben érkezni.",
-      notice: "A templom autóval nem megközelíthető",
+      notice: "A templom autóval nem megközelíthető.",
       mapCta: "Útvonal a templomhoz",
     },
     rsvp: {

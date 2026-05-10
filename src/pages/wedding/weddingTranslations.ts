@@ -253,9 +253,9 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     church: {
       title: 'Egyházi szertartás',
       imageAlt: 'Az egyházi szertartás temploma',
-      intro: 'Várunk benneteket a templomban az esküvői szertartásra.',
+      intro: 'TODO: Várunk benneteket a templomban az esküvői szertartásra.',
       details:
-        'Kérjük, vegyétek figyelembe, hogy a megközelítés macskaköves úton történik, és a feljutás körülbelül 7-10 percet vesz igénybe, ezért kényelmes cipőt ajánlunk. Autóval behajtani nem lehet (csak előzetesen engedélyezett járművekkel), ezért kérjük, hagyjátok az autót a vár alatti parkolóban.',
+        'TODO: Kérjük, vegyétek figyelembe, hogy a megközelítés macskaköves úton történik, és a feljutás körülbelül 7-10 percet vesz igénybe, ezért kényelmes cipőt ajánlunk. Autóval behajtani nem lehet (csak előzetesen engedélyezett járművekkel), ezért kérjük, hagyjátok az autót a vár alatti parkolóban.',
       notice: 'Autóval nem lehet behajtani a macskaköves útra',
       mapCta: 'Hogyan tudnak eljutni?',
     },

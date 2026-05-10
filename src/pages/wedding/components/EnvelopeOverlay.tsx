@@ -75,7 +75,7 @@ export function EnvelopeOverlay({
         {/* Letter preview — visible through the open top flap */}
         <div
           ref={letterRef}
-          className="overflow-hidden absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center sm:justify-center transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
+          className="overflow-hidden absolute left-2 right-2 top-2 bottom-2 md:left-4 md:right-4 md:top-4 md:bottom-4 shadow-inner rounded-sm z-10 flex flex-col items-center transition-transform duration-800 ease-in-out bg-center bg-cover bg-no-repeat"
           style={{
             backgroundImage: `url(${letterCover})`,
             backgroundSize: "100% 100%",

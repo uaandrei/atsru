@@ -214,7 +214,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       contact: "Kapcsolat",
     },
     hero: {
-      date: "2026 augusztus 8 (szombat)",
+      date: "2026. augusztus 8. (szombat)",
       place: "Segesvár",
       welcomeTitle: "Üdvözlünk Benneteket az esküvői oldalunkon!",
       welcomeBody:
@@ -309,7 +309,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     },
     contact: {
       title: "Kapcsolat",
-      body: "Bármilyen kérdés esetén, keressetek bátran!",
+      body: "Bármilyen kérdés esetén keressetek bátran!",
     },
   },
 };

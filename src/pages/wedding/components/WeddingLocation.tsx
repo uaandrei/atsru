@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import { weddingFonts, weddingColors } from './weddingTheme'
-import dallasImg from "../dallasbarn.png"
-import dallasLakeImg from "../dallasbarn2.png"
-import dallasCar from "../dallasbarn3.png"
-import dallasTable from "../dallasbarn4.png"
-import type { WeddingTranslation } from '../weddingTranslations'
+import { useState } from "react";
+import { weddingFonts, weddingColors } from "./weddingTheme";
+import dallasImg from "../dallasbarn.png";
+import dallasLakeImg from "../dallasbarn2.png";
+import dallasCar from "../dallasbarn3.png";
+import dallasTable from "../dallasbarn4.png";
+import type { WeddingTranslation } from "../weddingTranslations";
 
-const venueImageSources = [dallasImg, dallasLakeImg, dallasCar, dallasTable]
+const venueImageSources = [dallasImg, dallasLakeImg, dallasCar, dallasTable];
 
 /** Locație — description of the venue with practical info */
-export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
-  const [venueImageIndex, setVenueImageIndex] = useState(0)
+export function WeddingStory({ t }: { t: WeddingTranslation["location"] }) {
+  const [venueImageIndex, setVenueImageIndex] = useState(0);
   const currentVenueImage = {
     src: venueImageSources[venueImageIndex],
     alt: t.imageAlts[venueImageIndex] ?? t.venueName,
-  }
+  };
 
   const showPreviousImage = () => {
-    setVenueImageIndex((currentIndex) => (currentIndex === 0 ? venueImageSources.length - 1 : currentIndex - 1))
-  }
+    setVenueImageIndex((currentIndex) =>
+      currentIndex === 0 ? venueImageSources.length - 1 : currentIndex - 1,
+    );
+  };
 
   const showNextImage = () => {
-    setVenueImageIndex((currentIndex) => (currentIndex + 1) % venueImageSources.length)
-  }
+    setVenueImageIndex(
+      (currentIndex) => (currentIndex + 1) % venueImageSources.length,
+    );
+  };
 
   return (
     <section
       className="py-8 px-6 border-y"
       id="location"
-      style={{ background: weddingColors.surfaceContainerLowest, borderColor: weddingColors.surfaceContainerLow }}
+      style={{
+        background: weddingColors.background,
+        borderColor: weddingColors.surfaceContainerLow,
+      }}
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Photo */}
@@ -43,9 +50,9 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
               type="button"
               className="grid size-11 place-items-center rounded-full transition hover:scale-105 focus:outline-none focus:ring-2"
               style={{
-                background: 'rgba(255, 252, 248, 0.88)',
+                background: "rgba(255, 252, 248, 0.88)",
                 color: weddingColors.primary,
-                boxShadow: '0 8px 24px rgba(54, 42, 31, 0.18)',
+                boxShadow: "0 8px 24px rgba(54, 42, 31, 0.18)",
               }}
               onClick={showPreviousImage}
               aria-label={t.previousImage}
@@ -56,9 +63,9 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
               type="button"
               className="grid size-11 place-items-center rounded-full transition hover:scale-105 focus:outline-none focus:ring-2"
               style={{
-                background: 'rgba(255, 252, 248, 0.88)',
+                background: "rgba(255, 252, 248, 0.88)",
                 color: weddingColors.primary,
-                boxShadow: '0 8px 24px rgba(54, 42, 31, 0.18)',
+                boxShadow: "0 8px 24px rgba(54, 42, 31, 0.18)",
               }}
               onClick={showNextImage}
               aria-label={t.nextImage}
@@ -72,7 +79,10 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
                 key={src}
                 className="size-2 rounded-full"
                 style={{
-                  background: index === venueImageIndex ? weddingColors.primary : 'rgba(255, 252, 248, 0.75)',
+                  background:
+                    index === venueImageIndex
+                      ? weddingColors.primary
+                      : "rgba(255, 252, 248, 0.75)",
                 }}
               />
             ))}
@@ -83,20 +93,32 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
         <div className="flex flex-col gap-8">
           <h2
             className="mx-auto text-6xl italic"
-            style={{ fontFamily: weddingFonts.caveat, color: weddingColors.primary }}
+            style={{
+              fontFamily: weddingFonts.caveat,
+              color: weddingColors.primary,
+            }}
           >
             {t.title}
           </h2>
-          <div className="w-24 h-px mx-auto" style={{ background: weddingColors.primaryContainer }} />
+          <div
+            className="w-24 h-px mx-auto"
+            style={{ background: weddingColors.primaryContainer }}
+          />
           <p
             className="text-2xl md:text-3xl"
-            style={{ fontFamily: weddingFonts.headline, color: weddingColors.primary }}
+            style={{
+              fontFamily: weddingFonts.headline,
+              color: weddingColors.primary,
+            }}
           >
             {t.venueName}
           </p>
           <div
             className="space-y-5 leading-relaxed text-xl"
-            style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}
+            style={{
+              fontFamily: weddingFonts.body,
+              color: weddingColors.onSurfaceVariant,
+            }}
           >
             <p>{t.intro}</p>
             <p>{t.description}</p>
@@ -105,11 +127,17 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
           {/* Practical tips */}
           <div
             className="space-y-3 p-6 rounded border"
-            style={{ background: weddingColors.surfaceContainerLow, borderColor: weddingColors.surfaceContainer }}
+            style={{
+              background: weddingColors.surfaceContainerLow,
+              borderColor: weddingColors.surfaceContainer,
+            }}
           >
             <h3
               className="text-base uppercase tracking-widest mb-4"
-              style={{ fontFamily: weddingFonts.label, color: weddingColors.primary }}
+              style={{
+                fontFamily: weddingFonts.label,
+                color: weddingColors.primary,
+              }}
             >
               {t.tipsTitle}
             </h3>
@@ -121,7 +149,12 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
                 >
                   {icon}
                 </span>
-                <p style={{ fontFamily: weddingFonts.body, color: weddingColors.onSurfaceVariant }}>
+                <p
+                  style={{
+                    fontFamily: weddingFonts.body,
+                    color: weddingColors.onSurfaceVariant,
+                  }}
+                >
                   {text}
                 </p>
               </div>
@@ -130,13 +163,6 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
         </div>
         {/* Map */}
         <div className="md:col-span-2">
-          <p
-            className="mb-3 flex items-center gap-2"
-            style={{ fontFamily: weddingFonts.label, color: weddingColors.onSurfaceVariant }}
-          >
-            <span className="material-symbols-outlined text-base" style={{ color: weddingColors.primaryContainer }}>pin_drop</span>
-            {t.mapLabel}
-          </p>
           <a
             href="https://maps.app.goo.gl/oBDBPGDyoP2JpWtd9"
             target="_blank"
@@ -148,20 +174,13 @@ export function WeddingStory({ t }: { t: WeddingTranslation['location'] }) {
               fontFamily: weddingFonts.label,
             }}
           >
-            <span className="material-symbols-outlined text-base">directions</span>
+            <span className="material-symbols-outlined text-base">
+              directions
+            </span>
             {t.mapCta}
           </a>
-          {/* <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4563.435634453744!2d24.725900713123785!3d46.23788117097673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474b9fd669657fe9%3A0x2477d062b435dfc0!2sThe%20Dallas%20Barn!5e1!3m2!1sen!2sro!4v1776789017586!5m2!1sen!2sro"
-            className="w-full h-80 md:h-96 rounded"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="The Dallas Barn pe Google Maps"
-          /> */}
         </div>
       </div>
     </section>
-  )
+  );
 }

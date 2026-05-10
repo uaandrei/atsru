@@ -1,17 +1,17 @@
-import { useRef } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { weddingColors } from './components/weddingTheme'
-import { useEnvelopeInteraction } from './components/useEnvelopeInteraction'
-import { useRsvpForm } from './components/useRsvpForm'
-import { EnvelopeOverlay } from './components/EnvelopeOverlay'
-import { WeddingNav } from './components/WeddingNav'
-import { WeddingHero } from './components/WeddingHero'
-import { WeddingStory } from './components/WeddingLocation'
-import { WeddingChurch } from './components/WeddingChurch'
-import { WeddingDetails } from './components/WeddingSchedule'
-import { WeddingRsvp } from './components/WeddingRsvp'
-import { WeddingContact } from './components/WeddingContact'
-import { getWeddingLocale, weddingTranslations } from './weddingTranslations'
+import { useRef } from "react";
+import { useSearchParams } from "react-router-dom";
+import { weddingColors } from "./components/weddingTheme";
+import { useEnvelopeInteraction } from "./components/useEnvelopeInteraction";
+import { useRsvpForm } from "./components/useRsvpForm";
+import { EnvelopeOverlay } from "./components/EnvelopeOverlay";
+import { WeddingNav } from "./components/WeddingNav";
+import { WeddingHero } from "./components/WeddingHero";
+import { WeddingStory } from "./components/WeddingLocation";
+import { WeddingChurch } from "./components/WeddingChurch";
+import { WeddingDetails } from "./components/WeddingSchedule";
+import { WeddingRsvp } from "./components/WeddingRsvp";
+import { WeddingContact } from "./components/WeddingContact";
+import { getWeddingLocale, weddingTranslations } from "./weddingTranslations";
 
 /**
  * Wedding RSVP page with an interactive envelope intro animation.
@@ -24,19 +24,23 @@ import { getWeddingLocale, weddingTranslations } from './weddingTranslations'
  * 5. RSVP submissions are stored in Firebase Firestore
  */
 const Wedding = () => {
-  const mainRef = useRef<HTMLDivElement>(null)
-  const [searchParams] = useSearchParams()
-  const locale = getWeddingLocale(searchParams)
-  const t = weddingTranslations[locale]
-  const recipient = searchParams.get('recipient') ?? ''
-  const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef)
-  const rsvp = useRsvpForm(recipient)
+  const mainRef = useRef<HTMLDivElement>(null);
+  const [searchParams] = useSearchParams();
+  const locale = getWeddingLocale(searchParams);
+  const t = weddingTranslations[locale];
+  const recipient = searchParams.get("recipient") ?? "";
+  const { envelopeRemoved, refs, handlers, envelopeOpen } =
+    useEnvelopeInteraction(mainRef);
+  const rsvp = useRsvpForm(recipient);
 
   return (
     <div
       className="min-h-screen"
       lang={locale}
-      style={{ background: weddingColors.background, color: weddingColors.onBackground }}
+      style={{
+        background: weddingColors.background,
+        color: weddingColors.onBackground,
+      }}
     >
       {/* Scoped styles: override global lowercase, ghost input, clip-paths for envelope flaps */}
       <style>{`
@@ -65,7 +69,13 @@ const Wedding = () => {
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}
       {!envelopeRemoved && (
-        <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} t={t.envelope} recipient={recipient} />
+        <EnvelopeOverlay
+          refs={refs}
+          handlers={handlers}
+          envelopeOpen={envelopeOpen}
+          t={t.envelope}
+          recipient={recipient}
+        />
       )}
 
       {/* Main wedding website — hidden until envelope opens, then fades in */}
@@ -77,14 +87,14 @@ const Wedding = () => {
         <main>
           <WeddingHero t={t.hero} />
           <WeddingDetails t={t.schedule} />
-          <WeddingStory t={t.location} />
           <WeddingChurch t={t.church} />
+          <WeddingStory t={t.location} />
           <WeddingRsvp {...rsvp} t={t.rsvp} />
           <WeddingContact t={t.contact} />
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Wedding
+export default Wedding;

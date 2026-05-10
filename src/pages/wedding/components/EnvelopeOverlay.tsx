@@ -138,7 +138,7 @@ export function EnvelopeOverlay({
           >
             <div className="absolute inset-0 bg-linear-to-b from-[#dfc78c] to-[#dfc994] clip-top" />
             <p
-              className="bg-white/50 p-2 rounded-2xl absolute top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold md:text-3xl text-xl text-[#81613a] text-center"
+              className="bg-white/50 p-1 rounded-2xl absolute top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold md:text-3xl text-lg text-[#81613a] text-center"
               style={{ fontFamily: weddingFonts.body }}
             >
               {recipient}

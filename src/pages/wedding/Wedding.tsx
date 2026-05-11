@@ -29,8 +29,7 @@ const Wedding = () => {
   const locale = getWeddingLocale(searchParams);
   const t = weddingTranslations[locale];
   const recipient = searchParams.get("recipient") ?? "";
-  const { envelopeRemoved, refs, handlers, envelopeOpen } =
-    useEnvelopeInteraction(mainRef);
+  const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef);
   const rsvp = useRsvpForm(recipient);
 
   return (

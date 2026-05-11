@@ -32,6 +32,20 @@ const Wedding = () => {
   const { envelopeRemoved, refs, handlers, envelopeOpen } = useEnvelopeInteraction(mainRef);
   const rsvp = useRsvpForm(recipient);
 
+  if (recipient.trim() === "") {
+    return (
+      <div
+        className="wedding-page-root min-h-screen flex flex-col items-center justify-center text-center"
+        style={{
+          background: weddingColors.background,
+          color: weddingColors.onBackground,
+        }}
+      >
+        <h1 className="text-8xl md:text-9xl font-extrabold text-champagne mb-4">404</h1>
+      </div>
+    );
+  }
+
   return (
     <div
       className="wedding-page-root min-h-screen"
@@ -85,15 +99,7 @@ const Wedding = () => {
       `}</style>
 
       {/* Interactive envelope intro — removed from DOM after animation completes */}
-      {!envelopeRemoved && (
-        <EnvelopeOverlay
-          refs={refs}
-          handlers={handlers}
-          envelopeOpen={envelopeOpen}
-          t={t.envelope}
-          recipient={recipient}
-        />
-      )}
+      {!envelopeRemoved && <EnvelopeOverlay refs={refs} handlers={handlers} envelopeOpen={envelopeOpen} t={t.envelope} recipient={recipient} />}
 
       {/* Main wedding website — hidden until envelope opens, then fades in */}
       <div

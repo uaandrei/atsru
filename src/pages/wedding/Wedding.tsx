@@ -34,7 +34,7 @@ const Wedding = () => {
 
   return (
     <div
-      className="min-h-screen"
+      className="wedding-page-root min-h-screen"
       lang={locale}
       style={{
         background: weddingColors.background,
@@ -45,13 +45,31 @@ const Wedding = () => {
       <style>{`
         .wedding-page * { text-transform: none; }
         .wedding-page section[id] { scroll-margin-top: 5rem; }
+        .wedding-page-root { isolation: isolate; }
+        .wedding-main-content { position: relative; z-index: 0; }
+        .wedding-envelope-overlay {
+          z-index: 1000;
+          min-height: 100vh;
+          min-height: 100svh;
+          isolation: isolate;
+          overflow: hidden;
+          will-change: opacity, transform;
+        }
+        .wedding-envelope-stage { isolation: isolate; z-index: 1; }
+        .wedding-envelope-back { z-index: 0; }
+        .wedding-envelope-letter { z-index: 10; }
+        .wedding-envelope-side-flap { z-index: 20; }
+        .wedding-envelope-bottom-flap { z-index: 21; }
+        .wedding-envelope-top-flap { z-index: 25; }
+        .wedding-envelope-seal { z-index: 30; }
+        .wedding-envelope-cta-layer { z-index: 40; }
         .serif-italic { font-family: 'Bodoni Moda', serif; font-style: italic; }
-        .clip-top { clip-path: polygon(0 0, 100% 0, 50% 55%); }
-        .clip-bottom { clip-path: polygon(0 100%, 100% 100%, 50% 45%); }
-        .clip-left { clip-path: polygon(0 0, 60% 50%, 0 100%); }
-        .clip-right { clip-path: polygon(100% 0, 40% 50%, 100% 100%); }
-        .preserve-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
+        .clip-top { -webkit-clip-path: polygon(0 0, 100% 0, 50% 55%); clip-path: polygon(0 0, 100% 0, 50% 55%); }
+        .clip-bottom { -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 45%); clip-path: polygon(0 100%, 100% 100%, 50% 45%); }
+        .clip-left { -webkit-clip-path: polygon(0 0, 60% 50%, 0 100%); clip-path: polygon(0 0, 60% 50%, 0 100%); }
+        .clip-right { -webkit-clip-path: polygon(100% 0, 40% 50%, 100% 100%); clip-path: polygon(100% 0, 40% 50%, 100% 100%); }
+        .preserve-3d { -webkit-transform-style: preserve-3d; transform-style: preserve-3d; }
+        .backface-hidden { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
         .ghost-border-input {
           border: none;
           border-bottom: 1px solid rgba(211, 196, 183, 0.4);
@@ -80,7 +98,7 @@ const Wedding = () => {
       {/* Main wedding website — hidden until envelope opens, then fades in */}
       <div
         ref={mainRef}
-        className="wedding-page opacity-0 translate-y-12 scale-95 pointer-events-none transition-all duration-1000 ease-out origin-top"
+        className="wedding-page wedding-main-content opacity-0 translate-y-12 scale-95 pointer-events-none transition-all duration-1000 ease-out origin-top"
       >
         <WeddingNav t={t.nav} />
         <main>

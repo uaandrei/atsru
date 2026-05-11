@@ -280,7 +280,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       thankYouBodyDeclining: "Visszajelzéseteket rögzítettük.",
       attendanceQuestion: "Velünk ünnepeltek?",
       attending: "Igen",
-      declining: "Sajnos nem tudunk ott lenni",
+      declining: "Sajnos, nem tudunk ott lenni",
       namesLabel: "Hányan érkeztek?",
       namesHelp:
         "Kérjük, tüntessétek fel a neveiteket, és ha gyerekkel/gyerekekkel jösztök, az életkorukat is.",

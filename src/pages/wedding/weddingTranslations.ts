@@ -150,7 +150,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       intro: "Vă așteptăm la Biserica Romano-Catolică Sfântul Iosif din Sighișoara pentru slujba de cununie.",
       details:
         "Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis. Vă rugăm să lăsați mașina în parcarea de sub cetate.",
-      notice: "Accesul cu mașina nu este permis",
+      notice: "Accesul cu mașina nu este permis.",
       mapCta: "Cum ajungeți?",
     },
     rsvp: {

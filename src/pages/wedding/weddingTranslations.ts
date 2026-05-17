@@ -87,7 +87,7 @@ export type WeddingTranslation = {
 export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
   ro: {
     envelope: {
-      detailsCta: "Apăsați pentru detalii",
+      detailsCta: "Apăsați pentru detalii!",
       invitation: "Vă invităm cu drag la nunta noastră",
       datePlace: "8 august 2026 · Sighișoara",
       monogramAlt: "Monograma Zsófi & Andrei",
@@ -124,8 +124,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       nextImage: "Imaginea următoare",
       title: "Locația",
       venueName: "The Dallas Barn",
-      intro:
-        "Iubim natura, dansul, buna dispoziție și momentele petrecute împreună cu voi.",
+      intro: "Iubim natura, dansul, buna dispoziție și momentele petrecute împreună cu voi.",
       description:
         "De aceea, pentru a ne sărbători nunta, am ales un loc relaxant, aproape de natură, pe malul unui lac. Nu ne-am imaginat o nuntă clasică, ci o petrecere pe cinste, cu muzica noastră preferată și cu oamenii care ne sunt cei mai dragi.",
       tipsTitle: "De reținut",
@@ -148,32 +147,27 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     church: {
       title: "Cununia religioasă",
       imageAlt: "Biserica pentru cununia religioasă",
-      intro:
-        "Vă așteptăm la Biserica Romano-Catolică Sfântul Iosif din Sighișoara pentru slujba de cununie.",
+      intro: "Vă așteptăm la Biserica Romano-Catolică Sfântul Iosif din Sighișoara pentru slujba de cununie.",
       details:
-        "Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis, vă rugăm să lăsați mașina în parcarea de sub cetate.",
-      notice: "Fără mașini pe piatră cubică",
+        "Vă rugăm să aveți în vedere că accesul se face pe piatră cubică și urcușul durează aproximativ 7-10 minute, așa că vă recomandăm încălțăminte comodă. De asemenea, accesul cu mașina nu este permis. Vă rugăm să lăsați mașina în parcarea de sub cetate.",
+      notice: "Accesul cu mașina nu este permis",
       mapCta: "Cum ajungeți?",
     },
     rsvp: {
       title: "Confirmați participarea",
-      deadlinePrefix:
-        "Vă rugăm să ne confirmați participarea cel târziu până la",
+      deadlinePrefix: "Vă rugăm să ne confirmați participarea cel târziu până la",
       deadlineDate: "13 iulie",
       deadlineSuffix: ".",
       thankYouTitle: "Mulțumim!",
-      thankYouBody:
-        "Răspunsul vostru a fost înregistrat. Abia așteptăm să sărbătorim împreună!",
+      thankYouBody: "Răspunsul vostru a fost înregistrat. Abia așteptăm să sărbătorim împreună!",
       thankYouBodyDeclining: "Răspunsul vostru a fost înregistrat.",
       attendanceQuestion: "Veți sărbători alături de noi?",
       attending: "Da",
-      declining: "Din păcate nu putem fi prezenți",
+      declining: "Din păcate, nu putem fi prezenți",
       namesLabel: "Câte persoane veniți?",
-      namesHelp:
-        "Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.",
+      namesHelp: "Vă rugăm să ne comunicați numele voastre, iar dacă veniți cu copil/copii, și vârsta acestuia/acestora.",
       namesPlaceholder: "Ex: Ion Ionescu, Maria Ionescu, Sofia (5 ani)",
-      accommodationQuestion:
-        "Doriți să vă rezervăm cazare în Sighișoara? (Nu avem posibilitatea de cazare la locația evenimentului)",
+      accommodationQuestion: "Doriți să vă rezervăm cazare în Sighișoara? (Nu avem posibilitatea de cazare la locația evenimentului)",
       accommodationOptions: [
         {
           value: "sat-sun",
@@ -238,8 +232,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       nextImage: "Következő kép",
       title: "Helyszín",
       venueName: "The Dallas Barn",
-      intro:
-        "Szeretjük a természetet, táncot, jó hangulatot és együtt lenni veletek.",
+      intro: "Szeretjük a természetet, táncot, jó hangulatot és együtt lenni veletek.",
       description:
         "Ezért az esküvőnk megünnepléséhez egy laza, természetközeli helyet választottunk a tó partján. Nem egy klasszikus esküvőt álmodtunk meg magunknak, hanem egy fergeteges bulit a kedvenc zenéinkkel és a számunkra legkedvesebb emberekkel.",
       tipsTitle: "Fontos tudnivalók",
@@ -262,8 +255,7 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
     church: {
       title: "Egyházi szertartás",
       imageAlt: "Az egyházi szertartás temploma",
-      intro:
-        "Várunk Benneteket a segesvári Szent József Római Katolikus Templomban az esküvői szertartásra.",
+      intro: "Várunk Benneteket a segesvári Szent József Római Katolikus Templomban az esküvői szertartásra.",
       details:
         "A templom autóval nem megközelíthető, ezért kérjük, hagyjátok az autót a vár alatti parkolóban. A templomhoz vezető út macskaköves, és gyalog kb. 7-10 percet vesz igénybe, ezért érdemes kényelmes cipőben érkezni.",
       notice: "A templom autóval nem megközelíthető.",
@@ -275,18 +267,15 @@ export const weddingTranslations: Record<WeddingLocale, WeddingTranslation> = {
       deadlineDate: "július 13-ig",
       deadlineSuffix: ".",
       thankYouTitle: "Köszönjük!",
-      thankYouBody:
-        "Visszajelzéseteket rögzítettük. Alig várjuk, hogy együtt ünnepeljünk!",
+      thankYouBody: "Visszajelzéseteket rögzítettük. Alig várjuk, hogy együtt ünnepeljünk!",
       thankYouBodyDeclining: "Visszajelzéseteket rögzítettük.",
       attendanceQuestion: "Velünk ünnepeltek?",
       attending: "Igen",
       declining: "Sajnos, nem tudunk ott lenni",
       namesLabel: "Hányan érkeztek?",
-      namesHelp:
-        "Kérjük, tüntessétek fel a neveiteket, és ha gyerekkel/gyerekekkel jösztök, az életkorukat is.",
+      namesHelp: "Kérjük, tüntessétek fel a neveiteket, és ha gyerekkel/gyerekekkel jösztök, az életkorukat is.",
       namesPlaceholder: "Pl.: Kovács János, Kovács Mária, Júlia (5 éves)",
-      accommodationQuestion:
-        "Szeretnétek, hogy foglaljunk nektek szállást Segesváron? (A rendezvény helyszínén nincs szálláslehetőség)",
+      accommodationQuestion: "Szeretnétek, hogy foglaljunk nektek szállást Segesváron? (A rendezvény helyszínén nincs szálláslehetőség)",
       accommodationOptions: [
         {
           value: "sat-sun",

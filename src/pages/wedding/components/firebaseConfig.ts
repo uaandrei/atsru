@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJuHuhEo9LQcy-4K5Bdsap-Is8EAjilCg",
@@ -15,3 +16,6 @@ const app = initializeApp(firebaseConfig)
 
 /** Firestore database instance for the wedding RSVP collection */
 export const db = getFirestore(app)
+
+/** Cloud Storage instance — holds guest photo uploads for /wedding-pictures */
+export const storage = getStorage(app)

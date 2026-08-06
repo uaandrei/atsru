@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Guest photo uploads from /wedding-pictures — write-only for guests,
+    // one image at a time, nothing is ever listed or read back by the page.
+    match /wedding-pictures/{picture} {
+      allow create: if request.resource.size < 25 * 1024 * 1024
+                    && request.resource.contentType.matches('image/.*'); // Anonymous guests may add photos
+      allow read, update, delete: if request.auth != null; // Only authenticated users can browse, replace or remove them
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null; // rest of the bucket denied for anonymous users
+    }
+
+  }
+}

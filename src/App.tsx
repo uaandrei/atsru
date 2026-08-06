@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { LanguageProvider } from './i18n/LanguageProvider'
 import { HomePage } from './pages/HomePage'
 import { WeddingPage } from './pages/wedding'
+import { WeddingPicturesPage } from './pages/wedding-pictures'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           }
         />
         <Route path="/wedding" element={<WeddingPage />} />
+        <Route path="/wedding-pictures" element={<WeddingPicturesPage />} />
       </Routes>
     </BrowserRouter>
   )

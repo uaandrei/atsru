@@ -2,13 +2,15 @@
 
 Marketing site for atsru. Plain HTML, CSS and JavaScript. There's no framework, build step or runtime dependency.
 
+Requires [Bun](https://bun.sh).
+
 ```bash
-npm run serve        # dev server with live reload on http://localhost:5173
-npm run serve:host   # same, reachable from your phone on the local network
-npm run deploy       # firebase deploy --only hosting
+bun run serve        # dev server with live reload on http://localhost:5173
+bun run serve:host   # same, reachable from your phone on the local network
+bun run deploy       # firebase deploy --only hosting
 ```
 
-`bun run <script>` works the same way. Deploying needs the Firebase CLI (`npm i -g firebase-tools`) and `firebase login`.
+Deploying needs the Firebase CLI (`bun add -g firebase-tools`) and `firebase login`.
 
 ## Layout
 

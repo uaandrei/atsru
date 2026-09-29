@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "serve",
-      "runtimeExecutable": "node",
+      "runtimeExecutable": "bun",
       "runtimeArgs": ["scripts/serve.js", "--port", "5173"],
       "port": 5173
     }

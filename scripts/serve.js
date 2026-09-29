@@ -1,9 +1,9 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Zero-dependency dev server for ./public with live reload.
 // - HTML/JS/asset changes reload the page.
 // - CSS changes are hot-swapped without a reload (scroll position is kept).
 //
-// Usage: node scripts/serve.js [--port 5173] [--host]
+// Usage: bun scripts/serve.js [--port 5173] [--host]
 //   --host   listen on all interfaces so you can open the site from your phone
 
 import { createServer } from "node:http";

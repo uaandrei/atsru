@@ -1,0 +1,11 @@
+{
+  "name": "atsru",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "node scripts/serve.js",
+    "serve:host": "node scripts/serve.js --host",
+    "deploy": "firebase deploy --only hosting"
+  }
+}

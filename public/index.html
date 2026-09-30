@@ -13,14 +13,46 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="atsru" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content="atsru — Web and mobile software, built end to end" />
     <meta
       property="og:description"
       content="We design and build web apps, mobile apps and the backends behind them."
     />
     <meta property="og:url" content="https://atsru.ro/" />
-    <meta property="og:image" content="https://atsru.ro/icon-512.png" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://atsru.ro/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="atsru — Web and mobile software, built end to end. React, Flutter, .NET, Firebase." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://atsru.ro/#organization",
+            "name": "atsru",
+            "url": "https://atsru.ro/",
+            "logo": "https://atsru.ro/icon-512.png",
+            "email": "ro.atsru@gmail.com",
+            "description": "atsru designs and builds web apps, mobile apps and the backends behind them.",
+            "areaServed": { "@type": "Place", "name": "European Union" },
+            "knowsAbout": ["Web application development", "Mobile app development", "React", "Flutter", ".NET", "Firebase"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://atsru.ro/#website",
+            "url": "https://atsru.ro/",
+            "name": "atsru",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://atsru.ro/#organization" }
+          }
+        ]
+      }
+    </script>
 
     <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -123,7 +155,7 @@
             <li class="card">
               <a href="https://essentum-rufeea.ro/" target="_blank" rel="noopener">
                 <div class="card__media">
-                  <img src="/img/essentum.webp" alt="" width="252" height="247" loading="lazy" decoding="async" />
+                  <img src="/img/essentum.webp" alt="Essentum Rufeea website" width="252" height="247" loading="lazy" decoding="async" />
                 </div>
                 <h3>Essentum Rufeea <span class="arrow" aria-hidden="true">↗</span></h3>
                 <p>Brand site for a Romanian laundry fragrance company, with rich visuals and product storytelling.</p>
@@ -132,7 +164,7 @@
             <li class="card">
               <a href="https://rcpartners.ro/" target="_blank" rel="noopener">
                 <div class="card__media">
-                  <img src="/img/rcpartners.webp" alt="" width="278" height="207" loading="lazy" decoding="async" />
+                  <img src="/img/rcpartners.webp" alt="RC Partners website" width="278" height="207" loading="lazy" decoding="async" />
                 </div>
                 <h3>RC Partners <span class="arrow" aria-hidden="true">↗</span></h3>
                 <p>Corporate website for a law firm specialised in mergers and acquisitions.</p>
@@ -141,7 +173,7 @@
             <li class="card">
               <a href="https://minded-counsels.ro/" target="_blank" rel="noopener">
                 <div class="card__media">
-                  <img src="/img/minded.webp" alt="" width="290" height="152" loading="lazy" decoding="async" />
+                  <img src="/img/minded.webp" alt="Minded Counsels website" width="290" height="152" loading="lazy" decoding="async" />
                 </div>
                 <h3>Minded Counsels <span class="arrow" aria-hidden="true">↗</span></h3>
                 <p>Site for a boutique IP law firm with offices in Bucharest and Târgu Mureș.</p>

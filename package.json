@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "bun scripts/serve.js",
     "serve:host": "bun scripts/serve.js --host",
+    "og-image": "bun scripts/og-image.js",
     "deploy": "firebase deploy --only hosting"
   }
 }

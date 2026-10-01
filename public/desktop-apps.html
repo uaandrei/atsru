@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Web, Mobile &amp; Desktop App Development in the EU — atsru</title>
+    <title>WPF, WinForms &amp; Avalonia Desktop App Development — atsru</title>
     <meta
       name="description"
-      content="atsru builds web, mobile and desktop apps and the backends behind them with React, Flutter, .NET and Firebase. Fixed-price projects across the EU."
+      content="We build and modernise .NET desktop apps: WPF and WinForms for Windows, Avalonia for Windows, macOS and Linux. Fixed-price projects across the EU."
     />
     <meta name="theme-color" content="#0B0B0C" />
-    <link rel="canonical" href="https://atsru.ro/" />
+    <link rel="canonical" href="https://atsru.ro/desktop-apps" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="atsru" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="atsru — Web, mobile and desktop software, built end to end" />
+    <meta property="og:title" content="Desktop apps for Windows, macOS and Linux — atsru" />
     <meta
       property="og:description"
-      content="We design and build web, mobile and desktop apps and the backends behind them, for businesses across the EU."
+      content="New .NET desktop apps and modernisation of existing ones: WPF, WinForms and Avalonia."
     />
-    <meta property="og:url" content="https://atsru.ro/" />
+    <meta property="og:url" content="https://atsru.ro/desktop-apps" />
     <meta property="og:image" content="https://atsru.ro/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -32,25 +32,21 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
-            "@id": "https://atsru.ro/#organization",
-            "name": "atsru",
-            "url": "https://atsru.ro/",
-            "logo": "https://atsru.ro/icon-512.png",
-            "email": "ro.atsru@gmail.com",
-            "address": { "@type": "PostalAddress", "addressCountry": "RO" },
-            "knowsLanguage": ["en", "ro"],
-            "description": "atsru designs and builds web, mobile and desktop apps and the backends behind them.",
-            "areaServed": { "@type": "Place", "name": "European Union" },
-            "knowsAbout": ["Website development", "Search engine optimisation", "Web application development", "Mobile app development", "Desktop app development", "Prototyping", "React", "Flutter", ".NET", "WPF", "WinForms", "Avalonia", "Firebase"]
+            "@type": "Service",
+            "@id": "https://atsru.ro/desktop-apps#service",
+            "name": "Desktop app development",
+            "serviceType": "Desktop application development",
+            "description": "New .NET desktop apps and modernisation of existing ones: WPF and WinForms for Windows, Avalonia for Windows, macOS and Linux.",
+            "url": "https://atsru.ro/desktop-apps",
+            "provider": { "@type": "Organization", "@id": "https://atsru.ro/#organization", "name": "atsru", "url": "https://atsru.ro/" },
+            "areaServed": { "@type": "Place", "name": "European Union" }
           },
           {
-            "@type": "WebSite",
-            "@id": "https://atsru.ro/#website",
-            "url": "https://atsru.ro/",
-            "name": "atsru",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://atsru.ro/#organization" }
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atsru.ro/" },
+              { "@type": "ListItem", "position": 2, "name": "Desktop apps", "item": "https://atsru.ro/desktop-apps" }
+            ]
           }
         ]
       }
@@ -87,10 +83,10 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <main id="main">
-      <section class="hero" id="top">
+      <section class="hero hero--page" id="top">
         <div class="hero__content">
           <header class="site-header">
-            <a class="logo" href="#top" aria-label="atsru — home">
+            <a class="logo" href="/" aria-label="atsru — home">
               <svg viewBox="0 0 309.9 96" fill="#0B0B0C" aria-hidden="true">
                 <rect width="96" height="96" rx="24" fill="#0B0B0C" />
                 <use href="#mark" width="96" height="96" color="#C4F042" />
@@ -105,106 +101,124 @@
           </header>
 
           <div class="hero__copy">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Desktop apps</li>
+              </ol>
+            </nav>
             <h1 class="hero__title">
-              <span>Web, mobile</span>
-              <span>and desktop</span>
-              <span>software, built</span>
-              <span>end to end.</span>
+              <span>Desktop apps</span>
+              <span>for Windows,</span>
+              <span>macOS and Linux.</span>
             </h1>
             <p class="hero__lede">
-              We design and build web, mobile and desktop apps and the backends behind them, for businesses across the EU.
+              We build new .NET desktop applications and modernise existing ones: WPF and WinForms for Windows, Avalonia
+              when your app needs to run everywhere.
             </p>
-            <p class="hero__prompt">Have an idea you're ready to bring to life?</p>
             <div class="hero__actions">
               <a class="btn btn--dark" href="#contact">Start a project</a>
-              <a class="btn btn--ghost" href="#process">How we work</a>
+              <a class="btn btn--ghost" href="#modernise">Modernise an app</a>
             </div>
           </div>
 
           <ul class="hero__tags" aria-label="What we do">
-            <li>Web apps</li>
-            <li>Mobile apps</li>
-            <li>Desktop apps</li>
-            <li>Backend &amp; cloud</li>
+            <li>New apps</li>
+            <li>Modernisation</li>
+            <li>Maintenance</li>
           </ul>
         </div>
 
         <div class="hero__panel">
-          <p class="hero__stack">React · Flutter · .NET · Firebase</p>
+          <p class="hero__stack">WPF · WinForms · Avalonia · .NET</p>
           <svg class="hero__mark" viewBox="0 0 96 96" aria-hidden="true"><use href="#mark" /></svg>
         </div>
       </section>
 
-      <section class="section" id="services" aria-labelledby="services-title">
+      <section class="section" id="build" aria-labelledby="build-title">
         <div class="container">
-          <h2 class="section__title" id="services-title">Services</h2>
+          <h2 class="section__title" id="build-title">What we build</h2>
           <ul class="rows">
             <li class="row">
-              <h3>Websites</h3>
+              <h3>Line-of-business apps</h3>
+              <p>Order management, scheduling, reporting and the other tools your team works in all day.</p>
+            </li>
+            <li class="row">
+              <h3>Internal tools</h3>
+              <p>Admin panels, data entry and back-office apps that replace spreadsheets and manual work.</p>
+            </li>
+            <li class="row">
+              <h3>Cross-platform apps</h3>
+              <p>One Avalonia codebase that runs on Windows, macOS and Linux, with the same interface everywhere.</p>
+            </li>
+            <li class="row">
+              <h3>Connected apps</h3>
               <p>
-                Fast presentation websites for your business, built with SEO in mind, and apps that run in the browser,
-                from dashboards to full products.
+                Desktop apps that talk to your APIs, databases and cloud services, with a .NET backend they can share
+                with your web and mobile apps.
               </p>
             </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="modernise" aria-labelledby="modernise-title">
+        <div class="container">
+          <h2 class="section__title" id="modernise-title">Modernising existing apps</h2>
+          <ul class="rows">
             <li class="row">
-              <h3>Mobile apps</h3>
-              <p>iOS and Android apps from one Flutter codebase, shipped to the App Store and Google Play.</p>
+              <h3>WinForms to WPF</h3>
+              <p>A modern, maintainable interface for Windows apps that have outgrown WinForms.</p>
             </li>
             <li class="row">
-              <h3><a href="/desktop-apps">Desktop apps <span class="row__arrow" aria-hidden="true">→</span></a></h3>
-              <p>WPF and WinForms apps for Windows, Avalonia for macOS and Linux, and modernisation of existing ones.</p>
+              <h3>WinForms or WPF to Avalonia</h3>
+              <p>Bring an existing Windows app to macOS and Linux, keeping as much of the business logic as possible.</p>
             </li>
             <li class="row">
-              <h3>Backend &amp; cloud</h3>
-              <p>.NET APIs, Firebase, integrations and reliable deployments.</p>
+              <h3>.NET Framework to modern .NET</h3>
+              <p>Move to a current, supported .NET release for better performance and ongoing security updates.</p>
             </li>
             <li class="row">
-              <h3>Prototypes</h3>
-              <p>
-                Have an idea you want to test before handing it to your dev team? We build a working prototype you can
-                put in front of users, then hand it over.
-              </p>
+              <h3>Maintenance</h3>
+              <p>Fixes, updates and new features for the apps your team can't afford to stop using.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="frameworks" aria-labelledby="frameworks-title">
+        <div class="container">
+          <h2 class="section__title" id="frameworks-title">WPF, WinForms or Avalonia?</h2>
+          <ul class="rows">
+            <li class="row">
+              <h3>WPF</h3>
+              <p>Windows only. Mature, with rich data binding and styling. A good fit for complex Windows apps.</p>
+            </li>
+            <li class="row">
+              <h3>WinForms</h3>
+              <p>Windows only. Simple and quick to build with. Best for small, forms-heavy tools and existing apps.</p>
+            </li>
+            <li class="row">
+              <h3>Avalonia</h3>
+              <p>Windows, macOS and Linux. XAML-based like WPF, so WPF code and know-how carry over.</p>
             </li>
           </ul>
         </div>
       </section>
 
       <section class="section" id="process" aria-labelledby="process-title">
-        <div class="container">
-          <h2 class="section__title" id="process-title">How we work</h2>
-          <ol class="rows">
-            <li class="row">
-              <h3><span class="row__num">01</span>Scope</h3>
-              <p>A first call to understand what you're building, then a written scope and a fixed-price quote.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">02</span>Design</h3>
-              <p>Interface and architecture, agreed with you before the build starts.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">03</span>Build</h3>
-              <p>Short iterations, with a working version you can try as we go.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">04</span>Launch</h3>
-              <p>Release to production, documentation and a clean handover to your team.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section" id="about" aria-labelledby="about-title">
         <div class="container about">
-          <h2 class="section__title" id="about-title">About</h2>
+          <h2 class="section__title" id="process-title">How a project runs</h2>
           <div class="about__body">
-            <p class="about__lead">
-              One team from the first sketch to the production release — interface, app and the backend behind it.
+            <p class="about__lead">Fixed price, a first release in 4–8 weeks, and ongoing support after launch.</p>
+            <p>
+              After a first call we write a scope and send a fixed-price quote. You get a working version early, and we
+              release in short iterations until launch.
             </p>
             <p>
-              You work directly with the people writing the code. We keep the stack small and proven, ship in short
-              iterations and leave you with software that is fast, documented and easy to hand over.
+              After launch we keep maintaining the app, with updates, fixes and new features, or hand it over to your
+              team with the source code and documentation.
             </p>
-            <p>Based in Romania, we work remotely with businesses across the EU, in English or Romanian.</p>
           </div>
         </div>
       </section>
@@ -214,39 +228,35 @@
           <h2 class="section__title" id="faq-title">FAQ</h2>
           <ul class="rows">
             <li class="row">
-              <h3>How much does a project cost?</h3>
+              <h3>Can my WinForms app run on macOS or Linux?</h3>
               <p>
-                We work at a fixed price. After a first call we scope the project and send a quote, so you know the
-                cost before any work starts.
+                Not as it is: WinForms only runs on Windows. Rebuilding the interface in Avalonia lets the app run on
+                Windows, macOS and Linux, and the business logic can often be kept.
               </p>
             </li>
             <li class="row">
-              <h3>How long does it take?</h3>
+              <h3>Do we need to rewrite the whole app?</h3>
               <p>
-                Most projects reach a first usable release in 4–8 weeks. Larger products are split into milestones,
-                each with its own release.
+                Usually not. We review the existing code first, keep what still works and replace the parts that hold
+                the app back.
               </p>
             </li>
             <li class="row">
-              <h3>Do you work with clients outside Romania?</h3>
-              <p>Yes. We work remotely with businesses across the EU, in English or Romanian.</p>
-            </li>
-            <li class="row">
-              <h3>Can you build for both iOS and Android?</h3>
-              <p>Yes. We build mobile apps in Flutter, so one codebase ships to both the App Store and Google Play.</p>
-            </li>
-            <li class="row">
-              <h3>Do you build desktop apps?</h3>
+              <h3>Can you move us off .NET Framework?</h3>
               <p>
-                Yes. We build and modernise .NET desktop apps in WPF, WinForms and Avalonia, and they can share a backend
-                with your web and mobile apps.
+                Yes. We upgrade the project and its dependencies to a current .NET release, so the app keeps getting
+                security updates.
               </p>
             </li>
             <li class="row">
-              <h3>What do we get at the end?</h3>
+              <h3>Do you support the app after launch?</h3>
+              <p>Yes. We offer ongoing maintenance: updates, fixes and new features.</p>
+            </li>
+            <li class="row">
+              <h3>How much does it cost?</h3>
               <p>
-                The source code, documentation and deployment setup, so your team can take it from there or we can
-                keep building it together.
+                Every project is fixed price. After a first call we scope the work and send a quote, so you know the
+                cost before we start.
               </p>
             </li>
           </ul>
@@ -257,10 +267,10 @@
         <div class="container">
           <div class="cta">
             <div>
-              <h2 class="cta__title" id="contact-title">Have a project in mind?</h2>
-              <p class="cta__text">Tell us what you're building.</p>
+              <h2 class="cta__title" id="contact-title">Have a desktop app to build or modernise?</h2>
+              <p class="cta__text">Tell us what you're working with.</p>
             </div>
-            <a class="btn btn--lime" href="mailto:ro.atsru@gmail.com?subject=New%20project">Start a project</a>
+            <a class="btn btn--lime" href="mailto:ro.atsru@gmail.com?subject=Desktop%20app">Start a project</a>
           </div>
         </div>
       </section>
@@ -277,9 +287,9 @@
     </footer>
 
     <nav class="nav" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#process">Process</a>
+      <a href="/#about">About</a>
       <a class="nav__cta" href="#contact">Contact</a>
     </nav>
   </body>

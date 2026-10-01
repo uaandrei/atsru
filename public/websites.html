@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Web, Mobile &amp; Desktop App Development in the EU — atsru</title>
+    <title>Business Website Design &amp; Development in the EU — atsru</title>
     <meta
       name="description"
-      content="atsru builds web, mobile and desktop apps and the backends behind them with React, Flutter, .NET and Firebase. Fixed-price projects across the EU."
+      content="We design and build fast business websites with SEO built in, on modern frameworks like Astro and Next.js, plus web apps. Fixed-price projects across the EU."
     />
     <meta name="theme-color" content="#0B0B0C" />
-    <link rel="canonical" href="https://atsru.ro/" />
+    <link rel="canonical" href="https://atsru.ro/websites" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="atsru" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="atsru — Web, mobile and desktop software, built end to end" />
+    <meta property="og:title" content="Websites that load fast and get found — atsru" />
     <meta
       property="og:description"
-      content="We design and build web, mobile and desktop apps and the backends behind them, for businesses across the EU."
+      content="Business websites designed and built with SEO from day one, plus web apps."
     />
-    <meta property="og:url" content="https://atsru.ro/" />
+    <meta property="og:url" content="https://atsru.ro/websites" />
     <meta property="og:image" content="https://atsru.ro/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -32,25 +32,21 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
-            "@id": "https://atsru.ro/#organization",
-            "name": "atsru",
-            "url": "https://atsru.ro/",
-            "logo": "https://atsru.ro/icon-512.png",
-            "email": "ro.atsru@gmail.com",
-            "address": { "@type": "PostalAddress", "addressCountry": "RO" },
-            "knowsLanguage": ["en", "ro"],
-            "description": "atsru designs and builds web, mobile and desktop apps and the backends behind them.",
-            "areaServed": { "@type": "Place", "name": "European Union" },
-            "knowsAbout": ["Website development", "Search engine optimisation", "Web application development", "Mobile app development", "Desktop app development", "Prototyping", "React", "Flutter", ".NET", "WPF", "WinForms", "Avalonia", "Firebase"]
+            "@type": "Service",
+            "@id": "https://atsru.ro/websites#service",
+            "name": "Website design and development",
+            "serviceType": "Website design and development",
+            "description": "Business websites designed and built on modern frameworks with technical SEO, plus web apps such as dashboards, internal tools and customer portals.",
+            "url": "https://atsru.ro/websites",
+            "provider": { "@type": "Organization", "@id": "https://atsru.ro/#organization", "name": "atsru", "url": "https://atsru.ro/" },
+            "areaServed": { "@type": "Place", "name": "European Union" }
           },
           {
-            "@type": "WebSite",
-            "@id": "https://atsru.ro/#website",
-            "url": "https://atsru.ro/",
-            "name": "atsru",
-            "inLanguage": "en",
-            "publisher": { "@id": "https://atsru.ro/#organization" }
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atsru.ro/" },
+              { "@type": "ListItem", "position": 2, "name": "Websites", "item": "https://atsru.ro/websites" }
+            ]
           }
         ]
       }
@@ -87,10 +83,10 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <main id="main">
-      <section class="hero" id="top">
+      <section class="hero hero--page" id="top">
         <div class="hero__content">
           <header class="site-header">
-            <a class="logo" href="#top" aria-label="atsru — home">
+            <a class="logo" href="/" aria-label="atsru — home">
               <svg viewBox="0 0 309.9 96" fill="#0B0B0C" aria-hidden="true">
                 <rect width="96" height="96" rx="24" fill="#0B0B0C" />
                 <use href="#mark" width="96" height="96" color="#C4F042" />
@@ -105,106 +101,92 @@
           </header>
 
           <div class="hero__copy">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="/">Home</a></li>
+                <li aria-current="page">Websites</li>
+              </ol>
+            </nav>
             <h1 class="hero__title">
-              <span>Web, mobile</span>
-              <span>and desktop</span>
-              <span>software, built</span>
-              <span>end to end.</span>
+              <span>Websites that</span>
+              <span>load fast and</span>
+              <span>get found.</span>
             </h1>
-            <p class="hero__lede">
-              We design and build web, mobile and desktop apps and the backends behind them, for businesses across the EU.
-            </p>
-            <p class="hero__prompt">Have an idea you're ready to bring to life?</p>
+            <p class="hero__lede">We design and build presentation websites for your business, with SEO built in, and web apps for everything a website can't do.</p>
             <div class="hero__actions">
               <a class="btn btn--dark" href="#contact">Start a project</a>
-              <a class="btn btn--ghost" href="#process">How we work</a>
+              <a class="btn btn--ghost" href="#included">What's included</a>
             </div>
           </div>
 
           <ul class="hero__tags" aria-label="What we do">
-            <li>Web apps</li>
-            <li>Mobile apps</li>
-            <li>Desktop apps</li>
-            <li>Backend &amp; cloud</li>
+            <li>Design</li>
+            <li>Development</li>
+            <li>SEO</li>
           </ul>
         </div>
 
         <div class="hero__panel">
-          <p class="hero__stack">React · Flutter · .NET · Firebase</p>
+          <p class="hero__stack">Astro · Next.js · SEO</p>
           <svg class="hero__mark" viewBox="0 0 96 96" aria-hidden="true"><use href="#mark" /></svg>
         </div>
       </section>
 
-      <section class="section" id="services" aria-labelledby="services-title">
+      <section class="section" id="included" aria-labelledby="included-title">
         <div class="container">
-          <h2 class="section__title" id="services-title">Services</h2>
+          <h2 class="section__title" id="included-title">What's included</h2>
           <ul class="rows">
             <li class="row">
-              <h3><a href="/websites">Websites <span class="row__arrow" aria-hidden="true">→</span></a></h3>
-              <p>
-                Fast presentation websites designed and built for your business, with SEO in mind, and apps that run in
-                the browser, from dashboards to full products.
-              </p>
+              <h3>Design</h3>
+              <p>A site designed around your brand and your customers, not a template.</p>
             </li>
             <li class="row">
-              <h3><a href="/mobile-apps">Mobile apps <span class="row__arrow" aria-hidden="true">→</span></a></h3>
-              <p>iOS and Android apps built from one Flutter codebase, with the backend behind them.</p>
+              <h3>Development</h3>
+              <p>Built on modern frameworks such as Astro or Next.js, so pages load fast on every device.</p>
             </li>
             <li class="row">
-              <h3><a href="/desktop-apps">Desktop apps <span class="row__arrow" aria-hidden="true">→</span></a></h3>
-              <p>WPF and WinForms apps for Windows, Avalonia for macOS and Linux, and modernisation of existing ones.</p>
+              <h3>SEO</h3>
+              <p>Technical SEO from day one: page titles and descriptions, structured data, a sitemap and fast loading times.</p>
             </li>
             <li class="row">
-              <h3>Backend &amp; cloud</h3>
-              <p>.NET APIs, Firebase, integrations and reliable deployments.</p>
+              <h3>Updates</h3>
+              <p>Send us your changes and we update the site for you, as part of ongoing support.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="web-apps" aria-labelledby="web-apps-title">
+        <div class="container">
+          <h2 class="section__title" id="web-apps-title">Web apps</h2>
+          <ul class="rows">
+            <li class="row">
+              <h3>Dashboards</h3>
+              <p>Data and reporting your team can reach from any browser.</p>
             </li>
             <li class="row">
-              <h3><a href="/prototypes">Prototypes <span class="row__arrow" aria-hidden="true">→</span></a></h3>
-              <p>
-                Have an idea you want to test before investing in a full build? We design a clickable prototype you can
-                put in front of users in 2–4 weeks, then build the real product with you.
-              </p>
+              <h3>Internal tools</h3>
+              <p>Admin panels and workflows that replace spreadsheets and email threads.</p>
+            </li>
+            <li class="row">
+              <h3>Customer portals</h3>
+              <p>A place where your clients log in, see their data and get things done.</p>
+            </li>
+            <li class="row">
+              <h3>Full products</h3>
+              <p>Web platforms built to grow, with a backend they can share with your mobile and desktop apps.</p>
             </li>
           </ul>
         </div>
       </section>
 
       <section class="section" id="process" aria-labelledby="process-title">
-        <div class="container">
-          <h2 class="section__title" id="process-title">How we work</h2>
-          <ol class="rows">
-            <li class="row">
-              <h3><span class="row__num">01</span>Scope</h3>
-              <p>A first call to understand what you're building, then a written scope and a fixed-price quote.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">02</span>Design</h3>
-              <p>Interface and architecture, agreed with you before the build starts.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">03</span>Build</h3>
-              <p>Short iterations, with a working version you can try as we go.</p>
-            </li>
-            <li class="row">
-              <h3><span class="row__num">04</span>Launch</h3>
-              <p>Release to production, documentation and a clean handover to your team.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section" id="about" aria-labelledby="about-title">
         <div class="container about">
-          <h2 class="section__title" id="about-title">About</h2>
+          <h2 class="section__title" id="process-title">How a project runs</h2>
           <div class="about__body">
-            <p class="about__lead">
-              One team from the first sketch to the production release — interface, app and the backend behind it.
-            </p>
-            <p>
-              You work directly with the people writing the code. We keep the stack small and proven, ship in short
-              iterations and leave you with software that is fast, documented and easy to hand over.
-            </p>
-            <p>Based in Romania, we work remotely with businesses across the EU, in English or Romanian.</p>
+            <p class="about__lead">Fixed price, a first release in 4–8 weeks, and ongoing support after launch.</p>
+            <p>After a first call we write a scope and send a fixed-price quote. We design the site with you, then build it in short iterations you can review as we go.</p>
+            <p>After launch we keep the site up to date, with content changes, fixes and new pages, as part of ongoing support.</p>
           </div>
         </div>
       </section>
@@ -214,40 +196,24 @@
           <h2 class="section__title" id="faq-title">FAQ</h2>
           <ul class="rows">
             <li class="row">
-              <h3>How much does a project cost?</h3>
-              <p>
-                We work at a fixed price. After a first call we scope the project and send a quote, so you know the
-                cost before any work starts.
-              </p>
+              <h3>Can I edit the website myself?</h3>
+              <p>Not directly. We build sites without a content management system so they stay fast and simple. Send us your changes and we'll update the site for you.</p>
+            </li>
+            <li class="row">
+              <h3>Is SEO included?</h3>
+              <p>Yes. Every site comes with technical SEO: titles and descriptions, structured data, a sitemap and fast loading times.</p>
+            </li>
+            <li class="row">
+              <h3>Do you design the website too?</h3>
+              <p>Yes. We design and build it, so you don't need a separate designer.</p>
             </li>
             <li class="row">
               <h3>How long does it take?</h3>
-              <p>
-                Most projects reach a first usable release in 4–8 weeks. Larger products are split into milestones,
-                each with its own release.
-              </p>
+              <p>Most websites reach a first version in 4–8 weeks.</p>
             </li>
             <li class="row">
-              <h3>Do you work with clients outside Romania?</h3>
-              <p>Yes. We work remotely with businesses across the EU, in English or Romanian.</p>
-            </li>
-            <li class="row">
-              <h3>Can you build for both iOS and Android?</h3>
-              <p>Yes. We build mobile apps in Flutter, so one codebase runs on both iOS and Android.</p>
-            </li>
-            <li class="row">
-              <h3>Do you build desktop apps?</h3>
-              <p>
-                Yes. We build and modernise .NET desktop apps in WPF, WinForms and Avalonia, and they can share a backend
-                with your web and mobile apps.
-              </p>
-            </li>
-            <li class="row">
-              <h3>What do we get at the end?</h3>
-              <p>
-                The source code, documentation and deployment setup, so your team can take it from there or we can
-                keep building it together.
-              </p>
+              <h3>How much does it cost?</h3>
+              <p>Every project is fixed price. After a first call we scope the work and send a quote, so you know the cost before we start.</p>
             </li>
           </ul>
         </div>
@@ -257,10 +223,10 @@
         <div class="container">
           <div class="cta">
             <div>
-              <h2 class="cta__title" id="contact-title">Have a project in mind?</h2>
-              <p class="cta__text">Tell us what you're building.</p>
+              <h2 class="cta__title" id="contact-title">Need a website for your business?</h2>
+              <p class="cta__text">Tell us about your business.</p>
             </div>
-            <a class="btn btn--lime" href="mailto:ro.atsru@gmail.com?subject=New%20project">Start a project</a>
+            <a class="btn btn--lime" href="mailto:ro.atsru@gmail.com?subject=Website">Start a project</a>
           </div>
         </div>
       </section>
@@ -277,9 +243,9 @@
     </footer>
 
     <nav class="nav" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#process">Process</a>
+      <a href="/#about">About</a>
       <a class="nav__cta" href="#contact">Contact</a>
     </nav>
   </body>
